@@ -663,7 +663,10 @@ h1,h2,h3,h4,h5,h6{
   box-shadow:0 10px 24px rgba(16,185,129,.35);
 }
 .stack-final .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green-dark);font-weight:800;margin-bottom:4px}
-.stack-final .price{font-size:26px;font-weight:900;line-height:1;letter-spacing:-.5px;overflow-wrap:break-word;color:var(--dark)}
+.stack-final .price{font-weight:900;line-height:1;letter-spacing:-.5px;overflow-wrap:break-word;color:var(--dark);display:flex;align-items:baseline;justify-content:center;gap:1px}
+.stack-final .price-currency{font-size:18px;font-weight:700;align-self:flex-start;margin-top:4px}
+.stack-final .price-int{font-size:36px;font-weight:900}
+.stack-final .price-cents{font-size:18px;font-weight:800}
 .stack-final .old{font-size:11px;text-decoration:line-through;color:#94a3b8;margin-top:3px}
 .stack-final .info{font-size:10px;margin-top:5px;color:#64748b;line-height:1.4;overflow-wrap:break-word}
 
@@ -1373,7 +1376,7 @@ footer a{color:var(--green);font-weight:600}
 
       <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="stack-final" data-track="pricing-box-cta">
         <div class="lbl">HOY -60%</div>
-        <div class="price">$9.99 USD</div>
+        <div class="price"><span class="price-currency">$</span><span class="price-int">9</span><span class="price-cents">.99</span></div>
         <div class="old">antes $24.99</div>
         <div class="info">+ 2 bonos GRATIS · Acceso de por vida · Pago único</div>
       </a>
