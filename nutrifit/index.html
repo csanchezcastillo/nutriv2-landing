@@ -520,7 +520,26 @@ h1,h2,h3,h4,h5,h6{
   background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
   color:#fff;
 }
-.compare-col-emoji{font-size:18px}
+.compare-col-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  font-size:14px;
+  font-weight:800;
+  flex-shrink:0;
+  line-height:1;
+}
+.compare-col-bad .compare-col-icon{
+  background:#fff;
+  color:#dc2626;
+}
+.compare-col-good .compare-col-icon{
+  background:#fff;
+  color:var(--green);
+}
 .compare-col-list{
   list-style:none;
   padding:6px;
@@ -978,7 +997,7 @@ footer a{color:var(--green);font-weight:600}
   .stack-final .price{font-size:36px}
   .compare-grid{gap:16px}
   .compare-col-header{padding:14px 12px;font-size:14px}
-  .compare-col-emoji{font-size:20px}
+  .compare-col-icon{width:24px;height:24px;font-size:16px}
   .compare-col-list{padding:10px;gap:6px}
   .compare-col-list li{padding:10px 12px}
   .compare-topic{font-size:11px}
@@ -1039,7 +1058,7 @@ footer a{color:var(--green);font-weight:600}
   .stack{padding:32px 28px}
   .compare-grid{gap:20px}
   .compare-col-header{padding:16px 14px;font-size:15px}
-  .compare-col-emoji{font-size:22px}
+  .compare-col-icon{width:26px;height:26px;font-size:17px}
   .compare-col-list{padding:12px;gap:8px}
   .compare-col-list li{padding:12px 14px}
   .compare-topic{font-size:11px;letter-spacing:.6px}
@@ -1056,7 +1075,7 @@ footer a{color:var(--green);font-weight:600}
   .hero h1{font-size:clamp(42px,5vw,56px)}
   .compare-grid{gap:24px}
   .compare-col-header{padding:18px 16px;font-size:17px}
-  .compare-col-emoji{font-size:24px}
+  .compare-col-icon{width:28px;height:28px;font-size:18px}
   .compare-col-list{padding:14px;gap:10px}
   .compare-col-list li{padding:14px 16px}
   .compare-topic{font-size:12px}
@@ -1241,7 +1260,7 @@ footer a{color:var(--green);font-weight:600}
       <!-- COLUMNA SIN COMBO -->
       <div class="compare-col compare-col-bad">
         <div class="compare-col-header">
-          <span class="compare-col-emoji">😩</span>
+          <span class="compare-col-icon">✕</span>
           <span>Sin el combo</span>
         </div>
         <ul class="compare-col-list">
@@ -1275,7 +1294,7 @@ footer a{color:var(--green);font-weight:600}
       <!-- COLUMNA CON COMBO -->
       <div class="compare-col compare-col-good">
         <div class="compare-col-header">
-          <span class="compare-col-emoji">😊</span>
+          <span class="compare-col-icon">✓</span>
           <span>Con el combo</span>
         </div>
         <ul class="compare-col-list">
