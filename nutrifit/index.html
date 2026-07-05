@@ -231,14 +231,9 @@ h1,h2,h3,h4,h5,h6{
   width:100%;
   height:auto;
   filter:drop-shadow(0 15px 30px rgba(0,0,0,.15));
-  animation:float 4s ease-in-out infinite;
   display:block;
   object-fit:contain;
   margin:0 auto;
-}
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
 }
 
 /* ===========================
@@ -285,6 +280,11 @@ h1,h2,h3,h4,h5,h6{
 .cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(16,185,129,.5)}
 .cta:active{transform:translateY(0)}
 .cta .arrow{transition:transform .2s}
+.hero-cta-pulse{animation:ctaPulse 2.5s ease-in-out infinite}
+@keyframes ctaPulse{
+  0%,100%{box-shadow:0 8px 24px rgba(16,185,129,.4)}
+  50%{box-shadow:0 8px 30px rgba(16,185,129,.7),0 0 0 4px rgba(16,185,129,.15)}
+}
 .cta:hover .arrow{transform:translateX(4px)}
 
 .cta-note{
@@ -651,18 +651,18 @@ h1,h2,h3,h4,h5,h6{
   padding:14px 14px;
   border-radius:var(--radius);
   text-align:center;
-  box-shadow:0 6px 18px rgba(220,38,38,.2);
+  box-shadow:0 6px 18px rgba(16,185,129,.2);
   overflow:hidden;
   text-decoration:none;
   cursor:pointer;
   transition:transform .2s,box-shadow .2s;
-  border:2px solid #dc2626;
+  border:2px solid var(--green);
 }
 .stack-final:hover{
   transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(220,38,38,.35);
+  box-shadow:0 10px 24px rgba(16,185,129,.35);
 }
-.stack-final .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#dc2626;font-weight:800;margin-bottom:4px}
+.stack-final .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green-dark);font-weight:800;margin-bottom:4px}
 .stack-final .price{font-size:26px;font-weight:900;line-height:1;letter-spacing:-.5px;overflow-wrap:break-word;color:var(--dark)}
 .stack-final .old{font-size:11px;text-decoration:line-through;color:#94a3b8;margin-top:3px}
 .stack-final .info{font-size:10px;margin-top:5px;color:#64748b;line-height:1.4;overflow-wrap:break-word}
@@ -1040,7 +1040,7 @@ footer a{color:var(--green);font-weight:600}
   .hero-top{grid-area:top;text-align:left}
   .hero-bottom{grid-area:bottom;text-align:left}
   .hero-img-wrap{grid-area:img;align-self:center}
-  .hero-img{margin:0;max-width:100%;width:100%;animation:float 4s ease-in-out infinite}
+  .hero-img{margin:0;max-width:100%;width:100%}
   .section-title{font-size:clamp(32px,4.5vw,40px);margin-bottom:14px}
   .section-sub{font-size:17px;margin-bottom:48px}
   .product{grid-template-columns:160px 1fr;padding:24px}
@@ -1112,7 +1112,7 @@ footer a{color:var(--green);font-weight:600}
         </p>
 
         <div class="cta-wrap">
-          <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="cta anchor" data-track="hero-cta">
+          <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="cta anchor hero-cta-pulse" data-track="hero-cta">
             Quiero empezar hoy
             <span class="arrow">→</span>
           </a>
@@ -1373,8 +1373,8 @@ footer a{color:var(--green);font-weight:600}
 
       <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="stack-final" data-track="pricing-box-cta">
         <div class="lbl">HOY -60%</div>
-        <div class="price">$11.99 USD</div>
-        <div class="old">antes $29.99</div>
+        <div class="price">$9.99 USD</div>
+        <div class="old">antes $24.99</div>
         <div class="info">+ 2 bonos GRATIS · Acceso de por vida · Pago único</div>
       </a>
     </div>
