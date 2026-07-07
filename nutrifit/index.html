@@ -18,13 +18,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://d1yei2z3i6k35z.cloudfront.net" />
+<link rel="preload" as="image" href="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952f332f17d9_Ingles2.png" fetchpriority="high" />
 
 <!-- Google Fonts: Plus Jakarta Sans (headings) + Inter (body) -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
-<!-- Facebook Pixel -->
+<!-- Facebook Pixel (deferred) -->
 <script>
+window.addEventListener('load',function(){
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -33,6 +36,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://www.facebook.com/tr?id=1186949119684750&ev=PageView&noscript=1');
+});
 </script>
 
 <style>
@@ -58,6 +62,7 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
+  font-synthesis:none;
   overflow-wrap:break-word;
   word-wrap:break-word;
 }
@@ -226,6 +231,7 @@ h1,h2,h3,h4,h5,h6{
   position:relative;
   overflow:visible;
   text-align:center;
+  aspect-ratio:1/1;
 }
 .hero-img{
   max-width:100%;
@@ -1107,7 +1113,7 @@ footer a{color:var(--green);font-weight:600}
       </div>
 
       <div class="hero-img-wrap">
-        <img class="hero-img" src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952f332f17d9_Ingles2.png" alt="Combo Completo — 4 libros + audiolibro" width="1080" height="1080" loading="eager" fetchpriority="high" />
+        <img class="hero-img" src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952f332f17d9_Ingles2.png" alt="Combo Completo — 4 libros + audiolibro" width="1080" height="1080" loading="eager" fetchpriority="high" decoding="async" />
       </div>
 
       <div class="hero-bottom">
@@ -1162,7 +1168,7 @@ footer a{color:var(--green);font-weight:600}
     <h2 class="section-title reveal">Te presentamos el <span class="highlight">Combo Completo</span></h2>
     <p class="section-sub reveal">El plan que por fin te hace perder peso sin que la comida sea tu enemiga.</p>
 
-    <img class="combo-hero reveal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68941d555e137_COMBO.png" alt="Combo Completo - 4 libros y audiolibro" width="1080" height="1080" loading="lazy" />
+    <img class="combo-hero reveal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68941d555e137_COMBO.png" alt="Combo Completo - 4 libros y audiolibro" width="1080" height="1080" loading="lazy" decoding="async" />
 
     <p class="text-center reveal" style="max-width:min(680px,calc(100vw - 40px));margin:0 auto 24px;color:var(--gray);font-size:15px">
       Diseñados para que transformes tu cuerpo, tu energía y tu relación con la comida en solo <strong style="color:var(--green-dark)">21 días</strong>.
@@ -1173,7 +1179,7 @@ footer a{color:var(--green);font-weight:600}
     <div class="products">
       <!-- Product 1 -->
       <div class="product reveal">
-        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="Reto Keto 21 días" width="1080" height="889" loading="lazy" />
+        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="Reto Keto 21 días" width="1080" height="889" loading="lazy" decoding="async" />
         <div class="product-body">
           <h3>Reto Keto 21 días</h3>
           <p>En solo 21 días entras en cetosis, quemas grasa de forma natural y transformas tu cuerpo con menús diarios simples y estrategias que realmente funcionan.</p>
@@ -1185,7 +1191,7 @@ footer a{color:var(--green);font-weight:600}
 
       <!-- Product 2 -->
       <div class="product reveal">
-        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="30 Batidos para Quemar Grasa" width="1028" height="921" loading="lazy" />
+        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="30 Batidos para Quemar Grasa" width="1028" height="921" loading="lazy" decoding="async" />
         <div class="product-body">
           <h3>30 Batidos para Quemar Grasa</h3>
           <p>Un plan de 30 recetas de batidos deliciosos que aceleran tu metabolismo, reducen la inflamación y te dan energía desde el primer sorbo sin pasar hambre.</p>
@@ -1197,7 +1203,7 @@ footer a{color:var(--green);font-weight:600}
 
       <!-- Product 3 -->
       <div class="product reveal">
-        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="Menús Saludables 7 Días" width="1080" height="990" loading="lazy" />
+        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="Menús Saludables 7 Días" width="1080" height="990" loading="lazy" decoding="async" />
         <div class="product-body">
           <h3>Menús Saludables 7 Días</h3>
           <p>Una guía completa de 7 días de desayunos, almuerzos y cenas deliciosas que aceleran tu pérdida de peso sin contar calorías, sin pasar hambre y sin renunciar al sabor.</p>
@@ -1209,7 +1215,7 @@ footer a{color:var(--green);font-weight:600}
 
       <!-- BONO 1 -->
       <div class="product bonus reveal">
-        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="BONO: Guía de Ayuno Intermitente" width="1051" height="878" loading="lazy" />
+        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="BONO: Guía de Ayuno Intermitente" width="1051" height="878" loading="lazy" decoding="async" />
         <div class="product-body">
           <h3>🎁 Bono #1: Guía de Ayuno Intermitente</h3>
           <p>Aprende a implementar el ayuno intermitente a tu ritmo con estrategias prácticas, protocolos paso a paso y respuestas a todas tus dudas.</p>
@@ -1221,7 +1227,7 @@ footer a{color:var(--green);font-weight:600}
 
       <!-- BONO 2 -->
       <div class="product bonus reveal">
-        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="BONO: Audiolibro Ayuno Intermitente" width="972" height="877" loading="lazy" />
+        <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="BONO: Audiolibro Ayuno Intermitente" width="972" height="877" loading="lazy" decoding="async" />
         <div class="product-body">
           <h3>🎁 Bono #2: Audiolibro "Ayuno Intermitente"</h3>
           <p>Escúchalo mientras cocinas, caminas o descansas transforma tu cuerpo sin sacrificios, en cualquier momento y lugar.</p>
@@ -1380,7 +1386,7 @@ footer a{color:var(--green);font-weight:600}
         <div class="headline">"Muy fácil de seguir y delicioso"</div>
         <p class="quote">"Este combo me ha ayudado muchísimo a mejorar mi alimentación sin complicaciones. Las recetas son fáciles y realmente deliciosas."</p>
         <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689428d47e232_p1.jpg" alt="Carolina Méndez" />
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689428d47e232_p1.jpg" alt="Carolina Méndez" width="42" height="42" loading="lazy" decoding="async" />
           <div class="info">
             <div class="name">Carolina Méndez <span class="verified">✓</span></div>
             <div class="result">−6 kg en 3 semanas</div>
@@ -1393,7 +1399,7 @@ footer a{color:var(--green);font-weight:600}
         <div class="headline">"Súper económico y efectivo"</div>
         <p class="quote">"He comprado varios ebooks antes, pero este es el más completo y fácil de seguir. Vale cada centavo."</p>
         <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a857c07cd74_68942aaf0e73b_p4.jpg" alt="Alejandra Gómez" />
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a857c07cd74_68942aaf0e73b_p4.jpg" alt="Alejandra Gómez" width="42" height="42" loading="lazy" decoding="async" />
           <div class="info">
             <div class="name">Alejandra Gómez <span class="verified">✓</span></div>
             <div class="result">−9 kg en 40 días</div>
@@ -1406,7 +1412,7 @@ footer a{color:var(--green);font-weight:600}
         <div class="headline">"Feliz con los resultados"</div>
         <p class="quote">"Me siento más saludable y con más energía desde que sigo las recetas de este combo."</p>
         <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68942931989d5_p2.jpg" alt="Sofía Ríos" />
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68942931989d5_p2.jpg" alt="Sofía Ríos" width="42" height="42" loading="lazy" decoding="async" />
           <div class="info">
             <div class="name">Sofía Ríos <span class="verified">✓</span></div>
             <div class="result">Más energía desde el día 3</div>
@@ -1419,7 +1425,7 @@ footer a{color:var(--green);font-weight:600}
         <div class="headline">"Me ayudó a mejorar mi relación con la comida"</div>
         <p class="quote">"Este pack me enseñó que comer sano no significa pasar hambre. Aprendí a nutrirme mejor sin restricciones extremas."</p>
         <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a8586eecd27_68942abc67db4_p5.jpg" alt="María Fernanda López" />
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a8586eecd27_68942abc67db4_p5.jpg" alt="María Fernanda López" width="42" height="42" loading="lazy" decoding="async" />
           <div class="info">
             <div class="name">María Fernanda López <span class="verified">✓</span></div>
             <div class="result">−7 kg + mejor digestión</div>
@@ -1432,7 +1438,7 @@ footer a{color:var(--green);font-weight:600}
         <div class="headline">"Sano y sin complicaciones"</div>
         <p class="quote">"Este combo me ha demostrado que no hay que complicarse para comer sano. Todo es súper práctico y accesible."</p>
         <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/6894294249f43_p3.jpg" alt="Isabel Ortiz" />
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/6894294249f43_p3.jpg" alt="Isabel Ortiz" width="42" height="42" loading="lazy" decoding="async" />
           <div class="info">
             <div class="name">Isabel Ortiz <span class="verified">✓</span></div>
             <div class="result">Adiós a la inflamación</div>
@@ -1445,7 +1451,7 @@ footer a{color:var(--green);font-weight:600}
         <div class="headline">"Las recetas son increíbles"</div>
         <p class="quote">"No solo son saludables, ¡sino que saben increíble! Nunca pensé que comer bien fuera tan rico y variado."</p>
         <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a858bc0956c_68942ac9ae706_p6.jpg" alt="Gabriela Méndez" />
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a858bc0956c_68942ac9ae706_p6.jpg" alt="Gabriela Méndez" width="42" height="42" loading="lazy" decoding="async" />
           <div class="info">
             <div class="name">Gabriela Méndez <span class="verified">✓</span></div>
             <div class="result">−5 kg sin pasar hambre</div>
@@ -1471,7 +1477,7 @@ footer a{color:var(--green);font-weight:600}
       <p>
         <strong>El riesgo es TODO nuestro. El beneficio es TODO tuyo.</strong>
       </p>
-      <img class="seal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ec8bd8aff3_garantia.png" alt="Sello de garantía" width="224" height="224" loading="lazy" />
+      <img class="seal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ec8bd8aff3_garantia.png" alt="Sello de garantía" width="224" height="224" loading="lazy" decoding="async" />
     </div>
   </div>
 </section>
