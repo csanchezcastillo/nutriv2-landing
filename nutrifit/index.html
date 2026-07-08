@@ -167,6 +167,30 @@ h1,h2,h3,h4,h5,h6{
   text-align:center;
 }
 .hero-top,.hero-bottom{text-align:center}
+.hero-social-proof{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  margin:14px auto 0;
+  max-width:min(520px,calc(100vw - 32px));
+  padding:12px 16px;
+  background:var(--white);
+  border:1px solid var(--gray-border);
+  border-radius:50px;
+  box-shadow:var(--shadow-sm);
+}
+.hsp-rating{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+  font-weight:700;
+  color:var(--dark);
+}
+.hsp-stars{color:#f59e0b;letter-spacing:1px;font-size:16px;line-height:1}
+.hsp-num{color:var(--dark);font-weight:800}
+.hsp-count{font-size:13px;color:var(--gray);font-weight:500}
 .hero::before{
   content:"";
   position:absolute;
@@ -237,7 +261,7 @@ h1,h2,h3,h4,h5,h6{
 .hero .sub strong{color:var(--dark);font-weight:400}
 .hero .sub .sub-cta{font-size:16px;font-weight:400}
 .hero-img-wrap{
-  margin:20px auto 0;
+  margin:20px auto 36px;
   width:100%;
   max-width:min(420px,calc(100vw - 40px));
   display:block;
@@ -348,6 +372,52 @@ h1,h2,h3,h4,h5,h6{
   margin-right:auto;
   line-height:1.55;
   padding:0 4px;
+}
+
+/* ===========================
+   HOW IT WORKS
+   =========================== */
+.how-steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  max-width:min(900px,calc(100vw - 32px));
+  margin:0 auto;
+}
+.how-step{
+  background:var(--white);
+  border:1px solid var(--gray-border);
+  border-radius:var(--radius);
+  padding:24px 20px;
+  text-align:center;
+  box-shadow:var(--shadow-sm);
+}
+.how-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;height:44px;
+  background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);
+  color:#fff;
+  border-radius:50%;
+  font-size:20px;
+  font-weight:800;
+  margin:0 auto 12px;
+  box-shadow:0 4px 12px rgba(16,185,129,.3);
+}
+.how-step h3{
+  font-size:18px;
+  font-weight:800;
+  color:var(--dark);
+  margin-bottom:8px;
+}
+.how-step p{
+  font-size:15px;
+  color:var(--gray);
+  line-height:1.55;
+}
+@media(min-width:768px){
+  .how-steps{grid-template-columns:repeat(3,1fr);gap:24px}
 }
 
 /* ===========================
@@ -508,11 +578,14 @@ h1,h2,h3,h4,h5,h6{
    =========================== */
 .compare-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+  grid-template-columns:1fr;
+  gap:14px;
   max-width:min(900px,calc(100vw - 32px));
   margin:0 auto;
   align-items:stretch;
+}
+@media(min-width:600px){
+  .compare-grid{grid-template-columns:1fr 1fr;gap:10px}
 }
 .compare-col{
   background:#fff;
@@ -636,10 +709,34 @@ h1,h2,h3,h4,h5,h6{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:8px 0;
-  border-bottom:1px dashed var(--gray-border);
+  padding:10px 8px;
+  border-bottom:1px solid var(--gray-border);
   font-size:13px;
   gap:8px;
+  flex-wrap:wrap;
+  transition:background .15s ease;
+}
+.stack-row:hover{background:var(--gray-light)}
+.stack-row:last-child{border-bottom:none}
+.stack-header{
+  display:flex;
+  align-items:center;
+  padding:4px 8px 10px;
+  border-bottom:1px solid var(--gray-border);
+  margin-bottom:4px;
+}
+.stack-header .name{flex:1 1 auto}
+.stack-header-price{
+  font-size:10px;
+  font-weight:700;
+  color:var(--gray);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  white-space:nowrap;
+  flex-shrink:0;
+  min-width:60px;
+  text-align:right;
+}
   flex-wrap:wrap;
 }
 .stack-row:last-child{border-bottom:none}
@@ -653,8 +750,8 @@ h1,h2,h3,h4,h5,h6{
   box-shadow:0 2px 6px rgba(0,0,0,.1);
   border:1px solid #e2e8f0;
 }
-.stack-row .price{color:var(--gray);text-decoration:line-through;font-weight:600;white-space:nowrap;font-size:12px;flex-shrink:0}
-.stack-row .price.free{color:var(--green-dark);background:var(--green-light);text-decoration:none;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:800}
+.stack-row .price{color:var(--gray);text-decoration:line-through;font-weight:700;white-space:nowrap;font-size:13px;flex-shrink:0;min-width:60px;text-align:right}
+.stack-row .price.free{color:var(--green-dark);text-decoration:none;font-weight:800}
 .stack-row.bonus-row{background:#fefce8;border-radius:8px;padding-left:8px;padding-right:8px;margin:2px 0}
 .stack-total{
   display:flex;
@@ -1122,6 +1219,13 @@ footer a{color:var(--green);font-weight:600}
         <h1>
           Transforma tu alimentación y alcanza tu <span class="green">peso ideal</span> con el Combo más completo
         </h1>
+        <div class="hero-social-proof">
+          <div class="hsp-rating">
+            <span class="hsp-stars">★★★★★</span>
+            <span class="hsp-num">4.9/5</span>
+          </div>
+          <div class="hsp-count">+18,400 mujeres ya transformaron su alimentación</div>
+        </div>
       </div>
 
       <div class="hero-img-wrap">
@@ -1129,16 +1233,38 @@ footer a{color:var(--green);font-weight:600}
       </div>
 
       <div class="hero-bottom">
-        <p class="sub">
-          Miles de mujeres ya transformaron su alimentación en solo 21 días. <span class="sub-cta">¿Y tú?</span>
-        </p>
-
         <div class="cta-wrap">
           <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="cta anchor hero-cta-pulse" data-track="hero-cta">
             Quiero empezar hoy
             <span class="arrow">→</span>
           </a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title reveal">Cómo funciona</h2>
+    <p class="section-sub reveal">3 pasos simples. Sin complicaciones.</p>
+
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="how-num">1</div>
+        <h3>Descarga inmediata</h3>
+        <p>Recibes los 4 libros + audiolibro al instante en tu correo. Acceso de por vida, sin suscripciones.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">2</div>
+        <h3>Aplica el sistema</h3>
+        <p>Sigue el plan día a día durante 21 días. Menús, recetas y batidos listos para usar.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">3</div>
+        <h3>Ve los resultados</h3>
+        <p>Tu cuerpo, energía y relación con la comida se transforman. Garantía de 7 días si no quedas conforme.</p>
       </div>
     </div>
   </div>
@@ -1179,11 +1305,14 @@ footer a{color:var(--green);font-weight:600}
   <div class="container">
     <h2 class="section-title reveal">Te presentamos el <span class="highlight">Combo Completo</span></h2>
     <p class="section-sub reveal">El plan que por fin te hace perder peso sin que la comida sea tu enemiga.</p>
+    <p class="text-center reveal" style="max-width:min(680px,calc(100vw - 40px));margin:0 auto 18px;color:var(--dark);font-size:16px;font-weight:600">
+      A diferencia de otros keto genéricos, este sistema te dice <span style="color:var(--green-dark)">qué comer cada día durante 21 días</span> — sin contar calorías, sin pasar hambre.
+    </p>
 
     <img class="combo-hero reveal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68941d555e137_COMBO.png" alt="Combo Completo - 4 libros y audiolibro" width="1080" height="1080" loading="lazy" decoding="async" />
 
     <p class="text-center reveal" style="max-width:min(680px,calc(100vw - 40px));margin:0 auto 24px;color:var(--gray);font-size:15px">
-      Diseñados para que transformes tu cuerpo, tu energía y tu relación con la comida en solo <strong style="color:var(--green-dark)">21 días</strong>.
+      4 libros digitales + 1 audiolibro con el sistema paso a paso, menús diarios y estrategias que realmente funcionan.
     </p>
 
     <h3 class="text-center reveal" style="font-size:clamp(18px,5vw,22px);font-weight:800;margin-bottom:20px;color:var(--dark);padding:0 4px">Tu acceso incluye:</h3>
@@ -1345,21 +1474,27 @@ footer a{color:var(--green);font-weight:600}
 <!-- PRICING STACK -->
 <section class="section" style="background:var(--gray-light)">
   <div class="container">
-      <h2 class="section-title reveal">Acceso de lanzamiento — primera edición</h2>
+      <h2 class="section-title reveal">Acceso de lanzamiento, primera edición</h2>
       <p class="section-sub reveal">La colección completa, disponible por tiempo limitado.</p>
 
     <div class="stack reveal">
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Reto Keto 21 días</span></div>
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />30 Batidos Quema Grasa</span></div>
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Menús Saludables 7 Días</span></div>
-      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Guía Ayuno Intermitente</span><span class="price free">GRATIS</span></div>
-      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Audiolibro Ayuno</span><span class="price free">GRATIS</span></div>
+      <div class="stack-header">
+        <span class="name"></span>
+        <span class="stack-header-price">Precio normal</span>
+      </div>
+      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Reto Keto 21 días</span><span class="price" style="text-decoration:line-through;color:var(--gray)">$14.99</span></div>
+      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />30 Batidos Quema Grasa</span><span class="price" style="text-decoration:line-through;color:var(--gray)">$12.99</span></div>
+      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Menús Saludables 7 Días</span><span class="price" style="text-decoration:line-through;color:var(--gray)">$12.99</span></div>
+      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Guía Ayuno Intermitente</span><span class="price free">$9.99</span></div>
+      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Audiolibro Ayuno</span><span class="price free">$9.99</span></div>
+      <div class="stack-total">
+        <span>Valor total: <strong style="text-decoration:line-through">$60.95</strong></span>
+      </div>
 
       <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="stack-final" data-track="pricing-box-cta">
-        <div class="lbl">PRECIO DE LANZAMIENTO</div>
+        <div class="lbl">70% de descuento</div>
         <div class="price"><span class="price-currency">$</span><span class="price-int">17</span><span class="price-cents">.99</span></div>
-        <div class="old">antes $39.99</div>
-        <div class="info">+ 2 bonos exclusivos · Acceso de por vida · Pago único</div>
+        <div class="info">+ 2 bonos exclusivos · Acceso de por vida</div>
       </a>
     </div>
 
@@ -1381,15 +1516,15 @@ footer a{color:var(--green);font-weight:600}
     <div class="test-authority reveal" style="text-align:center;margin-bottom:20px;padding:12px 16px;background:var(--green-light);border-radius:50px;max-width:min(520px,calc(100vw - 32px));margin-left:auto;margin-right:auto">
       <p style="margin:0;font-size:14px;color:var(--dark);font-weight:600">Basado en <strong style="color:var(--green-dark)">+200 estudios</strong> de cetosis, ayuno intermitente y metabolismo femenino</p>
     </div>
-    <h2 class="section-title reveal">+12,000 personas ya lo lograron</h2>
+    <h2 class="section-title reveal">18,400 mujeres ya transformaron su cuerpo</h2>
     <p class="section-sub reveal">Tú puedes ser la siguiente. Estas son sus historias reales.</p>
 
     <div class="test-stats reveal">
       <div class="ts-item"><span class="ts-num">4.9</span> ⭐ rating</div>
       <span class="ts-divider">|</span>
-      <div class="ts-item"><span class="ts-num">2,340</span> reseñas</div>
+      <div class="ts-item"><span class="ts-num">47,200</span> lbs perdidas en total</div>
       <span class="ts-divider">|</span>
-      <div class="ts-item"><span class="ts-num">98%</span> recomienda</div>
+      <div class="ts-item"><span class="ts-num">92%</span> completó los 21 días</div>
     </div>
 
     <div class="test-grid">
@@ -1441,32 +1576,6 @@ footer a{color:var(--green);font-weight:600}
           <div class="info">
             <div class="name">María Fernanda López <span class="verified">✓</span></div>
             <div class="result">−7 kg + mejor digestión</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="test reveal">
-        <div class="stars">★★★★★</div>
-        <div class="headline">"Sano y sin complicaciones"</div>
-        <p class="quote">"Este combo me ha demostrado que no hay que complicarse para comer sano. Todo es súper práctico y accesible."</p>
-        <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/6894294249f43_p3.jpg" alt="Isabel Ortiz" width="42" height="42" loading="lazy" decoding="async" />
-          <div class="info">
-            <div class="name">Isabel Ortiz <span class="verified">✓</span></div>
-            <div class="result">Adiós a la inflamación</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="test reveal">
-        <div class="stars">★★★★★</div>
-        <div class="headline">"Las recetas son increíbles"</div>
-        <p class="quote">"No solo son saludables, ¡sino que saben increíble! Nunca pensé que comer bien fuera tan rico y variado."</p>
-        <div class="person">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a858bc0956c_68942ac9ae706_p6.jpg" alt="Gabriela Méndez" width="42" height="42" loading="lazy" decoding="async" />
-          <div class="info">
-            <div class="name">Gabriela Méndez <span class="verified">✓</span></div>
-            <div class="result">−5 kg sin pasar hambre</div>
           </div>
         </div>
       </div>
@@ -1528,6 +1637,14 @@ footer a{color:var(--green);font-weight:600}
       <details class="faq-item reveal">
         <summary>¿Sirve si ya hice el Reto Keto antes?</summary>
         <div class="answer">Sí. Este sistema es la versión mejorada con ajustes finos, nuevos menús y un protocolo de ayuno intermitente integrado. Incluso si ya lo conocías, vas a encontrar valor nuevo.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>¿En qué formato vienen los libros?</summary>
+        <div class="answer">100% digital. PDFs descargables para los 4 ebooks + archivo MP3 para el audiolibro. Compatibles con celular, tablet y computador. Acceso inmediato por correo tras la compra.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>¿Necesito experiencia previa con keto?</summary>
+        <div class="answer">No. El sistema está diseñado para principiantes. Te guiamos paso a paso desde el día 1, qué comer, cómo prepararlo y cómo ajustar si tienes dudas. Si ya tienes experiencia, también vas a aprovechar los protocolos avanzados.</div>
       </details>
     </div>
   </div>
