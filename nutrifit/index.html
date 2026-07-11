@@ -161,7 +161,7 @@ h1,h2,h3,h4,h5,h6{
    =========================== */
 .hero{
   background:linear-gradient(180deg,#ecfdf5 0%,#ffffff 100%);
-  padding:24px 0 36px;
+  padding:24px 0 0;
   position:relative;
   overflow:hidden;
   text-align:center;
@@ -759,7 +759,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .stack-row .price{color:var(--gray);text-decoration:line-through;font-weight:700;white-space:nowrap;font-size:14px;flex-shrink:0;min-width:60px;text-align:right}
 .stack-row .price.free{color:var(--green-dark);text-decoration:none;font-weight:800}
-.price-stack{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.price-gratis-badge{background:var(--green-dark);color:#fff;font-size:11px;font-weight:800;padding:4px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;flex-shrink:0}
 .price-old{color:var(--gray);text-decoration:line-through;font-weight:700;font-size:13px}
 .price-gratis{background:var(--green-dark);color:#fff;font-size:11px;font-weight:800;padding:4px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
 .stack-row.bonus-row{background:#fefce8;border-radius:8px;padding-left:8px;padding-right:8px;margin:2px 0}
@@ -769,7 +769,6 @@ h1,h2,h3,h4,h5,h6{
   align-items:center;
   margin-top:14px;
   padding-top:14px;
-  border-top:2px solid var(--dark);
   font-size:14px;
   color:var(--dark);
 }
@@ -1249,14 +1248,9 @@ footer a{color:var(--green);font-weight:600}
 </section>
  
 <!-- SOLUTION -->
-<section class="section solution">
+<section class="section solution" style="padding-top:0">
   <div class="container">
-    <h2 class="section-title reveal">Te presentamos el <span class="highlight">Combo Completo</span></h2>
-    <p class="section-sub reveal">A diferencia de otros métodos, este combo te enseña paso a paso lo que debes hacer para transformar tu alimentación <strong>desde el primer día</strong>.</p>
-
-    <img class="combo-hero reveal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68941d555e137_COMBO.png" alt="Combo Completo - 4 libros y audiolibro" width="1080" height="1080" loading="lazy" decoding="async" />
-
-    <h3 class="text-center reveal" style="font-size:clamp(18px,5vw,22px);font-weight:800;margin-top:32px;margin-bottom:32px;color:var(--dark);padding:0 4px;text-transform:uppercase;letter-spacing:.5px">EL COMBO COMPLETO INCLUYE:</h3>
+    <h3 class="text-center reveal" style="font-size:clamp(18px,5vw,22px);font-weight:800;margin-top:48px;margin-bottom:36px;color:var(--dark);padding:0 4px;text-transform:uppercase;letter-spacing:.5px">EL COMBO COMPLETO INCLUYE:</h3>
 
     <div class="products">
       <!-- Product 1 -->
@@ -1417,19 +1411,14 @@ footer a{color:var(--green);font-weight:600}
   <div class="container">
       <h2 class="section-title reveal">Todo lo que recibirás hoy</h2>
 
+    <img class="combo-hero reveal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68941d555e137_COMBO.png" alt="Combo Completo - 4 libros y audiolibro" width="1080" height="1080" loading="lazy" decoding="async" style="display:block;margin:24px auto 32px;max-width:min(360px,calc(100vw - 40px));width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)" />
+
     <div class="stack reveal">
-      <div class="stack-header">
-        <span class="name"></span>
-        <span class="stack-header-price">Precio normal</span>
-      </div>
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Reto Keto 21 días</span><span class="price" style="text-decoration:line-through;color:var(--gray)">$14.99</span></div>
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />30 Batidos Quema Grasa</span><span class="price" style="text-decoration:line-through;color:var(--gray)">$12.99</span></div>
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Menús Saludables 7 Días</span><span class="price" style="text-decoration:line-through;color:var(--gray)">$12.99</span></div>
-      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Guía Ayuno Intermitente</span><span class="price-stack"><span class="price-old">$9.99</span><span class="price-gratis">GRATIS</span></span></div>
-      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Audiolibro Ayuno Intermitente</span><span class="price-stack"><span class="price-old">$9.99</span><span class="price-gratis">GRATIS</span></span></div>
-      <div class="stack-total">
-        <span>Valor total: <strong style="text-decoration:line-through">$60.95</strong></span>
-      </div>
+      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Reto Keto 21 días</span></div>
+      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />30 Batidos Quema Grasa</span></div>
+      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Menús Saludables 7 Días</span></div>
+      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Guía Ayuno Intermitente</span><span class="price-gratis-badge">GRATIS</span></div>
+      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Audiolibro Ayuno Intermitente</span><span class="price-gratis-badge">GRATIS</span></div>
 
       <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="stack-final" data-track="pricing-box-cta">
         <div class="lbl">Oferta especial</div>
