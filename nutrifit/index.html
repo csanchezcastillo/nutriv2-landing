@@ -345,6 +345,10 @@ h1,h2,h3,h4,h5,h6{
   0%,100%{box-shadow:0 8px 24px rgba(16,185,129,.4)}
   50%{box-shadow:0 8px 30px rgba(16,185,129,.7),0 0 0 4px rgba(16,185,129,.15)}
 }
+@keyframes pulseGlow{
+  0%,100%{box-shadow:0 8px 20px rgba(245,158,11,.45),0 0 0 2px rgba(255,255,255,.25);transform:scale(1)}
+  50%{box-shadow:0 12px 30px rgba(245,158,11,.65),0 0 0 4px rgba(255,255,255,.4);transform:scale(1.015)}
+}
 .cta:hover .arrow{transform:translateX(4px)}
 
 .cta-note{
@@ -697,21 +701,6 @@ h1,h2,h3,h4,h5,h6{
   border:2px solid var(--green);
   position:relative;
   overflow:visible;
-}
-.stack::before{
-  content:"🔥 OFERTA ESPECIAL";
-  position:absolute;
-  top:-12px;left:50%;
-  transform:translateX(-50%);
-  background:var(--red);
-  color:#fff;
-  padding:5px 14px;
-  border-radius:50px;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.5px;
-  white-space:nowrap;
-  box-shadow:var(--shadow);
 }
 .stack-row{
   display:flex;
@@ -1288,15 +1277,34 @@ footer a{color:var(--green);font-weight:600}
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="cta-wrap text-center reveal" style="margin-top:28px;padding:0 4px">
+      <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="cta" data-track="products-cta">
+        ¡SÍ, QUIERO EL COMBO AHORA!
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section class="section bonuses-section" style="background:linear-gradient(180deg,#fff 0%,#fef9c3 50%,#fff 100%);position:relative;overflow:hidden">
+  <div style="position:absolute;top:0;left:0;right:0;height:80px;background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);pointer-events:none"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(0deg,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);pointer-events:none"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <h2 class="section-title reveal" style="color:#92400e">🎁 BONOS EXCLUSIVOS INCLUIDOS</h2>
+    <p class="section-sub reveal" style="color:#854d0e">Estos 2 bonos te los llevas GRATIS con tu combo.</p>
+
+    <div class="products" style="max-width:min(760px,calc(100vw - 32px))">
       <!-- BONO 1 -->
       <div class="product bonus reveal">
         <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="BONO: Guía de Ayuno Intermitente" width="1051" height="878" loading="lazy" decoding="async" />
         <div class="product-body">
-          <h3>🎁 Guía de Ayuno Intermitente</h3>
+          <h3 style="color:#92400e">🎁 Guía de Ayuno Intermitente</h3>
           <p>Aprende a implementar el ayuno intermitente a tu ritmo con estrategias prácticas, protocolos paso a paso y respuestas a todas tus dudas.</p>
           <div class="product-meta">
-            <span class="now">INCLUIDO</span>
+            <span class="now" style="background:#f59e0b">GRATIS</span>
           </div>
         </div>
       </div>
@@ -1305,103 +1313,13 @@ footer a{color:var(--green);font-weight:600}
       <div class="product bonus reveal">
         <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="BONO: Audiolibro Ayuno Intermitente" width="972" height="877" loading="lazy" decoding="async" />
         <div class="product-body">
-          <h3>🎁 Audiolibro "Ayuno Intermitente"</h3>
+          <h3 style="color:#92400e">🎁 Audiolibro "Ayuno Intermitente"</h3>
           <p>Escúchalo mientras cocinas, caminas o descansas transforma tu cuerpo sin sacrificios, en cualquier momento y lugar.</p>
           <div class="product-meta">
-            <span class="now">INCLUIDO</span>
+            <span class="now" style="background:#f59e0b">GRATIS</span>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="cta-wrap text-center reveal" style="margin-top:28px;padding:0 4px">
-      <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="cta" data-track="products-cta">
-        ¡SÍ, QUIERO EL COMBO AHORA!
-        <span class="arrow">→</span>
-      </a>
-      <div class="cta-note">
-        🔒 Pago 100% seguro · Se aceptan todos los medios de pago
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="section" style="background:var(--gray-light)">
-  <div class="container">
-    <h2 class="section-title reveal">La diferencia es brutal</h2>
-    <p class="section-sub reveal">Mira lo que cambia en tu vida cuando aplicas el combo completo.</p>
-
-    <div class="compare-grid reveal">
-
-      <!-- COLUMNA SIN COMBO -->
-      <div class="compare-col compare-col-bad">
-        <div class="compare-col-header">
-          <span class="compare-col-icon">✕</span>
-          <span>Sin el combo</span>
-        </div>
-        <ul class="compare-col-list">
-          <li>
-            <span class="compare-topic">Adelgazar</span>
-            <span class="compare-desc">Dietas estrictas que abandonas en 2 semanas</span>
-          </li>
-          <li>
-            <span class="compare-topic">Energía</span>
-            <span class="compare-desc">Cansancio y hambre que controlan tu día</span>
-          </li>
-          <li>
-            <span class="compare-topic">Antojos</span>
-            <span class="compare-desc">Luchar contra antojos con fuerza de voluntad</span>
-          </li>
-          <li>
-            <span class="compare-topic">Cocina</span>
-            <span class="compare-desc">Improvisar o comer siempre lo mismo</span>
-          </li>
-          <li>
-            <span class="compare-topic">Costo mensual</span>
-            <span class="compare-desc">Nutriólogos a $80/sesión, suscripciones mensuales</span>
-          </li>
-          <li>
-            <span class="compare-topic">Resultados</span>
-            <span class="compare-desc">1-2 semanas y vuelves a empezar</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- COLUMNA CON COMBO -->
-      <div class="compare-col compare-col-good">
-        <div class="compare-col-header">
-          <span class="compare-col-icon">✓</span>
-          <span>Con el combo</span>
-        </div>
-        <ul class="compare-col-list">
-          <li>
-            <span class="compare-topic">Adelgazar</span>
-            <span class="compare-desc">Pierde peso de forma sostenible y para siempre</span>
-          </li>
-          <li>
-            <span class="compare-topic">Energía</span>
-            <span class="compare-desc">Energía y vitalidad desde el primer día</span>
-          </li>
-          <li>
-            <span class="compare-topic">Antojos</span>
-            <span class="compare-desc">Controla antojos con el recetario incluido</span>
-          </li>
-          <li>
-            <span class="compare-topic">Cocina</span>
-            <span class="compare-desc">30+ recetas deliciosas y variadas cada día</span>
-          </li>
-          <li>
-            <span class="compare-topic">Sin Costo mensual</span>
-            <span class="compare-desc">Pago único $9.99 · Acceso de por vida</span>
-          </li>
-          <li>
-            <span class="compare-topic">Resultados</span>
-            <span class="compare-desc">1-2 semanas Cuerpo, energía y hábitos transformados</span>
-          </li>
-        </ul>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1409,31 +1327,43 @@ footer a{color:var(--green);font-weight:600}
 <!-- PRICING STACK -->
 <section class="section" style="background:var(--gray-light)">
   <div class="container">
-      <h2 class="section-title reveal">Todo lo que recibirás hoy</h2>
+      <h2 class="section-title reveal">TODO LO QUE NECESITAS ESTÁ INCLUIDO EN EL COMBO</h2>
 
     <img class="combo-hero reveal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68941d555e137_COMBO.png" alt="Combo Completo - 4 libros y audiolibro" width="1080" height="1080" loading="lazy" decoding="async" style="display:block;margin:24px auto 32px;max-width:min(360px,calc(100vw - 40px));width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)" />
 
-    <div class="stack reveal">
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Reto Keto 21 días</span></div>
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />30 Batidos Quema Grasa</span></div>
-      <div class="stack-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Menús Saludables 7 Días</span></div>
-      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Guía Ayuno Intermitente</span><span class="price-gratis-badge">GRATIS</span></div>
-      <div class="stack-row bonus-row"><span class="name"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb22137d19_AudioLibro.png" alt="" class="stack-thumb" loading="lazy" width="40" height="40" />Bono: Audiolibro Ayuno Intermitente</span><span class="price-gratis-badge">GRATIS</span></div>
+    <div class="cta-pricing reveal" style="text-align:center;padding:40px 16px 0;max-width:520px;margin:0 auto">
+      <div style="background:linear-gradient(135deg,#10b981 0%,#059669 100%);border-radius:24px;padding:40px 24px;box-shadow:0 20px 50px rgba(16,185,129,.35);position:relative;overflow:hidden">
+        <div style="position:absolute;top:-40px;right:-40px;width:140px;height:140px;background:rgba(255,255,255,.08);border-radius:50%"></div>
+        <div style="position:absolute;bottom:-30px;left:-30px;width:100px;height:100px;background:rgba(255,255,255,.08);border-radius:50%"></div>
 
-      <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="stack-final" data-track="pricing-box-cta">
-        <div class="lbl">SOLO POR HOY</div>
-        <div class="price"><span class="price-currency">$</span><span class="price-int">9</span><span class="price-cents">.99</span></div>
-        <div class="info">+ 2 bonos exclusivos · Acceso de por vida</div>
-      </a>
-    </div>
+        <div style="position:relative">
+          <span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:20px">⚡ SOLO POR HOY</span>
 
-    <div class="cta-wrap text-center reveal" style="margin-top:28px;padding:0 4px">
-      <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="cta" data-track="pricing-cta">
-        ¡SÍ, QUIERO EL COMBO AHORA!
-        <span class="arrow">→</span>
-      </a>
-      <div class="cta-note">
-        🔒 Pago 100% seguro · Se aceptan todos los medios de pago
+          <div style="margin-bottom:6px">
+            <span style="font-size:15px;color:rgba(255,255,255,.7);text-decoration:line-through;font-weight:500;letter-spacing:.5px">antes $24.99</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:3px;margin-bottom:8px">
+            <span style="font-size:36px;color:#fff;font-weight:700;align-self:flex-start;margin-top:14px">$</span>
+            <span style="font-size:80px;color:#fff;font-weight:900;line-height:1;letter-spacing:-3px">9</span>
+            <span style="font-size:36px;color:#fff;font-weight:800">.99</span>
+          </div>
+
+          <div style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-bottom:24px">
+            60% DE DESCUENTO
+          </div>
+
+          <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="pricing-box-cta" style="display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);color:#1f2937;font-size:16px;font-weight:900;padding:20px 24px;border-radius:14px;text-decoration:none;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 10px 30px rgba(245,158,11,.5),0 0 0 3px rgba(255,255,255,.3);transition:transform .2s;animation:pulseGlow 2s ease-in-out infinite">
+            🔥 ¡SÍ, QUIERO EL COMBO AHORA! <span style="font-size:22px">→</span>
+          </a>
+
+          <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;font-size:12px;color:rgba(255,255,255,.9);font-weight:500">
+            <span>✓ Acceso inmediato · 100% digital</span>
+            <span>✓ + 2 bonos exclusivos incluidos</span>
+            <span>✓ Acceso de por vida</span>
+            <span>✓ 7 días de garantía</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
