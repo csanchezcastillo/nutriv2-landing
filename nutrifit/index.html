@@ -522,9 +522,9 @@ h1,h2,h3,h4,h5,h6{
   transform:translateY(-3px);
   box-shadow:var(--shadow-lg);
 }
-.product.bonus{border-color:var(--yellow);background:linear-gradient(180deg,#fffbeb 0%,#ffffff 100%);padding-top:28px}
+.product.bonus{border-color:var(--yellow);background:linear-gradient(180deg,#fffbeb 0%,#ffffff 100%);padding-top:28px;counter-increment:bonus-num}
 .product.bonus::before{
-  content:"🎁 BONO GRATIS";
+  content:"🎁 BONO #" counter(bonus-num);
   position:absolute;
   top:-12px;left:50%;
   transform:translateX(-50%);
@@ -1293,10 +1293,9 @@ footer a{color:var(--green);font-weight:600}
   <div style="position:absolute;top:0;left:0;right:0;height:80px;background:linear-gradient(180deg,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);pointer-events:none"></div>
   <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(0deg,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);pointer-events:none"></div>
   <div class="container" style="position:relative;z-index:1">
-    <h2 class="section-title reveal" style="color:#92400e">CON EL COMBO LLEVA GRATIS<br>2 BONOS DE REGALO</h2>
-    <p class="section-sub reveal" style="color:#854d0e">Estos 2 bonos te los llevas GRATIS con tu combo.</p>
+    <h2 class="section-title reveal" style="color:#92400e;margin-bottom:40px;font-size:clamp(18px,5vw,22px)">CON EL COMBO LLEVA GRATIS<br>2 BONOS DE REGALO</h2>
 
-    <div class="products" style="max-width:min(760px,calc(100vw - 32px))">
+    <div class="products" style="max-width:min(760px,calc(100vw - 32px));counter-reset:bonus-num">
       <!-- BONO 1 -->
       <div class="product bonus reveal">
         <img class="product-img" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689eb1611acc0_Ayunointermitente.png" alt="BONO: Guía de Ayuno Intermitente" width="1051" height="878" loading="lazy" decoding="async" />
