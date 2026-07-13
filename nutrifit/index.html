@@ -346,8 +346,12 @@ h1,h2,h3,h4,h5,h6{
   50%{box-shadow:0 8px 30px rgba(16,185,129,.7),0 0 0 4px rgba(16,185,129,.15)}
 }
 @keyframes pulseGlow{
-  0%,100%{box-shadow:0 8px 20px rgba(245,158,11,.45),0 0 0 2px rgba(255,255,255,.25);transform:scale(1)}
-  50%{box-shadow:0 12px 30px rgba(245,158,11,.65),0 0 0 4px rgba(255,255,255,.4);transform:scale(1.015)}
+  0%,100%{box-shadow:0 8px 20px rgba(234,179,8,.45),0 0 0 2px rgba(255,255,255,.25);transform:scale(1)}
+  50%{box-shadow:0 12px 30px rgba(234,179,8,.65),0 0 0 4px rgba(255,255,255,.4);transform:scale(1.015)}
+}
+@keyframes shimmer{
+  0%{left:-100%}
+  100%{left:200%}
 }
 .cta:hover .arrow{transform:translateX(4px)}
 
@@ -530,14 +534,14 @@ h1,h2,h3,h4,h5,h6{
   transform:translateX(-50%);
   background:var(--yellow);
   color:var(--dark);
-  padding:5px 14px;
+  padding:6px 16px;
   border-radius:50px;
-  font-size:10px;
+  font-size:12px;
   font-weight:800;
-  letter-spacing:.5px;
+  letter-spacing:.6px;
   white-space:nowrap;
   z-index:5;
-  box-shadow:0 2px 8px rgba(251,191,36,.4);
+  box-shadow:0 3px 10px rgba(251,191,36,.45);
 }
 .product-img{
   width:100%;
@@ -1334,37 +1338,45 @@ footer a{color:var(--green);font-weight:600}
 
     <img class="combo-hero reveal" src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68941d555e137_COMBO.png" alt="Combo Completo - 4 libros y audiolibro" width="1080" height="1080" loading="lazy" decoding="async" style="display:block;margin:24px auto 32px;max-width:min(360px,calc(100vw - 40px));width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)" />
 
-    <div class="cta-pricing reveal" style="text-align:center;padding:40px 16px 0;max-width:520px;margin:0 auto">
-      <div style="background:linear-gradient(135deg,#10b981 0%,#059669 100%);border-radius:24px;padding:40px 24px;box-shadow:0 20px 50px rgba(16,185,129,.35);position:relative;overflow:hidden">
-        <div style="position:absolute;top:-40px;right:-40px;width:140px;height:140px;background:rgba(255,255,255,.08);border-radius:50%"></div>
-        <div style="position:absolute;bottom:-30px;left:-30px;width:100px;height:100px;background:rgba(255,255,255,.08);border-radius:50%"></div>
+    <div class="cta-pricing reveal" style="text-align:center;padding:48px 16px 24px;max-width:540px;margin:0 auto">
+      <div style="background:linear-gradient(180deg,#047857 0%,#065f46 50%,#064e3b 100%);border-radius:28px;padding:0;box-shadow:0 30px 60px rgba(6,95,70,.4),0 0 0 1px rgba(255,255,255,.08);position:relative;overflow:hidden">
 
-        <div style="position:relative">
-          <span style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:20px">⚡ SOLO POR HOY</span>
+        <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,.12) 0%,transparent 70%);border-radius:50%;pointer-events:none"></div>
+        <div style="position:absolute;bottom:-50px;left:-50px;width:160px;height:160px;background:radial-gradient(circle,rgba(251,191,36,.15) 0%,transparent 70%);border-radius:50%;pointer-events:none"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent)"></div>
 
-          <div style="margin-bottom:6px">
-            <span style="font-size:15px;color:rgba(255,255,255,.7);text-decoration:line-through;font-weight:500;letter-spacing:.5px">antes $24.99</span>
+        <div style="padding:40px 28px 32px;position:relative">
+
+          <div style="display:flex;justify-content:center;margin-bottom:20px">
+            <span style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);color:#1f2937;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:50px;box-shadow:0 4px 12px rgba(251,191,36,.4)">⚡ OFERTA SOLO POR HOY</span>
           </div>
 
-          <div style="display:flex;align-items:baseline;justify-content:center;gap:3px;margin-bottom:8px">
-            <span style="font-size:36px;color:#fff;font-weight:700;align-self:flex-start;margin-top:14px">$</span>
-            <span style="font-size:80px;color:#fff;font-weight:900;line-height:1;letter-spacing:-3px">11</span>
-            <span style="font-size:36px;color:#fff;font-weight:800">.99</span>
+          <div style="margin-bottom:4px">
+            <span style="font-size:15px;color:rgba(255,255,255,.55);text-decoration:line-through;font-weight:500;letter-spacing:.5px">Precio normal: $24.99</span>
           </div>
 
-          <div style="display:inline-block;background:rgba(255,255,255,.2);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-bottom:24px">
-            55% DE DESCUENTO
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;margin-bottom:6px;line-height:1">
+            <span style="font-size:32px;color:#fef3c7;font-weight:700;align-self:flex-start;margin-top:14px;margin-right:2px">$</span>
+            <span style="font-size:88px;color:#fff;font-weight:900;letter-spacing:-4px;text-shadow:0 4px 20px rgba(0,0,0,.3)">11</span>
+            <span style="font-size:32px;color:#fff;font-weight:800;margin-top:6px">.99</span>
           </div>
 
-          <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="pricing-box-cta" style="display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);color:#1f2937;font-size:16px;font-weight:900;padding:20px 24px;border-radius:14px;text-decoration:none;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 10px 30px rgba(245,158,11,.5),0 0 0 3px rgba(255,255,255,.3);transition:transform .2s;animation:pulseGlow 2s ease-in-out infinite">
-            🔥 ¡SÍ, QUIERO EL COMBO AHORA! <span style="font-size:22px">→</span>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);color:#fff;font-size:13px;font-weight:800;padding:6px 14px;border-radius:50px;margin-bottom:24px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.2)">
+            <span style="font-size:14px">🔥</span> 55% DE DESCUENTO · AHORRA $13.00
+          </div>
+
+          <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="pricing-box-cta" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#fde047 0%,#facc15 50%,#eab308 100%);color:#1f2937;font-size:16px;font-weight:900;padding:22px 24px;border-radius:16px;text-decoration:none;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 10px 30px rgba(234,179,8,.5),inset 0 1px 0 rgba(255,255,255,.4),0 0 0 3px rgba(255,255,255,.15);transition:transform .2s;animation:pulseGlow 2s ease-in-out infinite;position:relative;overflow:hidden">
+            <span style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:shimmer 3s infinite"></span>
+            <span style="position:relative">🔥 ¡SÍ, QUIERO EL COMBO AHORA!</span>
+            <span style="position:relative;font-size:22px">→</span>
           </a>
 
-          <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;font-size:12px;color:rgba(255,255,255,.9);font-weight:500">
-            <span>✓ Acceso inmediato · 100% digital</span>
-            <span>✓ + 2 bonos exclusivos incluidos</span>
-            <span>✓ Acceso de por vida</span>
-            <span>✓ 7 días de garantía</span>
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,.95);font-weight:500">
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> Acceso inmediato</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> 100% digital</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> + 2 bonos exclusivos</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> Acceso de por vida</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> 7 días de garantía</span>
           </div>
         </div>
       </div>
