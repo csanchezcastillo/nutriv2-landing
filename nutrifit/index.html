@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-<meta name="theme-color" content="#10b981" />
+<meta name="theme-color" content="#047857" />
 <title>Transforma tu alimentación y alcanza tu peso ideal con el Combo más completo</title>
 <link rel="icon" type="image/svg+xml" href="icon-v2.svg" />
 <meta name="description" content="Transforma tu alimentación y alcanza tu peso ideal con el Combo más completo. 4 libros + 1 audiolibro. Garantía 7 días." />
@@ -51,8 +51,9 @@ body{
   font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size:18px;
   line-height:1.55;
-  color:#1f2937;
-  background:#ffffff;
+  color:var(--dark);
+  background:radial-gradient(ellipse at 50% -10%,#FBF7E8 0%,#F5F5DC 55%,#F0EAD2 100%);
+  background-attachment:fixed;
   overflow-x:clip;
   max-width:100vw;
   width:100%;
@@ -95,28 +96,53 @@ h1,h2,h3,h4,h5,h6{
    VARIABLES
    =========================== */
 :root{
-  --green:#10b981;
-  --green-dark:#059669;
+  --green:#047857;
+  --green-dark:#064e3b;
+  --green-mid:#065f46;
   --green-light:#d1fae5;
-  --orange:#f97316;
-  --orange-dark:#ea580c;
-  --orange-light:#fed7aa;
-  --dark:#0f172a;
+  --gold:#d4a017;
+  --gold-light:#fcd34d;
+  --gold-soft:#f5e6a8;
+  --dark:#0f2a23;
   --gray:#64748b;
-  --gray-light:#f8fafc;
-  --gray-border:#e2e8f0;
+  --gray-light:#efe9d8;
+  --gray-border:#e7dfc9;
+  --cream:#F5F5DC;
   --red:#ef4444;
   --yellow:#fbbf24;
-  --orange:#f97316;
-  --gold:#d4a017;
+  --orange:#ea580c;
   --white:#ffffff;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.05);
-  --shadow:0 4px 12px rgba(0,0,0,.08);
-  --shadow-lg:0 20px 40px rgba(0,0,0,.12);
+  --shadow-sm:0 1px 2px rgba(15,42,35,.05);
+  --shadow:0 8px 24px rgba(15,42,35,.08);
+  --shadow-lg:0 28px 56px rgba(15,42,35,.12);
+  --shadow-gold:0 12px 32px rgba(212,160,23,.22);
   --radius:16px;
   --radius-sm:10px;
   --radius-lg:24px;
+  --radius-xl:28px;
 }
+
+/* ===========================
+   PREMIUM POLISH
+   =========================== */
+
+.hero-trust{
+  display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-top:16px;font-size:12.5px;color:var(--dark);opacity:.72;font-weight:600;letter-spacing:.2px;
+}
+.hero-trust span{display:inline-flex;align-items:center;gap:5px}
+.pricing-gold-line{
+  display:inline-block;margin:8px auto 0;
+  background:linear-gradient(90deg,#fcd34d,#d4a017);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-weight:900;font-size:13px;letter-spacing:2px;text-transform:uppercase;
+}
+.pricing-secure{
+  display:flex;justify-content:center;align-items:center;gap:6px;
+  margin-top:16px;font-size:11.5px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.4px;
+}
+.cta{box-shadow:0 12px 30px rgba(4,120,87,.38)}
+.cta:hover{box-shadow:0 16px 38px rgba(4,120,87,.52)}
 
 /* ===========================
    UTILITIES
@@ -160,7 +186,7 @@ h1,h2,h3,h4,h5,h6{
    HERO
    =========================== */
 .hero{
-  background:linear-gradient(180deg,#ecfdf5 0%,#ffffff 100%);
+  background:radial-gradient(ellipse at 50% 0%,rgba(4,120,87,.10) 0%,transparent 55%),linear-gradient(180deg,#FBF7E8 0%,#F5F5DC 100%);
   padding:24px 0 0;
   position:relative;
   overflow:hidden;
@@ -196,7 +222,7 @@ h1,h2,h3,h4,h5,h6{
   position:absolute;
   top:-80px;right:-80px;
   width:240px;height:240px;
-  background:radial-gradient(circle,rgba(16,185,129,.15) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(4,120,87,.15) 0%,transparent 70%);
   border-radius:50%;
   z-index:0;
   pointer-events:none;
@@ -307,7 +333,7 @@ h1,h2,h3,h4,h5,h6{
   font-size:16px;
   font-weight:800;
   border-radius:12px;
-  box-shadow:0 8px 24px rgba(16,185,129,.4);
+  box-shadow:0 8px 24px rgba(4,120,87,.4);
   transition:all .2s ease;
   text-transform:uppercase;
   letter-spacing:.2px;
@@ -331,7 +357,7 @@ h1,h2,h3,h4,h5,h6{
   0%{left:-100%}
   100%{left:200%}
 }
-.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(16,185,129,.5)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(4,120,87,.5)}
 .cta:active{transform:translateY(0)}
 .cta .arrow{transition:transform .2s}
 .hero-cta-pulse{animation:ctaPulse 2.5s ease-in-out infinite}
@@ -342,8 +368,8 @@ h1,h2,h3,h4,h5,h6{
   max-width:min(460px,calc(100vw - 40px));
 }
 @keyframes ctaPulse{
-  0%,100%{box-shadow:0 8px 24px rgba(16,185,129,.4)}
-  50%{box-shadow:0 8px 30px rgba(16,185,129,.7),0 0 0 4px rgba(16,185,129,.15)}
+  0%,100%{box-shadow:0 8px 24px rgba(4,120,87,.4)}
+  50%{box-shadow:0 8px 30px rgba(4,120,87,.7),0 0 0 4px rgba(4,120,87,.15)}
 }
 @keyframes pulseGlow{
   0%,100%{box-shadow:0 8px 20px rgba(234,179,8,.45),0 0 0 2px rgba(255,255,255,.25);transform:scale(1)}
@@ -422,7 +448,7 @@ h1,h2,h3,h4,h5,h6{
   font-size:20px;
   font-weight:800;
   margin:0 auto 12px;
-  box-shadow:0 4px 12px rgba(16,185,129,.3);
+  box-shadow:0 4px 12px rgba(4,120,87,.3);
 }
 .how-step h3{
   font-size:18px;
@@ -775,7 +801,7 @@ h1,h2,h3,h4,h5,h6{
   padding:14px 14px;
   border-radius:var(--radius);
   text-align:center;
-  box-shadow:0 6px 18px rgba(16,185,129,.2);
+  box-shadow:0 6px 18px rgba(4,120,87,.2);
   overflow:hidden;
   text-decoration:none;
   cursor:pointer;
@@ -784,7 +810,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .stack-final:hover{
   transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(16,185,129,.35);
+  box-shadow:0 10px 24px rgba(4,120,87,.35);
 }
 .stack-final .lbl{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green-dark);font-weight:800;margin-bottom:4px}
 .stack-final .price{font-weight:900;line-height:1;letter-spacing:-.5px;overflow-wrap:break-word;color:var(--dark);display:flex;align-items:baseline;justify-content:center;gap:1px}
@@ -854,7 +880,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .test:hover{
   transform:translateY(-4px);
-  box-shadow:0 16px 32px rgba(16,185,129,.18);
+  box-shadow:0 16px 32px rgba(4,120,87,.18);
   border-color:var(--green-light);
 }
 .test .stars{
@@ -1244,6 +1270,11 @@ footer a{color:var(--green);font-weight:600}
             ¡SÍ, QUIERO EL COMBO AHORA!
           </a>
         </div>
+        <div class="hero-trust">
+          <span>✓ Acceso inmediato</span>
+          <span>🔒 Pago 100% seguro</span>
+          <span>🛡️ 7 días de garantía</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1353,6 +1384,7 @@ footer a{color:var(--green);font-weight:600}
           <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);color:#fff;font-size:13px;font-weight:800;padding:6px 14px;border-radius:50px;margin-bottom:24px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.2)">
             <span style="font-size:14px">🔥</span> 50% DE DESCUENTO
           </div>
+          <div class="pricing-gold-line">✦ Ahorras $12.00 USD ✦</div>
 
           <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="pricing-box-cta" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#fde047 0%,#facc15 50%,#eab308 100%);color:#1f2937;font-size:16px;font-weight:900;padding:22px 24px;border-radius:16px;text-decoration:none;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 10px 30px rgba(234,179,8,.5),inset 0 1px 0 rgba(255,255,255,.4),0 0 0 3px rgba(255,255,255,.15);transition:transform .2s;animation:pulseGlow 2s ease-in-out infinite;position:relative;overflow:hidden">
             <span style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:shimmer 3s infinite"></span>
@@ -1360,12 +1392,13 @@ footer a{color:var(--green);font-weight:600}
           </a>
 
           <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,.95);font-weight:500">
-            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> Acceso inmediato</span>
-            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> 100% digital</span>
-            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> + 2 bonos exclusivos</span>
-            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> Acceso de por vida</span>
-            <span style="display:flex;align-items:center;gap:6px"><span style="color:#10b981;font-weight:900">✓</span> 7 días de garantía</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#fcd34d;font-weight:900">✓</span> Acceso inmediato</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#fcd34d;font-weight:900">✓</span> 100% digital</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#fcd34d;font-weight:900">✓</span> + 2 bonos exclusivos</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#fcd34d;font-weight:900">✓</span> Acceso de por vida</span>
+            <span style="display:flex;align-items:center;gap:6px"><span style="color:#fcd34d;font-weight:900">✓</span> 7 días de garantía</span>
           </div>
+          <div class="pricing-secure">🔒 Pago 100% seguro · Procesado por Hotmart · Acceso inmediato al confirmar</div>
         </div>
       </div>
     </div>
