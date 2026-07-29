@@ -1530,18 +1530,6 @@ footer a{color:var(--green);font-weight:600}
 document.addEventListener('click',function(e){
   const a=e.target.closest('[data-track]');
   if(!a) return;
-  if(typeof fbq!=='undefined'){
-    fbq('track','InitiateCheckout',{
-      content_ids:['combo-completo'],
-      content_type:'product',
-      content_name:'Combo Completo',
-      content_category:'digital',
-      num_items:1,
-      value:9.99,
-      currency:'USD',
-      location:a.dataset.track
-    });
-  }
   if(typeof gtag!=='undefined'){
     gtag('event','cta_click',{event_category:'CTA',event_label:a.dataset.track});
   }
