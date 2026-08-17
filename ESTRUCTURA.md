@@ -31,7 +31,7 @@ nutrifit/index.html (1538 líneas)
 
 ### 1. Hero Section (líneas 1226-1250)
 
-- **H1:** "Transforma tu alimentación y alcanza tu peso ideal con el Combo más completo"
+- **H1:** "Transforma tu alimentación en 21 días con un Combo Completo"
 - **Micro-copy** (italic, gris): "Tu cuerpo cambia cuando cambias el método"
 - **Imagen** del combo (PNG de CloudFront)
 - **CTA principal:** "¡SÍ, QUIERO EL COMBO AHORA!" (verde con pulseGlow)
@@ -59,9 +59,9 @@ nutrifit/index.html (1538 líneas)
 - Card premium con gradient verde oscuro
 - Decoraciones radiales (glows)
 - Badge "⚡ OFERTA ESPECIAL" (gradient dorado)
-- "Precio normal: 24.99 USD" (tachado)
-- **Precio:** "**9.99 USD**" (88px, gigante)
-- Badge "🔥 60% DE DESCUENTO"
+- "Precio normal: 39.99 USD" (tachado)
+- **Precio:** "**13.99 USD**" (88px, gigante)
+- Badge "🔥 65% DE DESCUENTO"
 - **CTA dorado** con pulseGlow + shimmer: "¡SÍ, QUIERO EL COMBO AHORA!"
 - 5 trust signals centrados (✓ Acceso inmediato, digital, +2 bonos, de por vida, garantía)
 
@@ -185,9 +185,9 @@ document.addEventListener('click',function(e){
 
 | # | Ubicación | Texto | Precio asociado |
 |---|-----------|-------|-----------------|
-| 1 | Hero | ¡SÍ, QUIERO EL COMBO AHORA! | $9.99 USD |
-| 2 | Después de productos | ¡SÍ, QUIERO EL COMBO AHORA! | $9.99 USD |
-| 3 | Pricing box | 🔥 ¡SÍ, QUIERO EL COMBO AHORA! | $9.99 USD (60% off) |
+| 1 | Hero | ¡SÍ, QUIERO EL COMBO AHORA! | $13.99 USD |
+| 2 | Después de productos | ¡SÍ, QUIERO EL COMBO AHORA! | $13.99 USD |
+| 3 | Pricing box | 🔥 ¡SÍ, QUIERO EL COMBO AHORA! | $13.99 USD (65% off) |
 
 ---
 
@@ -222,6 +222,7 @@ nutriv2-landing/
 
 | Commit | Descripción |
 |--------|-------------|
+| _local_  | **Price: 13.99 USD (65% off) · Ahorras $26 · anchor 39.99 USD** (sync manual sobre `nutrifit/index.html`) |
 | `0b4b797` | Price: 9.99 USD (60% off) + label 'OFERTA ESPECIAL' |
 | `0cc7262` | Remove fire emoji from CTA button (kept on discount badge) |
 | `9c5b8db` | Remove 'AHORRA $13.00' from discount badge |
