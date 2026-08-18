@@ -1256,112 +1256,7 @@ footer a{color:var(--green);font-weight:600}
   .compare-desc{font-size:14px;line-height:1.4}
 }
 
-/* (CTA-precio eliminado: precio removido del primer CTA verde) */
-/* ============ STICKY CTA (smart reveal on scroll) ============ */
-.sticky-cta{
-  position:fixed;
-  left:0;right:0;bottom:0;
-  z-index:90;
-  padding:0 12px calc(12px + env(safe-area-inset-bottom));
-  transform:translateY(110%);
-  opacity:0;
-  pointer-events:none;
-  transition:transform .35s cubic-bezier(.22,.61,.36,1), opacity .25s ease;
-}
-.sticky-cta.is-visible{
-  transform:translateY(0);
-  opacity:1;
-  pointer-events:auto;
-}
-.sticky-cta__inner{
-  max-width:720px;
-  margin:0 auto;
-  background:#fff;
-  border:1px solid rgba(4,120,87,.18);
-  border-radius:18px;
-  padding:8px;
-  display:flex;
-  align-items:stretch;
-  gap:10px;
-  box-shadow:0 -10px 30px -8px rgba(6,95,70,.35), 0 4px 12px rgba(0,0,0,.08);
-}
-.sticky-cta__offer{
-  flex:0 0 auto;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:8px 18px 8px 14px;
-  background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);
-  border-radius:12px;
-  border:1px solid rgba(4,120,87,.18);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
-}
-.sticky-cta__flame{
-  font-size:1.6em;
-  line-height:1;
-  filter:drop-shadow(0 0 6px rgba(249,115,22,.35));
-}
-.sticky-cta__offer-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.15;
-  gap:2px;
-  text-align:left;
-}
-.sticky-cta__discount{
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-weight:900;
-  font-size:1.1rem;
-  color:#065f46;
-  letter-spacing:-.02em;
-  line-height:1;
-}
-.sticky-cta__subtitle{
-  font-size:.65rem;
-  color:#047857;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  line-height:1;
-}
-.sticky-cta__btn{
-  flex:1 1 auto;
-  background:linear-gradient(180deg,#fde047 0%,#facc15 50%,#eab308 100%);
-  color:#1f2937;
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-weight:900;
-  font-size:clamp(1.05rem,3vw,1.2rem);
-  padding:16px 20px;
-  border-radius:12px;
-  text-decoration:none;
-  letter-spacing:.5px;
-  text-transform:uppercase;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  white-space:nowrap;
-  box-shadow:0 8px 22px -6px rgba(234,179,8,.55), inset 0 1px 0 rgba(255,255,255,.4);
-  animation:pulseGlow 2.4s ease-in-out infinite;
-  transition:transform .15s ease,box-shadow .15s ease;
-}
-.sticky-cta__btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -6px rgba(234,179,8,.65)}
-.sticky-cta__btn:active{transform:translateY(0)}
-.sticky-cta__arrow{font-size:1.15em;transition:transform .15s ease;line-height:1}
-.sticky-cta__btn:hover .sticky-cta__arrow{transform:translateX(3px)}
-@media (max-width:480px){
-  .sticky-cta__inner{padding:6px;border-radius:14px;gap:6px}
-  .sticky-cta__offer{padding:8px 12px;gap:8px}
-  .sticky-cta__flame{font-size:1.3em}
-  .sticky-cta__discount{font-size:.95rem}
-  .sticky-cta__subtitle{font-size:.55rem}
-  .sticky-cta__btn{padding:14px 14px;font-size:1rem}
-}
-@media (max-width:380px){
-  .sticky-cta__flame{display:none}
-  .sticky-cta__offer{padding:8px 10px}
-  .sticky-cta__btn{padding:12px 12px;font-size:.95rem;letter-spacing:.3px}
-}
+/* (CTA-precio eliminado: sticky CTA también eliminado) */
 </style>
 </head>
 <body>
@@ -1478,11 +1373,11 @@ footer a{color:var(--green);font-weight:600}
           </div>
 
           <div style="margin-bottom:4px">
-            <span style="font-size:15px;color:rgba(255,255,255,.55);text-decoration:line-through;font-weight:500;letter-spacing:.5px">Precio normal: 39.99 USD</span>
+            <span style="font-size:15px;color:rgba(255,255,255,.55);text-decoration:line-through;font-weight:500;letter-spacing:.5px">Precio normal: $28.00 USD</span>
           </div>
 
           <div style="display:flex;align-items:flex-end;justify-content:center;gap:2px;margin-bottom:6px;line-height:1">
-            <span style="font-size:88px;color:#fff;font-weight:900;letter-spacing:-4px;text-shadow:0 4px 20px rgba(0,0,0,.3)">13</span>
+            <span style="font-size:88px;color:#fff;font-weight:900;letter-spacing:-4px;text-shadow:0 4px 20px rgba(0,0,0,.3)">9</span>
             <span style="font-size:40px;color:#fff;font-weight:800;letter-spacing:-1px;margin-bottom:6px">.99</span>
             <span style="font-size:11px;color:#fef3c7;font-weight:700;letter-spacing:1.5px;margin-left:4px;margin-bottom:28px;background:rgba(254,243,199,.15);padding:3px 6px;border-radius:4px;line-height:1">USD</span>
           </div>
@@ -1490,7 +1385,7 @@ footer a{color:var(--green);font-weight:600}
           <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);color:#fff;font-size:13px;font-weight:800;padding:6px 14px;border-radius:50px;margin-bottom:24px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.2)">
             <span style="font-size:14px">🔥</span> 65% DE DESCUENTO
           </div>
-          <div class="pricing-gold-line">✦ Ahorras $26.00 USD ✦</div>
+          <div class="pricing-gold-line">✦ Ahorras $18.00 USD ✦</div>
 
           <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="pricing-box-cta" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#fde047 0%,#facc15 50%,#eab308 100%);color:#1f2937;font-size:16px;font-weight:900;padding:22px 24px;border-radius:16px;text-decoration:none;text-transform:uppercase;letter-spacing:.8px;box-shadow:0 10px 30px rgba(234,179,8,.5),inset 0 1px 0 rgba(255,255,255,.4),0 0 0 3px rgba(255,255,255,.15);transition:transform .2s;animation:pulseGlow 2s ease-in-out infinite;position:relative;overflow:hidden">
             <span style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:shimmer 3s infinite"></span>
@@ -1514,7 +1409,7 @@ footer a{color:var(--green);font-weight:600}
 <!-- FAQ -->
 <section class="section faq">
   <div class="container">
-    <h2 class="pro-title reveal m"><span class="ak">Preguntas</span> frecuentes</h2>
+    <h2 class="pro-title reveal m" style="text-transform:uppercase"><span class="ak">Preguntas</span> frecuentes</h2>
 
     <div class="faq-list">
       <details class="faq-item reveal">
@@ -1620,22 +1515,7 @@ footer a{color:var(--green);font-weight:600}
 
 
 
-<!-- ============ STICKY CTA (smart reveal on scroll) ============ -->
-<aside class="sticky-cta" id="stickyCta" role="region" aria-label="Comprar el combo ahora">
-  <div class="sticky-cta__inner">
-    <div class="sticky-cta__offer">
-      <span class="sticky-cta__flame" aria-hidden="true">🔥</span>
-      <div class="sticky-cta__offer-text">
-        <span class="sticky-cta__discount">65% OFF</span>
-        <span class="sticky-cta__subtitle">Combo Completo</span>
-      </div>
-    </div>
-    <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="sticky-cta__btn" data-track="sticky-cta" onclick="stickyCtaClick(event)">
-      <span>¡LO QUIERO!</span>
-      <span class="sticky-cta__arrow" aria-hidden="true">→</span>
-    </a>
-  </div>
-</aside>
+<!-- ============ STICKY CTA eliminado ============ -->
 
 <footer>
   <p>© 2026 Combo Completo · Todos los derechos reservados<br/>
@@ -1675,38 +1555,10 @@ document.addEventListener('click',function(e){
 });
 
 /* ===========================
-   STICKY CTA — show/hide on scroll
+   STICKY CTA eliminado
    =========================== */
-(function(){
-  const bar = document.getElementById('stickyCta');
-  if(!bar) return;
-  let raf = null;
-  function update(){
-    const y = window.scrollY || document.documentElement.scrollTop;
-    const docH = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
-    const nearTop = y < 480;
-    const nearBottom = docH > 200 && y > docH - 200;
-    if(!nearTop && !nearBottom){
-      bar.classList.add('is-visible');
-    } else {
-      bar.classList.remove('is-visible');
-    }
-  }
-  function onScroll(){
-    if(raf) return;
-    raf = requestAnimationFrame(() => { update(); raf = null; });
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll);
-  update();
-})();
 
-/* Sticky CTA click → fbq Lead + redirect Hotmart */
-function stickyCtaClick(e){
-  if(e) e.preventDefault();
-  try{ fbq('track','Lead'); }catch(_){}
-  window.location.href = 'https://pay.hotmart.com/V98479276N?checkoutMode=10';
-}
+/* Sticky CTA eliminado — removidas funciones stickyCtaClick y show/hide */
 </script>
 
 </body>
