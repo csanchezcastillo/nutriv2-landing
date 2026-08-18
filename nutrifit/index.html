@@ -1276,60 +1276,69 @@ footer a{color:var(--green);font-weight:600}
 .sticky-cta__inner{
   max-width:720px;
   margin:0 auto;
-  display:flex;
-  align-items:center;
-  gap:12px;
   background:#fff;
   border:1px solid rgba(4,120,87,.18);
   border-radius:18px;
-  padding:10px 10px 10px 18px;
+  padding:8px;
+  display:flex;
+  align-items:stretch;
+  gap:10px;
   box-shadow:0 -10px 30px -8px rgba(6,95,70,.35), 0 4px 12px rgba(0,0,0,.08);
 }
-.sticky-cta__price{
-  flex:1 1 auto;
-  min-width:0;
-  display:flex;flex-direction:column;
-  line-height:1.1;
+.sticky-cta__offer{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 18px 8px 14px;
+  background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);
+  border-radius:12px;
+  border:1px solid rgba(4,120,87,.18);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
 }
-.sticky-cta__now{
+.sticky-cta__flame{
+  font-size:1.6em;
+  line-height:1;
+  filter:drop-shadow(0 0 6px rgba(249,115,22,.35));
+}
+.sticky-cta__offer-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+  gap:2px;
+  text-align:left;
+}
+.sticky-cta__discount{
   font-family:'Plus Jakarta Sans',sans-serif;
   font-weight:900;
-  font-size:clamp(1.4rem,4.5vw,1.85rem);
+  font-size:1.1rem;
   color:#065f46;
-  letter-spacing:-.5px;
-  display:flex;align-items:baseline;flex-wrap:wrap;
-  gap:4px;
+  letter-spacing:-.02em;
+  line-height:1;
 }
-.sticky-cta__was{
-  font-size:.78rem;
-  color:#64748b;
-  text-decoration:line-through;
-  font-weight:600;
-}
-.sticky-cta__off{
-  background:linear-gradient(135deg,#fee2e2 0%,#fecaca 100%);
-  color:#991b1b;
+.sticky-cta__subtitle{
   font-size:.65rem;
-  font-weight:800;
-  padding:2px 7px;
-  border-radius:6px;
-  letter-spacing:.04em;
+  color:#047857;
+  font-weight:700;
+  letter-spacing:.08em;
   text-transform:uppercase;
+  line-height:1;
 }
 .sticky-cta__btn{
-  flex:0 0 auto;
+  flex:1 1 auto;
   background:linear-gradient(180deg,#fde047 0%,#facc15 50%,#eab308 100%);
   color:#1f2937;
   font-family:'Plus Jakarta Sans',sans-serif;
   font-weight:900;
-  font-size:clamp(.85rem,2.2vw,1.02rem);
-  padding:14px 18px;
-  border-radius:14px;
+  font-size:clamp(1.05rem,3vw,1.2rem);
+  padding:16px 20px;
+  border-radius:12px;
   text-decoration:none;
   letter-spacing:.5px;
   text-transform:uppercase;
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:8px;
   white-space:nowrap;
   box-shadow:0 8px 22px -6px rgba(234,179,8,.55), inset 0 1px 0 rgba(255,255,255,.4);
@@ -1338,18 +1347,20 @@ footer a{color:var(--green);font-weight:600}
 }
 .sticky-cta__btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -6px rgba(234,179,8,.65)}
 .sticky-cta__btn:active{transform:translateY(0)}
-.sticky-cta__icon{font-size:1.1em}
-.sticky-cta__arrow{font-size:1.15em;transition:transform .15s ease}
+.sticky-cta__arrow{font-size:1.15em;transition:transform .15s ease;line-height:1}
 .sticky-cta__btn:hover .sticky-cta__arrow{transform:translateX(3px)}
 @media (max-width:480px){
-  .sticky-cta__icon{display:none}
-  .sticky-cta__inner{padding:8px 8px 8px 14px;gap:8px;border-radius:14px}
-  .sticky-cta__was{display:none}
+  .sticky-cta__inner{padding:6px;border-radius:14px;gap:6px}
+  .sticky-cta__offer{padding:8px 12px;gap:8px}
+  .sticky-cta__flame{font-size:1.3em}
+  .sticky-cta__discount{font-size:.95rem}
+  .sticky-cta__subtitle{font-size:.55rem}
+  .sticky-cta__btn{padding:14px 14px;font-size:1rem}
 }
 @media (max-width:380px){
-  .sticky-cta__btn{padding:12px 14px;font-size:.82rem;letter-spacing:.3px}
-  .sticky-cta__now{font-size:1.25rem}
-  .sticky-cta__off{font-size:.58rem}
+  .sticky-cta__flame{display:none}
+  .sticky-cta__offer{padding:8px 10px}
+  .sticky-cta__btn{padding:12px 12px;font-size:.95rem;letter-spacing:.3px}
 }
 </style>
 </head>
@@ -1612,12 +1623,14 @@ footer a{color:var(--green);font-weight:600}
 <!-- ============ STICKY CTA (smart reveal on scroll) ============ -->
 <aside class="sticky-cta" id="stickyCta" role="region" aria-label="Comprar el combo ahora">
   <div class="sticky-cta__inner">
-    <div class="sticky-cta__price">
-      <span class="sticky-cta__now">$13.99 <span class="sticky-cta__off">65% OFF</span></span>
-      <span class="sticky-cta__was">Antes $39.99</span>
+    <div class="sticky-cta__offer">
+      <span class="sticky-cta__flame" aria-hidden="true">🔥</span>
+      <div class="sticky-cta__offer-text">
+        <span class="sticky-cta__discount">65% OFF</span>
+        <span class="sticky-cta__subtitle">Combo Completo</span>
+      </div>
     </div>
     <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" class="sticky-cta__btn" data-track="sticky-cta" onclick="stickyCtaClick(event)">
-      <span class="sticky-cta__icon" aria-hidden="true">🔥</span>
       <span>¡LO QUIERO!</span>
       <span class="sticky-cta__arrow" aria-hidden="true">→</span>
     </a>
