@@ -353,6 +353,28 @@ h1,h2,h3,h4,h5,h6{
   50%{box-shadow:0 8px 30px rgba(4,120,87,.7),0 0 0 4px rgba(4,120,87,.15)}
 }
 /* (pulseGlowSticky eliminado) */
+
+/* ============ OFERTA ESPECIAL badge (texto + glow pulse) ============ */
+.oferta-badge{
+  display:inline-block;
+  color:#fbbf24;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:6px 4px;
+  animation:ofertaPulse 2s ease-in-out infinite;
+}
+@keyframes ofertaPulse{
+  0%,100%{
+    text-shadow:0 0 8px rgba(251,191,36,.4);
+    transform:scale(1);
+  }
+  50%{
+    text-shadow:0 0 18px rgba(251,191,36,.8), 0 0 28px rgba(251,191,36,.5);
+    transform:scale(1.025);
+  }
+}
 @keyframes shimmer{
   0%{left:-100%}
   100%{left:200%}
@@ -1368,7 +1390,7 @@ footer a{color:var(--green);font-weight:600}
         <div style="padding:40px 28px 32px;position:relative">
 
           <div style="display:flex;justify-content:center;margin-bottom:20px">
-            <span style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);color:#1f2937;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:50px;box-shadow:0 4px 12px rgba(251,191,36,.4)">⚡ OFERTA ESPECIAL</span>
+            <span class="oferta-badge">⚡ OFERTA ESPECIAL · SOLO POR HOY</span>
           </div>
 
           <div style="margin-bottom:4px">
