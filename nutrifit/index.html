@@ -45,9 +45,11 @@ fbq('track', 'PageView');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;min-width:0}
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:24px;
   -webkit-text-size-adjust:100%;
   overflow-x:clip;
   max-width:100vw;
+  width:100%;
 }
 body{
   font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -57,7 +59,7 @@ body{
   background:#F5F5DC;
   max-width:100vw;
   width:100%;
-  padding-bottom:90px;
+  padding-bottom:110px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
@@ -363,6 +365,7 @@ h1,h2,h3,h4,h5,h6{
   letter-spacing:2px;
   text-transform:uppercase;
   padding:6px 4px;
+  scroll-margin-top:24px;
   animation:ofertaPulse 2s ease-in-out infinite;
 }
 @keyframes ofertaPulse{
@@ -387,6 +390,8 @@ h1,h2,h3,h4,h5,h6{
   transform:translateY(150%);
   opacity:0;
   pointer-events:none;
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
   transition:transform .4s cubic-bezier(.22,.61,.36,1), opacity .3s ease;
 }
 .sticky-cta.is-visible{
@@ -1576,7 +1581,7 @@ footer a{color:var(--green);font-weight:600}
         <div style="padding:40px 28px 32px;position:relative">
 
           <div style="display:flex;justify-content:center;margin-bottom:20px">
-            <span class="oferta-badge">⚡ OFERTA ESPECIAL · SOLO POR HOY</span>
+            <span class="oferta-badge" id="oferta-especial">⚡ OFERTA ESPECIAL · SOLO POR HOY</span>
           </div>
 
           <div class="value-stack">
@@ -1742,7 +1747,7 @@ footer a{color:var(--green);font-weight:600}
         <span class="sticky-cta__subtitle">Combo Completo</span>
       </div>
     </div>
-    <a href="#oferta" class="sticky-cta__btn" data-track="sticky-cta">
+    <a href="#oferta-especial" class="sticky-cta__btn" data-track="sticky-cta">
       <span>¡LO QUIERO!</span>
       <span class="sticky-cta__arrow" aria-hidden="true">→</span>
     </a>
@@ -1788,15 +1793,25 @@ document.addEventListener('click',function(e){
 
 /* ===========================
    STICKY CTA — show after scroll
-   Aparece tras pasar el hero (>500px)
+   Aparece tras pasar el hero; oculta en pricing/footer
    =========================== */
 (function(){
   const bar=document.getElementById('stickyCta');
+  const oferta=document.getElementById('oferta');
   if(!bar) return;
   let raf=null;
   function update(){
     const y=window.scrollY||document.documentElement.scrollTop;
-    if(y>500){
+    const docH=(document.documentElement.scrollHeight||document.body.scrollHeight)-window.innerHeight;
+    const pastHero=y>500;
+    let inOferta=false;
+    if(oferta){
+      const ofertaTop=oferta.offsetTop;
+      const ofertaBottom=ofertaTop+oferta.offsetHeight;
+      inOferta=y+window.innerHeight>ofertaTop+150 && y<ofertaBottom;
+    }
+    const nearBottom=docH>200 && y>docH-150;
+    if(pastHero && !inOferta && !nearBottom){
       bar.classList.add('is-visible');
     } else {
       bar.classList.remove('is-visible');
