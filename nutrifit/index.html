@@ -45,7 +45,6 @@ fbq('track', 'PageView');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;min-width:0}
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:24px;
   -webkit-text-size-adjust:100%;
   overflow-x:clip;
   max-width:100vw;
@@ -59,7 +58,6 @@ body{
   background:#F5F5DC;
   max-width:100vw;
   width:100%;
-  padding-bottom:80px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
@@ -379,127 +377,7 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
-/* ============ STICKY CTA (divided — aparece tras scroll, compacto) ============ */
-.sticky-cta{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:9999;
-  padding:0 8px calc(6px + env(safe-area-inset-bottom));
-  transform:translateY(150%);
-  opacity:0;
-  pointer-events:none;
-  -webkit-backdrop-filter:blur(12px);
-  backdrop-filter:blur(12px);
-  transition:transform .4s cubic-bezier(.22,.61,.36,1), opacity .3s ease;
-}
-.sticky-cta.is-visible{
-  transform:translateY(0);
-  opacity:1;
-  pointer-events:auto;
-}
-.sticky-cta__inner{
-  max-width:680px;
-  margin:0 auto;
-  background:#fff;
-  border:1px solid rgba(4,120,87,.18);
-  border-radius:14px;
-  padding:5px;
-  box-shadow:0 -8px 22px -8px rgba(6,95,70,.3), 0 3px 8px rgba(0,0,0,.06);
-  display:flex;
-  align-items:stretch;
-  gap:5px;
-}
-.sticky-cta__offer{
-  flex:0 0 auto;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:6px 12px;
-  background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);
-  border-radius:10px;
-  border:1px solid rgba(4,120,87,.18);
-}
-.sticky-cta__flame{
-  font-size:1.2em;
-  line-height:1;
-  filter:drop-shadow(0 0 6px rgba(249,115,22,.35));
-}
-.sticky-cta__offer-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-  gap:1px;
-  text-align:left;
-}
-.sticky-cta__discount{
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-weight:900;
-  font-size:.88rem;
-  color:#065f46;
-  letter-spacing:-.02em;
-  line-height:1;
-}
-.sticky-cta__subtitle{
-  font-size:.55rem;
-  color:#047857;
-  font-weight:700;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-  line-height:1;
-}
-.sticky-cta__btn{
-  flex:1 1 auto;
-  background:linear-gradient(180deg,#fde047 0%,#facc15 50%,#eab308 100%);
-  color:#1f2937;
-  font-family:'Plus Jakarta Sans',sans-serif;
-  font-weight:900;
-  font-size:clamp(.85rem,2.4vw,.95rem);
-  padding:10px 14px;
-  border-radius:9px;
-  text-decoration:none;
-  letter-spacing:.4px;
-  text-transform:uppercase;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  white-space:nowrap;
-  box-shadow:0 4px 12px -3px rgba(234,179,8,.45), inset 0 1px 0 rgba(255,255,255,.4);
-  transition:transform .15s ease, box-shadow .15s ease;
-  position:relative;
-  overflow:hidden;
-}
-.sticky-cta__btn::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:60%;
-  height:100%;
-  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.55) 50%,transparent 100%);
-  animation:stickyShine 3s ease-in-out infinite;
-  pointer-events:none;
-}
-@keyframes stickyShine{
-  0%{left:-100%}
-  60%,100%{left:120%}
-}
-.sticky-cta__btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px -3px rgba(234,179,8,.55)}
-.sticky-cta__btn:active{transform:translateY(0)}
-.sticky-cta__arrow{font-size:1em;transition:transform .15s ease;line-height:1}
-.sticky-cta__btn:hover .sticky-cta__arrow{transform:translateX(3px)}
-@media (max-width:480px){
-  .sticky-cta{padding:0 6px calc(4px + env(safe-area-inset-bottom))}
-  .sticky-cta__inner{padding:4px;border-radius:12px;gap:4px}
-  .sticky-cta__offer{padding:5px 10px;gap:6px}
-  .sticky-cta__flame{font-size:1em}
-  .sticky-cta__discount{font-size:.78rem}
-  .sticky-cta__subtitle{display:none}
-  .sticky-cta__btn{padding:9px 12px;font-size:.82rem;gap:5px;letter-spacing:.3px}
-  .sticky-cta__arrow{font-size:.95em}
-}
+/* ============ STICKY CTA eliminado ============ */
 
 /* ============ VALUE STACK (pricing box) ============ */
 .value-stack{
@@ -1756,22 +1634,7 @@ footer a{color:var(--green);font-weight:600}
 
 
 
-<!-- ============ STICKY CTA (divided — siempre visible) ============ -->
-<aside class="sticky-cta" id="stickyCta" role="region" aria-label="Ver la oferta">
-  <div class="sticky-cta__inner">
-    <div class="sticky-cta__offer">
-      <span class="sticky-cta__flame" aria-hidden="true">🔥</span>
-      <div class="sticky-cta__offer-text">
-        <span class="sticky-cta__discount">76% OFF</span>
-        <span class="sticky-cta__subtitle">Combo Completo</span>
-      </div>
-    </div>
-    <a href="#oferta-especial" class="sticky-cta__btn" data-track="sticky-cta">
-      <span>VER OFERTA ESPECIAL</span>
-      <span class="sticky-cta__arrow" aria-hidden="true">→</span>
-    </a>
-  </div>
-</aside>
+<!-- ============ STICKY CTA eliminado ============ -->
 
 <footer>
   <p>© 2026 Combo Completo · Todos los derechos reservados<br/>
@@ -1810,41 +1673,7 @@ document.addEventListener('click',function(e){
   }
 });
 
-/* ===========================
-   STICKY CTA — show after scroll
-   Aparece tras pasar el hero; oculta en pricing/footer
-   =========================== */
-(function(){
-  const bar=document.getElementById('stickyCta');
-  const oferta=document.getElementById('oferta');
-  if(!bar) return;
-  let raf=null;
-  function update(){
-    const y=window.scrollY||document.documentElement.scrollTop;
-    const docH=(document.documentElement.scrollHeight||document.body.scrollHeight)-window.innerHeight;
-    const pastHero=y>500;
-    let inOferta=false;
-    if(oferta){
-      const ofertaTop=oferta.offsetTop;
-      const ofertaBottom=ofertaTop+oferta.offsetHeight;
-      inOferta=y+window.innerHeight>ofertaTop+150 && y<ofertaBottom;
-    }
-    const nearBottom=docH>200 && y>docH-150;
-    if(pastHero && !inOferta && !nearBottom){
-      bar.classList.add('is-visible');
-    } else {
-      bar.classList.remove('is-visible');
-    }
-  }
-  function onScroll(){
-    if(raf) return;
-    raf=requestAnimationFrame(()=>{update();raf=null});
-  }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
-  setTimeout(update,200);
-  update();
-})();
+/* (sticky CTA JS eliminado) */
 </script>
 
 </body>
