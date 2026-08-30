@@ -182,9 +182,10 @@ p{margin:0}
 .brand-mark{
   width:30px;height:30px;border-radius:9px;
   background:linear-gradient(135deg,#10B981,#047857);
-  display:grid;place-items:center;color:#fff;font-size:14px;
+  display:grid;place-items:center;color:#fff;
   box-shadow:0 6px 14px -4px rgba(16,185,129,.5);
 }
+.brand-mark svg{width:17px;height:17px;display:block}
 .brand-name{font-size:15px;letter-spacing:-.01em}
 .brand-name span{color:var(--brand-3)}
 .nav-cta{display:none;font-size:14px;padding:10px 16px;min-height:auto;border-radius:10px}
@@ -673,7 +674,9 @@ footer{
   <div class="container">
     <div class="row">
       <a href="#top" class="brand" aria-label="Combo Nutricional">
-        <span class="brand-mark">C</span>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+        </span>
         <span class="brand-name">Combo <span>Nutricional</span></span>
       </a>
       <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="header-cta" class="btn btn-primary nav-cta">
