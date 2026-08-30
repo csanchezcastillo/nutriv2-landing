@@ -239,7 +239,6 @@ p{margin:0}
 .hero-img{
   position:relative;
   border-radius:var(--radius-xl);
-  overflow:hidden;
   background:transparent;
   aspect-ratio:1/1;
   max-width:380px;
@@ -248,22 +247,28 @@ p{margin:0}
   box-shadow:
     0 30px 60px -20px rgba(4,120,87,.40),
     0 12px 24px -8px rgba(15,23,42,.12);
+  overflow:visible;
 }
-.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img > .hero-img-inner{
+  position:absolute;inset:0;
+  border-radius:inherit;
+  overflow:hidden;
+}
+.hero-img > .hero-img-inner img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-img-badge{
-  position:absolute;top:14px;right:-8px;z-index:2;
+  position:absolute;top:-12px;left:18px;z-index:2;
   display:inline-flex;align-items:center;gap:5px;
   background:linear-gradient(135deg,#FCD34D,#F59E0B);
   color:#1F1300;font-family:var(--font-display);font-weight:800;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
   padding:6px 12px;border-radius:999px;
-  box-shadow:0 8px 18px -4px rgba(245,158,11,.55),0 0 0 4px rgba(255,255,255,.6);
-  transform:rotate(6deg);
+  box-shadow:0 10px 20px -4px rgba(245,158,11,.6),0 0 0 4px rgba(255,255,255,.65);
+  transform:rotate(-4deg);
   animation:badgeWiggle 3s ease-in-out infinite;
 }
-@media (min-width:640px){.hero-img-badge{top:18px;right:-12px;font-size:11.5px;padding:7px 14px}}
+@media (min-width:640px){.hero-img-badge{top:-14px;left:24px;font-size:11.5px;padding:7px 14px}}
 @keyframes badgeWiggle{
-  0%,100%{transform:rotate(6deg) scale(1)}
-  50%{transform:rotate(6deg) scale(1.06)}
+  0%,100%{transform:rotate(-4deg) scale(1)}
+  50%{transform:rotate(-4deg) scale(1.06)}
 }
 @media (min-width:960px){.hero-img-badge{display:none}}
 
@@ -668,7 +673,9 @@ footer{
 
       <div class="hero-img reveal">
         <span class="hero-img-badge">🔥 60% OFF</span>
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952f332f17d9_Ingles2.png" alt="Combo Completo" width="1080" height="1080" fetchpriority="high" decoding="async" />
+        <div class="hero-img-inner">
+          <img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952f332f17d9_Ingles2.png" alt="Combo Completo" width="1080" height="1080" fetchpriority="high" decoding="async" />
+        </div>
       </div>
     </div>
   </div>
