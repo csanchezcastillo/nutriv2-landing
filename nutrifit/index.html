@@ -444,10 +444,10 @@ p{margin:0}
 }
 .discount-pill{
   display:inline-flex;align-items:center;gap:5px;
-  background:linear-gradient(90deg,#FCD34D,#F59E0B);
-  color:#1F1300;font-family:var(--font-display);font-weight:800;font-size:12px;letter-spacing:.04em;
-  padding:5px 12px;border-radius:999px;
-  box-shadow:0 6px 14px -4px rgba(245,158,11,.5);
+  background:rgba(252,211,77,.10);
+  border:1px solid rgba(252,211,77,.45);
+  color:#FCD34D;font-family:var(--font-display);font-weight:800;font-size:12px;letter-spacing:.04em;
+  padding:5px 14px;border-radius:999px;
 }
 .savings-pill{
   display:inline-flex;align-items:center;gap:5px;
@@ -469,12 +469,6 @@ p{margin:0}
   animation:shimmer 3s infinite;
 }
 @keyframes shimmer{0%{left:-100%}100%{left:200%}}
-
-.pricing-card__timer{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  font-size:12.5px;color:#A7F3D0;font-weight:600;margin-bottom:14px;
-}
-.pricing-card__timer strong{color:#FCD34D;font-family:var(--font-display);font-weight:800;font-variant-numeric:tabular-nums}
 
 .pricing-guarantee{
   display:flex;align-items:center;gap:12px;
@@ -746,8 +740,7 @@ Quiero el combo →
             <span class="unit">USD</span>
           </div>
           <div class="discount-row">
-            <span class="discount-pill">🔥 Oferta especial</span>
-            <span class="savings-pill">Ahorras $15.00</span>
+            <span class="discount-pill">Ahorras $15</span>
           </div>
         </div>
 
@@ -755,9 +748,7 @@ Quiero el combo →
           Quiero esta oferta →
         </a>
 
-        <div class="pricing-card__timer">
-          ⏱ Oferta por tiempo limitado
-        </div>
+        
 
         <div class="pricing-guarantee">
           <span class="pricing-guarantee__icon" aria-hidden="true">🛡️</span>
