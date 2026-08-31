@@ -63,6 +63,7 @@ button{font:inherit;cursor:pointer;border:0;background:transparent;color:inherit
 h1,h2,h3{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:0;line-height:1.1}
 p{margin:0}
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+@media (min-width:960px){.container{padding:0 32px}}
 
 /* =========================
    BUTTONS
@@ -154,64 +155,17 @@ p{margin:0}
 }
 
 /* =========================
-   URGENCY BAR
-   ========================= */
-.urgency-bar{
-  background:linear-gradient(90deg,#022C22,#064E3B,#022C22);
-  color:#D1FAE5;
-  font-size:12.5px;font-weight:600;
-  padding:9px 16px;text-align:center;
-  line-height:1.4;
-}
-@media (max-width:480px){.urgency-bar{font-size:11.5px;padding:8px 12px}}
-.urgency-bar strong{color:#FCD34D;font-weight:700}
-.urgency-bar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#10B981;margin-right:8px;animation:pulseDot 1.6s infinite;vertical-align:middle}
-@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(16,185,129,.7)}70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
-
-/* =========================
-   HEADER
-   ========================= */
-.site-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.88);
-  backdrop-filter:saturate(180%) blur(14px);
-  -webkit-backdrop-filter:saturate(180%) blur(14px);
-  border-bottom:1px solid var(--line-2);
-}
-.site-header .row{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:800;color:var(--ink)}
-.brand-mark{
-  width:30px;height:30px;border-radius:9px;
-  background:linear-gradient(135deg,#10B981,#047857);
-  display:grid;place-items:center;color:#fff;
-  box-shadow:0 6px 14px -4px rgba(16,185,129,.5);
-}
-.brand-mark svg{width:17px;height:17px;display:block}
-.brand-name{font-size:15px;letter-spacing:-.01em}
-.brand-name span{color:var(--brand-3)}
-.nav-cta{display:none;font-size:14px;padding:10px 16px;min-height:auto;border-radius:10px}
-@media (min-width:768px){.nav-cta{display:inline-flex}}
-
-/* =========================
    HERO — mobile-first
    ========================= */
 .hero{
   position:relative;
-  padding:28px 0 20px;
+  padding:14px 0 20px;
   background:
     radial-gradient(900px 480px at 80% -10%,rgba(16,185,129,.14),transparent 60%),
     radial-gradient(700px 400px at -10% 30%,rgba(245,158,11,.08),transparent 60%),
     linear-gradient(180deg,#F7FAF8 0%,#FFFFFF 100%);
   overflow:hidden;
 }
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:7px;
-  background:#ECFDF5;color:var(--brand-3);
-  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  padding:6px 12px;border-radius:999px;
-  border:1px solid #A7F3D0;
-}
-.hero-eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--brand)}
 .hero h1{
   font-size:clamp(32px,7.5vw,56px);
   margin:14px 0 12px;
@@ -231,10 +185,9 @@ p{margin:0}
   line-height:1.5;
 }
 .hero-text{text-align:center}
-.hero-eyebrow{margin:0 auto}
-.hero-grid{display:grid;gap:24px;align-items:center;grid-template-columns:1fr}
-.hero-grid > .hero-img{order:-1}
-.hero-grid > .hero-text{order:1}
+.hero-text--top{margin-bottom:0}
+.hero-text--bottom{margin-top:0}
+.hero-grid{display:grid;gap:20px;align-items:center;grid-template-columns:1fr}
 .hero-cta-row{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:18px}
 .hero-cta-row .btn{width:100%;max-width:340px}
 
@@ -275,15 +228,16 @@ p{margin:0}
 @media (min-width:960px){.hero-img-badge{display:none}}
 
 @media (min-width:640px){
-  .hero{padding:56px 0 28px}
+  .hero{padding:36px 0 28px}
   .hero-cta-row{flex-direction:row;justify-content:center;align-items:center;gap:14px;margin-bottom:22px}
   .hero-cta-row .btn{width:auto;max-width:none}
 }
 @media (min-width:960px){
-  .hero{padding:72px 0 32px}
-  .hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}
-  .hero-grid > .hero-img{order:1}
-  .hero-grid > .hero-text{order:0}
+  .hero{padding:64px 0 48px}
+  .hero-grid{gap:36px;max-width:960px;margin:0 auto}
+  .hero h1{font-size:clamp(44px,4.5vw,68px);line-height:1.04}
+  .hero-sub{font-size:18px;max-width:680px}
+  .hero-img{max-width:480px}
 }
 
 /* =========================
@@ -294,6 +248,7 @@ p{margin:0}
 .section--first{padding-top:24px}
 @media (min-width:640px){.section{padding:56px 0}.section--first{padding-top:32px}}
 @media (min-width:768px){.section{padding:72px 0}.section--first{padding-top:48px}}
+@media (min-width:960px){.section{padding:96px 0}.section--first{padding-top:56px}}
 .section-eyebrow{
   display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--brand-3);margin-bottom:10px;
@@ -322,7 +277,11 @@ p{margin:0}
   grid-template-columns:1fr;
 }
 @media (min-width:640px){.features{grid-template-columns:repeat(2,1fr);gap:20px}}
-@media (min-width:960px){.features{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:960px){.features{grid-template-columns:repeat(3,1fr);gap:28px}
+  .feature-media img{max-height:220px}
+  .feature h3{font-size:20px}
+  .feature p{font-size:15px}
+}
 .feature{
   background:#fff;
   border:1px solid var(--line-2);
@@ -338,12 +297,6 @@ p{margin:0}
 }
 .feature-media img{max-height:180px;width:auto;filter:drop-shadow(0 10px 20px rgba(0,0,0,.10))}
 .feature-body{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column;gap:8px}
-.feature-badge{
-  display:inline-flex;align-self:flex-start;align-items:center;gap:5px;
-  font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--brand-3);background:#ECFDF5;border:1px solid #A7F3D0;
-  padding:4px 9px;border-radius:999px;
-}
 .feature h3{font-size:18px;letter-spacing:-.02em;line-height:1.2}
 @media (min-width:640px){.feature h3{font-size:19px}}
 .feature p{color:var(--muted);font-size:14px;line-height:1.55}
@@ -353,38 +306,63 @@ p{margin:0}
    BONUS
    ========================= */
 .bonus-section{
-  background:linear-gradient(180deg,#FFFBEB,#FFFFFF);
-  border-top:1px solid var(--line-2);
-  border-bottom:1px solid var(--line-2);
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(800px 500px at 50% 0%,rgba(245,158,11,.20),transparent 60%),
+    radial-gradient(600px 400px at 80% 100%,rgba(245,158,11,.10),transparent 60%),
+    linear-gradient(180deg,#FFFBEB 0%,#FEF3C7 100%);
+  border-top:1px solid #FDE68A;
+  border-bottom:1px solid #FDE68A;
 }
 .bonus-card{
-  display:grid;gap:20px;align-items:center;
+  display:grid;gap:24px;align-items:center;
   grid-template-columns:1fr;
-  max-width:760px;margin:0 auto;
-  background:#fff;border:1px solid #FDE68A;border-radius:var(--radius-xl);
-  padding:22px;box-shadow:var(--shadow);
+  max-width:820px;margin:0 auto;
+  background:#fff;
+  border:2px solid #F59E0B;
+  border-radius:24px;
+  padding:28px;box-shadow:0 20px 50px -16px rgba(245,158,11,.45),0 0 0 6px rgba(254,243,199,.5);
   position:relative;
 }
-.bonus-media{
-  background:linear-gradient(180deg,#FEF3C7,#FFFBEB);
-  border-radius:16px;padding:16px;display:grid;place-items:center;
+@media (min-width:960px){
+  .bonus-card{max-width:960px;grid-template-columns:240px 1fr;gap:48px;padding:48px}
+  .bonus-media img{max-height:280px}
 }
-.bonus-media img{max-height:160px;width:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.10))}
-.bonus-body h3{font-size:20px;margin:0 0 6px}
+.bonus-card::before{
+  content:"🎁";position:absolute;top:-22px;left:24px;
+  background:linear-gradient(135deg,#F59E0B,#D97706);
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;font-size:24px;
+  box-shadow:0 8px 20px -6px rgba(245,158,11,.6);
+  transform:rotate(-6deg);
+}
+.bonus-media{
+  background:linear-gradient(135deg,#FEF3C7,#FDE68A);
+  border-radius:18px;padding:20px;display:grid;place-items:center;
+  position:relative;overflow:hidden;
+}
+.bonus-media::before{
+  content:"";position:absolute;top:-30%;right:-30%;width:120px;height:120px;
+  background:radial-gradient(circle,rgba(255,255,255,.6),transparent 70%);
+}
+.bonus-media img{max-height:200px;width:auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,.15));position:relative;z-index:1}
+.bonus-body h3{font-size:22px;margin:0 0 8px;letter-spacing:-.02em}
 .bonus-body .tag{
   display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
-  background:#FEF3C7;color:#92400E;padding:4px 9px;border-radius:999px;margin-bottom:8px;
+  background:linear-gradient(90deg,#FCD34D,#F59E0B);color:#1F1300;padding:5px 11px;border-radius:999px;margin-bottom:10px;
+  box-shadow:0 4px 10px -3px rgba(245,158,11,.4);
 }
-.bonus-body p{color:var(--muted);font-size:14px}
+.bonus-body p{color:var(--muted);font-size:14.5px;line-height:1.5}
 @media (min-width:640px){
-  .bonus-card{grid-template-columns:160px 1fr;gap:24px;padding:24px}
-  .bonus-body h3{font-size:22px}
+  .bonus-card{grid-template-columns:200px 1fr;gap:32px;padding:36px}
+  .bonus-body h3{font-size:26px}
 }
 
 /* =========================
    PRICING — single premium card
    ========================= */
 .pricing-wrap{max-width:560px;margin:0 auto;position:relative}
+@media (min-width:960px){.pricing-wrap{max-width:680px}.pricing-card{padding:36px 32px 32px}.pricing-card h3{font-size:24px}}
 
 .pricing-card{
   position:relative;
@@ -481,6 +459,30 @@ p{margin:0}
 }
 .pricing-card__timer strong{color:#FCD34D;font-family:var(--font-display);font-weight:800;font-variant-numeric:tabular-nums}
 
+.pricing-guarantee{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(252,211,77,.10);
+  border:1px solid rgba(252,211,77,.25);
+  border-radius:14px;
+  padding:12px 14px;
+  margin-top:4px;
+}
+.pricing-guarantee__icon{
+  flex:0 0 auto;
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,#FCD34D,#F59E0B);
+  display:grid;place-items:center;font-size:18px;
+  box-shadow:0 6px 14px -4px rgba(245,158,11,.5);
+}
+.pricing-guarantee__text{flex:1;text-align:left;line-height:1.3}
+.pricing-guarantee__text strong{
+  display:block;color:#FCD34D;font-family:var(--font-display);font-weight:800;font-size:13px;
+  letter-spacing:-.01em;
+}
+.pricing-guarantee__text small{
+  display:block;color:#A7F3D0;font-size:11.5px;margin-top:2px;
+}
+
 .value-stack{
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.08);
@@ -506,7 +508,8 @@ p{margin:0}
    ========================= */
 .test-grid{display:grid;gap:14px;grid-template-columns:1fr}
 @media (min-width:640px){.test-grid{grid-template-columns:1fr 1fr;gap:18px}}
-@media (min-width:1024px){.test-grid{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:1024px){.test-grid{grid-template-columns:repeat(4,1fr);gap:22px}}
+@media (min-width:960px){.test{}.test .stars{font-size:14px}.test .quote{font-size:14.5px}.test .avatar{width:42px;height:42px}.test .name{font-size:14px}}
 .test{
   background:#fff;border:1px solid var(--line-2);border-radius:var(--radius-lg);
   padding:18px;display:flex;flex-direction:column;gap:8px;
@@ -524,6 +527,7 @@ p{margin:0}
    FAQ
    ========================= */
 .faq-wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+@media (min-width:960px){.faq-wrap{max-width:860px}}
 .faq-item{
   background:#fff;border:1px solid var(--line-2);border-radius:var(--radius);
   overflow:hidden;transition:border-color .2s ease;
@@ -560,6 +564,7 @@ p{margin:0}
   padding:32px 22px;box-shadow:var(--shadow);
   display:flex;flex-direction:column;align-items:center;gap:12px;
 }
+@media (min-width:960px){.guarantee-card{max-width:820px;padding:48px 40px;gap:16px}.guarantee-icon{width:72px;height:72px;font-size:32px}.guarantee-seal{width:120px}}
 .guarantee-icon{
   width:56px;height:56px;border-radius:50%;
   background:linear-gradient(135deg,#10B981,#047857);color:#fff;
@@ -576,13 +581,28 @@ p{margin:0}
    FINAL CTA
    ========================= */
 .final-cta{
-  text-align:center;padding:48px 0;
-  background:radial-gradient(700px 360px at 50% 100%,rgba(16,185,129,.10),transparent 60%),#FFFFFF;
+  position:relative;overflow:hidden;
+  text-align:center;padding:56px 0;
+  background:
+    radial-gradient(800px 400px at 50% 100%,rgba(252,211,77,.18),transparent 60%),
+    radial-gradient(600px 300px at 50% 0%,rgba(16,185,129,.18),transparent 60%),
+    linear-gradient(160deg,#022C22 0%,#064E3B 100%);
+  color:#ECFDF5;
 }
-@media (min-width:768px){.final-cta{padding:72px 0}}
-.final-cta h2{font-size:clamp(28px,6vw,42px);margin-bottom:10px;line-height:1.12}
-.final-cta p{color:var(--muted);font-size:15px;max-width:480px;margin:0 auto 22px;line-height:1.5}
+.final-cta::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(252,211,77,.4),transparent);
+}
+.final-cta h2{color:#fff;font-size:clamp(30px,6vw,46px);margin-bottom:14px;line-height:1.1;letter-spacing:-.02em}
+.final-cta p{color:#A7F3D0;font-size:15.5px;max-width:520px;margin:0 auto 24px;line-height:1.5}
 .final-cta .btn{width:100%;max-width:360px}
+.final-cta .final-trust{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:18px;
+  margin-top:18px;font-size:12.5px;color:#A7F3D0;font-weight:600;
+}
+.final-cta .final-trust span{display:inline-flex;align-items:center;gap:6px}
+.final-cta .final-trust .chk{color:#FCD34D;font-weight:900}
+@media (min-width:768px){.final-cta{padding:80px 0}}
 
 /* =========================
    FOOTER
@@ -609,35 +629,12 @@ footer{
 .reveal.delay-3{transition-delay:.24s}
 
 @media (prefers-reduced-motion:reduce){
-  .reveal,.btn-gold,.urgency-bar .dot{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
+  .reveal,.btn-gold{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
   html{scroll-behavior:auto}
 }
 </style>
 </head>
 <body>
-
-<!-- URGENCY -->
-<div class="urgency-bar" role="status">
-  <span class="dot"></span>
-  <strong>Oferta relámpago</strong> · Termina hoy en <span id="urgency-countdown">--:--:--</span>
-</div>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container">
-    <div class="row">
-      <a href="#top" class="brand" aria-label="Combo Nutricional">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
-        </span>
-        <span class="brand-name">Combo <span>Nutricional</span></span>
-      </a>
-      <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="header-cta" class="btn btn-primary nav-cta">
-        Quiero el combo →
-      </a>
-    </div>
-  </div>
-</header>
 
 <main id="top">
 
@@ -645,16 +642,8 @@ footer{
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
-      <div class="hero-text">
-        <span class="hero-eyebrow"><span class="dot"></span> Combo Nutricional</span>
+      <div class="hero-text hero-text--top">
         <h1>Transforma tu alimentación <span class="hl">con un Combo Completo</span></h1>
-        <p class="hero-sub">3 libros digitales con recetas, menús y planes prácticos + 1 bono gratis para perder peso de manera efectiva.</p>
-
-        <div class="hero-cta-row">
-          <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="hero-cta" class="btn btn-primary hero-cta">
-            Quiero el combo ahora →
-          </a>
-        </div>
       </div>
 
       <div class="hero-img reveal">
@@ -663,24 +652,30 @@ footer{
           <img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952f332f17d9_Ingles2.png" alt="Combo Completo" width="1080" height="1080" fetchpriority="high" decoding="async" />
         </div>
       </div>
+
+      <div class="hero-text hero-text--bottom">
+        <p class="hero-sub">Tu transformación empieza hoy.</p>
+        <div class="hero-cta-row">
+          <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="hero-cta" class="btn btn-primary hero-cta">
+            Quiero el combo ahora →
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="section section--first" id="incluye">
+<section class="section section--first" id="incluye" style="background:var(--bg-soft)">
   <div class="container">
     <div class="section-head">
-      <span class="section-eyebrow">Qué incluye</span>
-      <h2 class="section-title reveal">Todo para empezar hoy</h2>
-      <p class="section-sub reveal delay-1">Recetas keto, batidos quema grasa y menús semanales listos.</p>
+      <h2 class="section-title reveal" style="text-transform:uppercase">El combo nutricional incluye</h2>
     </div>
 
     <div class="features">
       <article class="feature reveal">
         <div class="feature-media"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ecb93e90a_689eaa4ac6d78_RetoKeto.png" alt="Reto Keto 21 días" width="1080" height="889" loading="lazy" decoding="async" /></div>
         <div class="feature-body">
-          <span class="feature-badge">Guía principal</span>
           <h3>Reto Keto 21 días</h3>
           <p>En solo 21 días entras en cetosis, pierdes peso de forma natural y transformas tu cuerpo con menús diarios simples y estrategias que realmente funcionan.</p>
         </div>
@@ -689,7 +684,6 @@ footer{
       <article class="feature reveal delay-1">
         <div class="feature-media"><img src="https://d1yei2z3i6k35z.cloudfront.net/15747784/6952ec71c2e6c_689ea6e0d01ed_30Batidos.png" alt="30 Batidos para Quemar Grasa" width="1028" height="921" loading="lazy" decoding="async" /></div>
         <div class="feature-body">
-          <span class="feature-badge">Recetario</span>
           <h3>30 Batidos para Quemar Grasa</h3>
           <p>Un plan de 30 recetas de batidos deliciosos que aceleran tu metabolismo, reducen la inflamación y te dan energía desde el primer sorbo sin pasar hambre.</p>
         </div>
@@ -698,7 +692,6 @@ footer{
       <article class="feature reveal delay-2">
         <div class="feature-media"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689ead3b409d7_menus7dias.png" alt="Menús Saludables 7 Días" width="1080" height="990" loading="lazy" decoding="async" /></div>
         <div class="feature-body">
-          <span class="feature-badge">Plan semanal</span>
           <h3>Menús Saludables 7 Días</h3>
           <p>Una guía completa de 7 días de desayunos, almuerzos y cenas deliciosas que aceleran tu pérdida de peso sin contar calorías, sin pasar hambre y sin renunciar al sabor.</p>
         </div>
@@ -711,8 +704,8 @@ footer{
 <section class="section bonus-section" id="bonus">
   <div class="container">
     <div class="section-head">
-      <span class="section-eyebrow">Bono exclusivo</span>
-      <h2 class="section-title reveal" style="text-transform:uppercase">Llévalo <span style="background:linear-gradient(90deg,#F59E0B,#D97706);-webkit-background-clip:text;background-clip:text;color:transparent">gratis</span></h2>
+      <span class="section-eyebrow" style="color:#92400E;background:#FEF3C7;border-color:#FCD34D">🎁 Regalo extra</span>
+      <h2 class="section-title reveal" style="text-transform:uppercase">Porque tu combo vale más <span style="background:linear-gradient(90deg,#F59E0B,#D97706);-webkit-background-clip:text;background-clip:text;color:transparent">de lo que imaginas</span></h2>
     </div>
 
     <div class="bonus-card reveal">
@@ -765,7 +758,7 @@ footer{
         </a>
 
         <div class="pricing-card__timer">
-          ⏱ La oferta termina en <strong id="pricing-countdown">--:--:--</strong>
+          ⏱ Oferta por tiempo limitado
         </div>
 
         <div class="value-stack">
@@ -776,13 +769,21 @@ footer{
           <div class="value-stack__row"><span class="value-stack__name">🎁 Bono Ayuno Intermitente</span></div>
         </div>
 
+        <div class="pricing-guarantee">
+          <span class="pricing-guarantee__icon" aria-hidden="true">🛡️</span>
+          <div class="pricing-guarantee__text">
+            <strong>7 días de garantía total</strong>
+            <small>Si no quedas conforme, te devolvemos el 100% de tu dinero.</small>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section" id="testimonios" style="background:var(--bg-soft)">
+<section class="section" id="testimonios">
   <div class="container">
     <div class="section-head">
       <span class="section-eyebrow">Resultados reales</span>
@@ -842,7 +843,7 @@ footer{
 </section>
 
 <!-- FAQ -->
-<section class="section" id="faq">
+<section class="section" id="faq" style="background:var(--bg-soft)">
   <div class="container">
     <div class="section-head">
       <span class="section-eyebrow">Preguntas frecuentes</span>
@@ -886,11 +887,16 @@ footer{
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
-    <h2 class="reveal">Empieza hoy por $9.99</h2>
-    <p class="reveal delay-1">Acceso inmediato. 7 días de garantía.</p>
+    <h2 class="reveal">Tu transformación empieza hoy</h2>
+    <p class="reveal delay-1">Miles de personas ya transformaron su alimentación. Tu turno empieza con un solo click.</p>
     <a href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="final-cta" class="btn btn-primary reveal delay-2">
-      Quiero mi combo →
+      Quiero mi combo por $9.99 →
     </a>
+    <div class="final-trust reveal delay-3">
+      <span><span class="chk">✓</span> Acceso inmediato</span>
+      <span><span class="chk">✓</span> 7 días de garantía</span>
+      <span><span class="chk">✓</span> Pago seguro Hotmart</span>
+    </div>
   </div>
 </section>
 
@@ -928,23 +934,6 @@ document.addEventListener('click',function(e){
   if(typeof fbq!=='undefined') fbq('trackCustom','CTA_Click',{location:loc});
   if(typeof gtag!=='undefined') gtag('event','cta_click',{event_category:'CTA',event_label:loc});
 });
-
-/* Countdown to end of day */
-(function(){
-  function pad(n){return n<10?'0'+n:''+n}
-  function tick(el){
-    var now=new Date();
-    var end=new Date(now.getFullYear(),now.getMonth(),now.getDate(),23,59,59);
-    var diff=Math.max(0,Math.floor((end-now)/1000));
-    var h=Math.floor(diff/3600),m=Math.floor((diff%3600)/60),s=diff%60;
-    el.textContent=pad(h)+':'+pad(m)+':'+pad(s);
-  }
-  ['urgency-countdown','pricing-countdown'].forEach(function(id){
-    var el=document.getElementById(id);
-    if(!el) return;
-    tick(el);setInterval(function(){tick(el)},1000);
-  });
-})();
 </script>
 </body>
 </html>
