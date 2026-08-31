@@ -13,6 +13,39 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://d1yei2z3i6k35z.cloudfront.net" />
+<link rel="preconnect" href="https://connect.facebook.net" />
+
+<!-- ==========================================================
+     Facebook Pixel (Meta) — ID: 1186949119684750
+     Eventos disparados: PageView (auto), InitiateCheckout (CTA),
+                        CTA_Click (custom con location).
+     Para 'Purchase' configurar integración Hotmart → Meta.
+     ========================================================== -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1186949119684750');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1186949119684750&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel -->
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
@@ -926,13 +959,28 @@ footer{
   els.forEach(function(e){io.observe(e)});
 })();
 
-/* CTA tracking */
+/* CTA tracking — dispara InitiateCheckout (FB) + begin_checkout (GA4) */
 document.addEventListener('click',function(e){
   var a=e.target.closest('[data-track]');
   if(!a) return;
   var loc=a.dataset.track;
-  if(typeof fbq!=='undefined') fbq('trackCustom','CTA_Click',{location:loc});
-  if(typeof gtag!=='undefined') gtag('event','cta_click',{event_category:'CTA',event_label:loc});
+  if(typeof fbq!=='undefined'){
+    fbq('track','InitiateCheckout',{
+      content_name:'Combo Nutricional',
+      content_category:'digital-product',
+      value:9.99,
+      currency:'USD'
+    });
+    fbq('trackCustom','CTA_Click',{location:loc});
+  }
+  if(typeof gtag!=='undefined'){
+    gtag('event','begin_checkout',{
+      currency:'USD',
+      value:9.99,
+      items:[{item_id:'combo-nutricional',item_name:'Combo Nutricional',price:9.99,quantity:1}]
+    });
+    gtag('event','cta_click',{event_category:'CTA',event_label:loc});
+  }
 });
 </script>
 </body>
