@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.digibooks.online/nutrifit/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.digibooks.online/nutrifit/combo-nutricional-keto-completo.webp</image:loc>
+      <image:title>Combo Nutrifit nutricional completo</image:title>
+      <image:caption>Combo digital con recetas keto, batidos saludables y menús de 7 días</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.digibooks.online/nutrifit/reto-keto-21-dias.webp</image:loc>
+      <image:title>Ebook Reto Keto 21 días</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.digibooks.online/nutrifit/30-batidos-saludables.webp</image:loc>
+      <image:title>Recetario 30 batidos saludables</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.digibooks.online/nutrifit/menus-saludables-7-dias.webp</image:loc>
+      <image:title>Guía menús saludables 7 días</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.digibooks.online/nutrifit/guia-ayuno-intermitente.webp</image:loc>
+      <image:title>Guía de ayuno intermitente</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.digibooks.online/nutrifit/garantia-7-dias.webp</image:loc>
+      <image:title>Sello de garantía de 7 días</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.digibooks.online/nutrifit/privacidad.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.digibooks.online/nutrifit/terminos.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
