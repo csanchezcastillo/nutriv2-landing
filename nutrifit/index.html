@@ -480,18 +480,60 @@ p{margin:0}
 
 .pricing-card{
   position:relative;
-  background:linear-gradient(160deg,#064E3B 0%,#022C22 100%);
   border-radius:var(--radius-xl);
   padding:28px 22px 24px;
   color:#ECFDF5;
-  box-shadow:0 30px 60px -20px rgba(2,44,34,.45),0 0 0 1px rgba(255,255,255,.06),inset 0 1px 0 rgba(255,255,255,.08);
+  box-shadow:0 30px 60px -20px rgba(2,44,34,.45),inset 0 1px 0 rgba(255,255,255,.08);
   overflow:hidden;
   text-align:center;
-  border:1px solid rgba(252,211,77,.18);
+  border:2px solid transparent;
+  background:
+    linear-gradient(160deg,#064E3B 0%,#022C22 100%) padding-box,
+    linear-gradient(135deg,#FCD34D,#F59E0B 45%,#34D399) border-box;
 }
 .pricing-card::before{content:"";position:absolute;top:-90px;right:-90px;width:260px;height:260px;background:radial-gradient(circle,rgba(252,211,77,.28),transparent 70%);border-radius:50%}
 .pricing-card::after{content:"";position:absolute;bottom:-100px;left:-100px;width:240px;height:240px;background:radial-gradient(circle,rgba(52,211,153,.20),transparent 70%);border-radius:50%}
 .pricing-card > *{position:relative}
+
+/* Cinta de descuento */
+.pricing-ribbon{
+  position:absolute;top:20px;right:-46px;z-index:5;
+  transform:rotate(45deg);
+  background:linear-gradient(90deg,#FCD34D,#F59E0B);
+  color:#1F1300;font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.08em;
+  padding:7px 56px;
+  box-shadow:0 10px 22px -6px rgba(245,158,11,.55);
+}
+.pricing-ribbon span{display:block;transform:translateX(0)}
+
+/* Lista "incluye" */
+.pricing-includes{
+  list-style:none;margin:0 0 18px;padding:14px 16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:14px;
+  display:grid;gap:9px;text-align:left;
+}
+.pricing-includes li{
+  display:flex;align-items:center;gap:9px;
+  font-size:13.5px;color:#D1FAE5;line-height:1.35;
+}
+.pricing-includes .chk{color:#FCD34D;font-weight:900;flex:0 0 auto;font-size:14px}
+.bonus-tag{
+  display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.08em;
+  background:linear-gradient(90deg,#FCD34D,#F59E0B);color:#1F1300;
+  padding:2px 7px;border-radius:999px;margin-left:auto;
+}
+
+/* Fila de confianza */
+.pricing-trust{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;
+  font-size:12px;color:#A7F3D0;font-weight:600;margin-top:14px;
+}
+.pricing-trust span{display:inline-flex;align-items:center;gap:5px}
+
+/* Glow del precio */
+.price-display .int{text-shadow:0 0 26px rgba(252,211,77,.4)}
 
 .pricing-card__head{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:18px}
 .pricing-card__badge{
@@ -734,7 +776,7 @@ footer{
     <div class="hero-grid">
       <div class="hero-text hero-text--top">
         <h1>Keto, Ayuno Intermitente, Batidos y Menús Saludables en un Solo Combo</h1>
-        <h2 class="hero-sub">4 guías digitales con menús simples y estrategias prácticas paso a paso.</h2>
+        <h2 class="hero-sub">Menús simples y estrategias prácticas paso a paso.</h2>
       </div>
 
       <div class="hero-img reveal">
@@ -758,7 +800,7 @@ footer{
         <div class="feature-media"><img src="reto-keto-21-dias.webp" alt="Ebook digital Reto Keto 21 días con plan de alimentación" width="1080" height="889" loading="lazy" decoding="async" /></div>
         <div class="feature-body">
           <h3>Reto Keto 21 días</h3>
-          <p>Un plan de 21 días con menús diarios bajos en carbohidratos, pensado para quienes buscan comer más liviano y sentirse más ligeros día a día, con estrategias prácticas y sin complicaciones.</p>
+          <p>21 días de menús listos para transformar tu alimentación sin complicarte. Sigue el plan y empieza a notar la diferencia.</p>
         </div>
       </article>
 
@@ -766,7 +808,7 @@ footer{
         <div class="feature-media"><img src="30-batidos-saludables.webp" alt="Recetario digital de 30 batidos saludables" width="1028" height="921" loading="lazy" decoding="async" /></div>
         <div class="feature-body">
           <h3>30 Batidos saludables</h3>
-          <p>Un plan de 30 recetas de batidos pensado como complemento de tus comidas del día o para esos momentos de antojo entre horas. Te ayudan a sentirte satisfecho por más tiempo y a mantener mejor el control de lo que comes, sin pasar hambre ni renunciar al sabor.</p>
+          <p>30 batidos fáciles que te llenan de energía, calman el hambre y frenan los antojos entre comidas.</p>
         </div>
       </article>
 
@@ -774,7 +816,7 @@ footer{
         <div class="feature-media"><img src="menus-saludables-7-dias.webp" alt="Guía digital de menús saludables para 7 días" width="1080" height="990" loading="lazy" decoding="async" /></div>
         <div class="feature-body">
           <h3>Menús Saludables 7 Días</h3>
-          <p>Una guía completa de 7 días de desayunos, almuerzos y cenas pensadas para ayudarte a comer de forma más ligera y equilibrada, sin contar calorías, sin pasar hambre y sin renunciar al sabor.</p>
+          <p>Tu semana resuelta: desayunos, almuerzos y cenas listos para comer rico sin contar calorías ni renunciar al sabor.</p>
         </div>
       </article>
     </div>
@@ -803,8 +845,8 @@ footer{
 </section>
 
 <!-- PRICING -->
-<section class="section" id="oferta" style="background:linear-gradient(180deg,#FFFFFF 0%,#F7FAF8 100%);position:relative;overflow:hidden">
-  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,.10),transparent 70%);pointer-events:none"></div>
+<section class="section" id="oferta" style="background:linear-gradient(180deg,#FFFBF0 0%,#FDF4E3 100%);position:relative;overflow:hidden">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:640px;height:640px;background:radial-gradient(circle,rgba(245,158,11,.14),transparent 70%);pointer-events:none"></div>
   <div class="container" style="position:relative">
     <div class="section-head">
       <h2 class="section-title reveal">Todo lo que necesitas está incluido en el combo</h2>
@@ -812,6 +854,7 @@ footer{
 
     <div class="pricing-wrap">
       <div class="pricing-card reveal">
+        <div class="pricing-ribbon" aria-hidden="true"><span>-60%</span></div>
         <div class="pricing-card__head">
           <span class="pricing-card__badge" id="oferta-especial"><span class="pulse"></span> Oferta especial</span>
           <h3>Combo Nutricional Completo</h3>
@@ -819,7 +862,7 @@ footer{
         </div>
 
         <div class="price-block">
-          <div class="price-original"><span class="arrow">↓</span> Precio normal <s>$24.99</s> <span class="arrow">↓</span></div>
+          <div class="price-original">Precio normal <s>$24.99</s></div>
           <div class="price-display" aria-label="Precio final 9.99 USD">
             <span class="currency">$</span>
             <span class="int">9.99</span>
@@ -831,11 +874,22 @@ footer{
           </div>
         </div>
 
+        <ul class="pricing-includes">
+          <li><span class="chk">✓</span> Reto Keto 21 días</li>
+          <li><span class="chk">✓</span> 30 Batidos saludables</li>
+          <li><span class="chk">✓</span> Menús Saludables 7 días</li>
+          <li><span class="chk">🎁</span> Guía de Ayuno Intermitente <span class="bonus-tag">BONO</span></li>
+        </ul>
+
         <a href="https://pay.hotmart.com/V98479276N?off=bl4klt4o" data-track="pricing-cta" class="btn btn-gold pricing-cta">
           Quiero esta oferta →
         </a>
 
-        
+        <div class="pricing-trust">
+          <span>🔒 Pago seguro</span>
+          <span>⚡ Acceso inmediato</span>
+          <span>📱 100% digital</span>
+        </div>
 
         <div class="pricing-guarantee">
           <span class="pricing-guarantee__icon" aria-hidden="true">🛡️</span>
@@ -861,7 +915,7 @@ footer{
     <div class="test-grid">
       <div class="test reveal">
         <div class="stars">★★★★★</div>
-        <p class="quote">"Me gustó mucho porque las recetas son sencillas y no tuve que complicarme buscando ingredientes. Lo que más me ayudó fue tener todo organizado para saber qué preparar cada día."</p>
+        <p class="quote">"Llevo 3 semanas y ya se me nota. Lo mejor: como rico, no paso hambre y por fin dejé de improvisar."</p>
         <div class="person">
           <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689428d47e232_p1.jpg" alt="Foto de cliente Carolina Méndez" width="34" height="34" loading="lazy" /></div>
           <div>
@@ -872,7 +926,7 @@ footer{
 
       <div class="test reveal delay-1">
         <div class="stars">★★★★★</div>
-        <p class="quote">"Al principio pensé que sería difícil mantener el plan, pero las opciones son bastante prácticas. Me ayudó mucho tener las comidas planificadas y sentir que podía seguirlo sin dejar de comer rico."</p>
+        <p class="quote">"Se me quitaron los antojos de la tarde. Tengo más energía y por primera vez me mantengo constante."</p>
         <div class="person">
           <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a857c07cd74_68942aaf0e73b_p4.jpg" alt="Foto de cliente Alejandra Gómez" width="34" height="34" loading="lazy" /></div>
           <div>
@@ -883,7 +937,7 @@ footer{
 
       <div class="test reveal delay-2">
         <div class="stars">★★★★★</div>
-        <p class="quote">"Lo que más me gustó fue que no se siente como una dieta complicada. Las recetas son fáciles de preparar y tener varias opciones me ayudó a ser más constante."</p>
+        <p class="quote">"Me sentí más ligera y con mucha más energía. Y lo mejor: no se siente como una dieta."</p>
         <div class="person">
           <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68942931989d5_p2.jpg" alt="Foto de cliente Sofía Ríos" width="34" height="34" loading="lazy" /></div>
           <div>
@@ -894,7 +948,7 @@ footer{
 
       <div class="test reveal delay-3">
         <div class="stars">★★★★★</div>
-        <p class="quote">"Estoy muy contenta con el contenido. Sobre todo me gustaron los menús y los batidos porque son fáciles de preparar. Ahora tengo muchas más ideas para organizar mis comidas."</p>
+        <p class="quote">"Mejoró mi digestión y ya no me siento hinchada. Los menús me organizaron toda la semana."</p>
         <div class="person">
           <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a8586eecd27_68942abc67db4_p5.jpg" alt="Foto de cliente María F. López" width="34" height="34" loading="lazy" /></div>
           <div>
@@ -960,7 +1014,7 @@ footer{
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
-    <h2 class="reveal">Empieza a organizar tu alimentación hoy</h2>
+    <h2 class="reveal">Toma el control hoy</h2>
     <p class="reveal delay-1">Miles de personas ya transformaron su alimentación. Tu turno empieza con un solo click.</p>
     <a href="https://pay.hotmart.com/V98479276N?off=bl4klt4o" data-track="final-cta" class="btn btn-gold reveal delay-2">
       Quiero mi combo por $9.99 →
