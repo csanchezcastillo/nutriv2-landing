@@ -213,6 +213,41 @@ button{font:inherit;cursor:pointer;border:0;background:transparent;color:inherit
 h1,h2,h3{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:0;line-height:1.1}
 p{margin:0}
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+
+/* =========================
+   FRANJA OFERTA (marquee)
+   ========================= */
+.offer-marquee{
+  position:relative;overflow:hidden;white-space:nowrap;
+  background:linear-gradient(90deg,#022C22 0%,#064E3B 50%,#022C22 100%);
+  color:#D1FAE5;
+  padding:10px 0;
+  font-family:var(--font-display);font-weight:700;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;
+  border-bottom:1px solid rgba(252,211,77,.25);
+}
+.offer-marquee::before,
+.offer-marquee::after{
+  content:"";position:absolute;top:0;bottom:0;width:48px;z-index:2;pointer-events:none;
+}
+.offer-marquee::before{left:0;background:linear-gradient(90deg,#022C22,transparent)}
+.offer-marquee::after{right:0;background:linear-gradient(270deg,#022C22,transparent)}
+.offer-marquee__inner{
+  display:inline-flex;align-items:center;gap:16px;
+  padding-left:16px;
+  animation:marquee 26s linear infinite;
+  will-change:transform;
+}
+.offer-marquee__inner span{display:inline-flex;align-items:center;gap:6px}
+.offer-marquee__inner strong{color:#FCD34D;font-weight:800}
+.offer-marquee__inner .dot{color:#10B981;font-size:14px}
+@keyframes marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .offer-marquee__inner{animation:none;justify-content:center}
+}
 @media (min-width:960px){.container{padding:0 32px}}
 
 /* =========================
@@ -810,6 +845,20 @@ footer{
 </head>
 <body>
 
+<!-- FRANJA OFERTA (marquee) -->
+<div class="offer-marquee" role="status" aria-label="Oferta: 50% de descuento por tiempo limitado">
+  <div class="offer-marquee__inner">
+    <span>🔥 <strong>50% OFF</strong></span><span class="dot">•</span>
+    <span>Oferta especial por tiempo limitado</span><span class="dot">•</span>
+    <span>Acceso inmediato</span><span class="dot">•</span>
+    <span>Garantía de 7 días</span><span class="dot">•</span>
+    <span>🔥 <strong>50% OFF</strong></span><span class="dot">•</span>
+    <span>Oferta especial por tiempo limitado</span><span class="dot">•</span>
+    <span>Acceso inmediato</span><span class="dot">•</span>
+    <span>Garantía de 7 días</span><span class="dot">•</span>
+  </div>
+</div>
+
 <main id="top">
 
 <!-- HERO -->
@@ -828,7 +877,7 @@ footer{
       </div>
 
       <div class="hero-cta-block reveal">
-        <a href="#oferta" class="hero-cta-btn" data-track="hero-image-cta">
+        <a href="https://pay.hotmart.com/V98479276N?off=bl4klt4o" class="hero-cta-btn" data-track="hero-image-cta">
           <span>Quiero mi combo ahora</span>
           <span class="hero-cta-btn__arrow" aria-hidden="true">→</span>
         </a>
