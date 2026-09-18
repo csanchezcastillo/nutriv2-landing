@@ -343,6 +343,48 @@ p{margin:0}
 }
 .hero-img > .hero-img-inner img{width:100%;height:100%;object-fit:cover;display:block}
 
+/* CTA premium bajo la imagen del hero */
+.hero-cta-block{text-align:center;margin-top:2px}
+.hero-cta-btn{
+  position:relative;
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  width:100%;max-width:380px;
+  padding:19px 28px;
+  font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:.01em;
+  color:#1F1300;text-decoration:none;
+  border-radius:16px;
+  background:linear-gradient(180deg,#FCD34D,#F59E0B 50%,#D97706);
+  box-shadow:0 14px 30px -8px rgba(234,179,8,.55),inset 0 1px 0 rgba(255,255,255,.5);
+  overflow:hidden;
+  isolation:isolate;
+  animation:heroCtaPulse 2.6s ease-in-out infinite;
+  transition:transform .2s ease,box-shadow .3s ease;
+}
+.hero-cta-btn::before{
+  content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);
+  animation:heroCtaShine 3.2s ease-in-out infinite;
+  z-index:-1;
+}
+.hero-cta-btn:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 24px 48px -10px rgba(234,179,8,.85),inset 0 1px 0 rgba(255,255,255,.5);
+}
+.hero-cta-btn__arrow{display:inline-block;transition:transform .25s ease;font-weight:800}
+.hero-cta-btn:hover .hero-cta-btn__arrow{transform:translateX(5px)}
+.hero-cta-note{
+  margin:14px auto 0;max-width:380px;
+  font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.01em;
+}
+@keyframes heroCtaShine{0%{left:-120%}55%{left:140%}100%{left:140%}}
+@keyframes heroCtaPulse{
+  0%,100%{box-shadow:0 14px 30px -8px rgba(234,179,8,.55),inset 0 1px 0 rgba(255,255,255,.5),0 0 0 0 rgba(234,179,8,0)}
+  50%{box-shadow:0 18px 40px -8px rgba(234,179,8,.8),inset 0 1px 0 rgba(255,255,255,.5),0 0 0 12px rgba(234,179,8,.16)}
+}
+@media (min-width:640px){
+  .hero-cta-btn{font-size:18px;padding:20px 32px}
+}
+
 @media (min-width:640px){
   .hero{padding:36px 0 28px}
 }
@@ -775,7 +817,7 @@ footer{
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text hero-text--top">
-        <h1>Transforma tu alimentación y Desinflama tu cuerpo con este <span class="hl">Combo 3 en 1</span></h1>
+        <h1>Transforma tu alimentación y siéntete más ligera con este <span class="hl">Combo 3 en 1</span></h1>
         <h2 class="hero-sub">Estrategias prácticas paso a paso con resultados reales.</h2>
       </div>
 
@@ -783,6 +825,14 @@ footer{
         <div class="hero-img-inner">
           <img src="combo-nutricional-keto-completo.webp" alt="Ebook digital Combo Completo: recetas keto, batidos saludables y menús de 7 días" width="1080" height="1080" fetchpriority="high" decoding="async" />
         </div>
+      </div>
+
+      <div class="hero-cta-block reveal">
+        <a href="#oferta" class="hero-cta-btn" data-track="hero-image-cta">
+          <span>Quiero mi combo ahora</span>
+          <span class="hero-cta-btn__arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="hero-cta-note">🔒 Compra segura · ⚡ Acceso inmediato · 🛡️ Garantía de 7 días</p>
       </div>
     </div>
   </div>
@@ -1031,9 +1081,6 @@ footer{
 
 <footer>
   <div class="container">
-    <div class="disclaimer-google" style="max-width: 900px; margin: 20px auto 10px auto; font-size: 0.8rem; line-height: 1.5; opacity: 0.92; text-align: center;">
-      <p><strong>Aviso legal:</strong> El contenido disponible en este sitio web y en las guías digitales ofrecidas es exclusivamente de carácter educativo e informativo. No constituye asesoramiento médico, diagnóstico ni tratamiento profesional. Los resultados pueden variar de persona a persona en función de su estado de salud, nivel de actividad física y constancia. Antes de comenzar cualquier cambio drástico en tu régimen alimenticio o estilo de vida, se recomienda consultar a un profesional de la salud o nutricionista.</p>
-    </div>
     <div class="foot-row">
       <div class="foot-copy">© 2026 Combo Nutricional · 🔒 Procesado por Hotmart</div>
       <nav class="foot-links" aria-label="Enlaces">
