@@ -1020,10 +1020,12 @@ html,body{background:#F5F5E7}
 .final-cta{color:#173D2E;border-top:1px solid #DCE7DD}
 .final-cta h2{color:#173D2E}
 .final-cta p,.final-cta .final-trust,footer{color:#51645A}
-.sticky-cta{position:fixed;z-index:1000;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(245,245,231,.96);border-top:1px solid #DCE7DD;box-shadow:0 -8px 24px rgba(23,56,42,.12);backdrop-filter:blur(10px);transform:translateY(110%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .25s ease,opacity .25s ease,visibility .25s ease}
+.sticky-cta{position:fixed;z-index:1000;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;padding:0;background:transparent;transform:translateY(calc(100% + 24px + env(safe-area-inset-bottom,0px)));opacity:0;visibility:hidden;pointer-events:none;transition:transform .25s ease,opacity .25s ease,visibility .25s ease}
 .sticky-cta.is-visible{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto}
-.sticky-cta__button{display:flex;width:100%;max-width:560px;min-height:48px;margin:0 auto;align-items:center;justify-content:center;padding:12px 20px;border-radius:999px;background:#19BD32;color:#fff;font-family:var(--font-display);font-weight:800;font-size:15px;box-shadow:0 5px 14px rgba(25,189,50,.22)}
+.sticky-cta__button{display:flex;flex-direction:column;gap:4px;width:100%;max-width:560px;min-height:64px;margin:0 auto;align-items:center;justify-content:center;padding:12px 16px;border-radius:20px;background:#19BD32;color:#fff;font-family:var(--font-display);font-weight:800;font-size:clamp(13px,3.5vw,15px);line-height:1.3;text-align:center;box-shadow:0 5px 14px rgba(25,189,50,.22),inset 0 1px 0 rgba(255,255,255,.22)}
 .sticky-cta__button:hover{background:#15A42B}
+.sticky-cta__note{font-family:var(--font-body);font-size:11px;line-height:1.4;font-weight:500;color:#fff}
+@media (max-width:959px){body{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}}
 @media (min-width:960px){.sticky-cta{display:none}}
 @media (prefers-reduced-motion:reduce){.sticky-cta{transition:none}}
 </style>
@@ -1294,7 +1296,10 @@ html,body{background:#F5F5E7}
 </main>
 
 <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
-  <a href="https://pay.hotmart.com/V98479276N?off=bl4klt4o" class="sticky-cta__button" data-track="sticky-cta">QUIERO EL COMBO COMPLETO →</a>
+  <a href="https://pay.hotmart.com/V98479276N?off=bl4klt4o" class="sticky-cta__button" data-track="sticky-cta">
+    <span>QUIERO EL COMBO COMPLETO →</span>
+    <span class="sticky-cta__note">Acceso inmediato · Garantía 7 días</span>
+  </a>
 </div>
 
 <footer>
@@ -1324,36 +1329,37 @@ html,body{background:#F5F5E7}
   els.forEach(function(e){io.observe(e)});
 })();
 
-/* CTA fijo: aparece al salir del hero y se oculta al llegar al CTA final */
+/* CTA flotante: tras 350px de scroll, sin duplicar botones de compra */
 (function(){
   var sticky=document.getElementById('sticky-cta');
-  var hero=document.querySelector('.hero');
-  var finalCta=document.querySelector('.final-cta');
-  if(!sticky||!hero||!finalCta) return;
-  function setVisible(visible){
+  var purchaseButtons=document.querySelectorAll('.pricing-cta,.final-cta .btn');
+  var footer=document.querySelector('footer');
+  if(!sticky||!footer) return;
+  var scheduled=false;
+  function update(){
+    scheduled=false;
+    var visible=window.innerWidth<960&&window.scrollY>=350;
+    purchaseButtons.forEach(function(button){
+      var rect=button.getBoundingClientRect();
+      if(rect.bottom>0&&rect.top<window.innerHeight+100) visible=false;
+    });
+    if(footer.getBoundingClientRect().top<=window.innerHeight) visible=false;
     sticky.classList.toggle('is-visible',visible);
     sticky.setAttribute('aria-hidden',visible?'false':'true');
   }
-  if(!('IntersectionObserver' in window)){
-    var update=function(){
-      var heroOut=hero.getBoundingClientRect().bottom<=0;
-      var finalAhead=finalCta.getBoundingClientRect().top>window.innerHeight;
-      setVisible(heroOut&&finalAhead);
-    };
-    window.addEventListener('scroll',update,{passive:true});
-    update();
-    return;
+  function scheduleUpdate(){
+    if(scheduled) return;
+    scheduled=true;
+    window.requestAnimationFrame(update);
   }
-  var heroVisible=true,finalVisible=false;
-  var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.target===hero) heroVisible=entry.isIntersecting;
-      if(entry.target===finalCta) finalVisible=entry.isIntersecting;
-    });
-    setVisible(!heroVisible&&!finalVisible&&finalCta.getBoundingClientRect().top>window.innerHeight);
-  },{threshold:0.01});
-  observer.observe(hero);
-  observer.observe(finalCta);
+  window.addEventListener('scroll',scheduleUpdate,{passive:true});
+  window.addEventListener('resize',scheduleUpdate);
+  if('IntersectionObserver' in window){
+    var observer=new IntersectionObserver(scheduleUpdate,{rootMargin:'0px 0px 100px 0px',threshold:0});
+    purchaseButtons.forEach(function(button){observer.observe(button)});
+    observer.observe(footer);
+  }
+  update();
 })();
 
 /* CTA tracking — dispara InitiateCheckout (FB) + begin_checkout (GA4) */
