@@ -117,7 +117,7 @@
     "name": "¿Cómo pago y qué métodos aceptan?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Cada combo tendrá su propio enlace de pago; los botones se activarán al configurar los checkouts."
+      "text": "El pago del Combo Completo está disponible en Hotmart. Los enlaces de Esencial y Plus se añadirán al configurarlos."
     }
   }, {
     "@type": "Question",
@@ -1046,7 +1046,7 @@ html,body{background:#F5F5E7}
 .bundle-price{display:flex;align-items:baseline;gap:5px;margin-top:auto;padding-top:12px;color:#173D2E}
 .bundle-price strong{font-family:var(--font-display);font-size:32px;line-height:1;font-weight:800}
 .bundle-price span{font-size:12px;font-weight:600;color:#718078}
-.bundle-button{width:100%;min-height:46px;margin-top:14px;padding:12px 14px;border:0;border-radius:12px;background:#19BD32;color:#fff;font-family:var(--font-display);font-size:13px;font-weight:800}
+.bundle-button{display:flex;align-items:center;justify-content:center;width:100%;min-height:46px;margin-top:14px;padding:12px 14px;border:0;border-radius:12px;background:#19BD32;color:#fff;font-family:var(--font-display);font-size:13px;font-weight:800;text-align:center;text-decoration:none}
 .bundle-button:disabled{background:#19BD32;color:#fff;cursor:default;opacity:1;box-shadow:0 5px 14px rgba(25,189,50,.2)}
 .bundle-checkout-note{margin-top:7px;text-align:center;color:#718078;font-size:10px}
 @media (min-width:680px){.bundle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bundle-card:last-child{grid-column:1/-1}.bundle-card:last-child .bundle-body{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}.bundle-card:last-child .bundle-body h3,.bundle-card:last-child .bundle-kicker{grid-column:1/-1}.bundle-card:last-child .bundle-price,.bundle-card:last-child .bundle-button,.bundle-card:last-child .bundle-checkout-note{grid-column:1/-1}}
@@ -1169,8 +1169,8 @@ html,body{background:#F5F5E7}
           <div class="bundle-includes">Reto Keto + Menús + 30 batidos + Ayuno + Planificador de menús</div>
           <p class="bundle-desire">Organiza tu semana con todos los recursos, incluido el planificador de menús.</p>
           <div class="bundle-price"><strong>$19.99</strong><span>USD · pago único</span></div>
-          <button class="bundle-button" type="button" disabled aria-describedby="pago-pendiente-completo">ELEGIR COMBO COMPLETO</button>
-          <small class="bundle-checkout-note" id="pago-pendiente-completo">Enlace de pago por configurar</small>
+          <a class="bundle-button" href="https://pay.hotmart.com/V98479276N?off=bl4klt4o" data-track="combo-completo" data-price="19.99" data-product="Combo Completo Nutrifit" data-item-id="combo-completo" aria-describedby="detalle-combo-completo">COMPRAR COMBO COMPLETO →</a>
+          <small class="bundle-checkout-note" id="detalle-combo-completo">Acceso inmediato · Garantía 7 días</small>
         </div>
       </article>
     </div>
@@ -1208,7 +1208,7 @@ html,body{background:#F5F5E7}
       </details>
       <details class="faq-item reveal delay-2">
         <summary>¿Cómo pago y qué métodos aceptan?</summary>
-        <div class="answer">Cada combo tendrá su enlace de pago. Los botones se activarán al configurar los checkouts.</div>
+        <div class="answer">El Combo Completo ya permite pagar en Hotmart. Los enlaces de Esencial y Plus se añadirán al configurarlos.</div>
       </details>
       <details class="faq-item reveal delay-3">
         <summary>¿Cómo recibo el contenido?</summary>
