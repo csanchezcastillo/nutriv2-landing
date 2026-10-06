@@ -38,9 +38,8 @@
 
 <!-- ==========================================================
      Facebook Pixel (Meta) — ID: 1186949119684750
-     Eventos disparados: PageView (auto), InitiateCheckout (CTA),
-                        CTA_Click (custom con location).
-     Para 'Purchase' configurar integración Hotmart → Meta.
+      Eventos disparados: PageView una vez al cargar y CTA_Click al pulsar compra.
+      InitiateCheckout y Purchase deben llegar desde la integración Hotmart → Meta.
      ========================================================== -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -1397,7 +1396,18 @@ html,body{background:#F5F5E7}
   start();
 })();
 
-/* CTA tracking — se activa cuando cada combo tenga un checkout con data-price */
+/* Navegación interna sin cambiar el hash ni disparar otro PageView */
+document.addEventListener('click',function(e){
+  var link=e.target.closest('a[href="#oferta"]');
+  if(!link||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+  var offer=document.getElementById('oferta');
+  if(!offer) return;
+  e.preventDefault();
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  offer.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+});
+
+/* Registra el clic en cada combo; Hotmart reporta InitiateCheckout */
 document.addEventListener('click',function(e){
   var a=e.target.closest('[data-track][data-price]');
   if(!a) return;
@@ -1406,21 +1416,22 @@ document.addEventListener('click',function(e){
   if(!Number.isFinite(price)||price<=0) return;
   var productName=a.dataset.product||'Combo Nutrifit';
   if(typeof fbq!=='undefined'){
-    fbq('track','InitiateCheckout',{
+    fbq('trackCustom','CTA_Click',{
+      location:loc,
       content_name:productName,
-      content_category:'digital-product',
       value:price,
       currency:'USD'
     });
-    fbq('trackCustom','CTA_Click',{location:loc});
   }
   if(typeof gtag!=='undefined'){
-    gtag('event','begin_checkout',{
+    gtag('event','cta_click',{
+      event_category:'CTA',
+      event_label:loc,
       currency:'USD',
       value:price,
-      items:[{item_id:a.dataset.itemId||'combo-nutrifit',item_name:productName,price:price,quantity:1}]
+      item_id:a.dataset.itemId||'combo-nutrifit',
+      item_name:productName
     });
-    gtag('event','cta_click',{event_category:'CTA',event_label:loc});
   }
 });
 </script>
