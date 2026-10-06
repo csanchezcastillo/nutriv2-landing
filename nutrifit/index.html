@@ -844,6 +844,7 @@ footer{
 .hero{background:#FFF8D2;padding:26px 0 30px}
 .hero h1{max-width:720px;margin:6px auto 10px;font-size:clamp(25px,6vw,38px);line-height:1.15}
 .hero h1 .hl{background:none;color:#1B3226;-webkit-text-fill-color:currentColor}
+.hero-mobile-break{display:none}
 .hero-sub{max-width:560px;font-size:16px;color:#38483C;margin-bottom:18px}
 .hero-grid{gap:10px}
 .hero-img{max-width:400px}
@@ -1035,6 +1036,7 @@ html,body{background:#F5F5E7}
 @media (min-width:680px){.bundle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bundle-card:last-child{grid-column:1/-1}.bundle-card:last-child .bundle-body{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}.bundle-card:last-child .bundle-body h3,.bundle-card:last-child .bundle-kicker{grid-column:1/-1}.bundle-card:last-child .bundle-price,.bundle-card:last-child .bundle-button,.bundle-card:last-child .bundle-checkout-note{grid-column:1/-1}}
 @media (min-width:1024px){.bundle-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.bundle-card:last-child{grid-column:auto}.bundle-card:last-child .bundle-body{display:flex}.bundle-card:last-child .bundle-price,.bundle-card:last-child .bundle-button,.bundle-card:last-child .bundle-checkout-note{grid-column:auto}.bundle-card--popular{transform:translateY(-8px)}}
 @media (max-width:767px){
+  .hero-mobile-break{display:block}
   .hero{padding:20px 0 22px}
   .hero-sub{margin-bottom:12px;font-size:15px}
   .hero-img{max-width:340px}
@@ -1099,8 +1101,8 @@ html,body{background:#F5F5E7}
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text hero-text--top">
-        <h1>Transforma tu alimentación y elige el combo ideal para ti</h1>
-        <p class="hero-sub">Un plan práctico para lograr resultados reales.</p>
+        <h1>Deja de saltar de dieta en dieta: sigue un plan claro y<br class="hero-mobile-break" />baja de peso</h1>
+        <p class="hero-sub">Reto Keto, batidos y menús listos para empezar hoy.</p>
       </div>
 
       <div class="hero-img reveal">
@@ -1109,7 +1111,7 @@ html,body{background:#F5F5E7}
         </div>
       </div>
 
-      <a class="hero-combo-cta" href="#oferta">VER LOS TRES COMBOS →</a>
+      <a class="hero-combo-cta" href="#oferta">QUIERO MI PLAN →</a>
 
     </div>
   </div>
