@@ -202,7 +202,7 @@
       border-radius: 0;
       background: transparent;
       box-shadow: none;
-      animation: hero-arrive .7s cubic-bezier(.2,.7,.2,1) both;
+      animation: none;
     }
 
     .hero-product img {
@@ -211,10 +211,6 @@
       object-fit: contain;
     }
 
-    @keyframes hero-arrive {
-      from { opacity: 0; transform: translateY(13px) scale(.985); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
 
     .cta {
       position: relative;
@@ -582,12 +578,6 @@
     .footer-links a { min-height: 46px; display: inline-flex; align-items: center; color: var(--ink-2); text-decoration-color: rgba(65, 90, 73, .35); text-underline-offset: 3px; }
     .footer-contact { margin-top: 7px !important; color: var(--muted); }
 
-    html.js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1); }
-    html.js .reveal.is-visible { opacity: 1; transform: none; }
-    html.js .reveal-delay-1 { transition-delay: 70ms; }
-    html.js .reveal-delay-2 { transition-delay: 140ms; }
-    html.js .reveal-delay-3 { transition-delay: 210ms; }
-
     @media (min-width: 700px) {
       .container { width: min(calc(100% - 64px), var(--content)); }
       .hero { padding: 40px 0 82px; }
@@ -880,7 +870,6 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
-      html.js .reveal { opacity: 1; transform: none; }
     }
     /* Natural lifestyle photography in the problem and steps sections. */
     .visual-problems .problem-item { grid-template-columns: 96px minmax(0, 1fr); }
@@ -973,7 +962,7 @@
         <div class="hero-copy">
           <div class="brand-signature"><img src="icon-v2.svg" width="28" height="28" alt="" aria-hidden="true"><strong>Nutrifit</strong></div>
           <h1 id="hero-title">Transforma tu alimentación<br>con un plan claro</h1>
-          <p class="hero-subtitle">Reto Keto, batidos y menús listos para empezar hoy</p>
+          <p class="hero-subtitle">Reto Keto + Ayuno Intermitente + Menús y Batidos, todo listo para empezar hoy</p>
           <a class="cta hero-cta" href="#oferta" aria-label="Ver los tres combos y elegir tu plan">QUIERO MI PLAN <span aria-hidden="true">→</span></a>
           <div class="trust-line" aria-label="Pago seguro, acceso inmediato y producto 100% digital"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="11" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Pago seguro</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m13 3-8 11h6l-1 7 9-12h-6l1-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Acceso inmediato</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4m-3 14h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>100% digital</span></div>
         </div>
@@ -1210,21 +1199,6 @@
   <script>
     (function () {
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var revealItems = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window && !reduceMotion) {
-        var revealObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
-        revealItems.forEach(function (item) { revealObserver.observe(item); });
-      } else {
-        revealItems.forEach(function (item) { item.classList.add('is-visible'); });
-      }
-
       document.addEventListener('click', function (event) {
         var anchor = event.target.closest('a[href="#oferta"]');
         if (anchor) {
