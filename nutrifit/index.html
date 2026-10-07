@@ -481,7 +481,7 @@
 
     .combo-image img { width: 100%; height: 100%; object-fit: cover; }
     .combo-kicker { margin-bottom: 4px; color: var(--brand-2); font-size: .75rem; font-weight: 700; }
-    .combo-card h3 { margin-bottom: 6px; font-size: 1.4rem; }
+    .combo-card h3 { margin-bottom: 8px; font-size: 1.55rem; font-weight: 800; letter-spacing: -.035em; }
     .includes { margin: 0 0 10px; color: var(--muted); font-size: .85rem; line-height: 1.5; }
     .includes strong { color: var(--ink-2); }
     .combo-description { min-height: 52px; margin-bottom: 17px; color: var(--ink-2); font-size: .92rem; line-height: 1.55; }
@@ -766,10 +766,11 @@
     .benefit-art { width: 88px; height: 88px; }
     .section-shortcut { display: flex; justify-content: center; align-items: center; gap: 12px; width: fit-content; min-height: 44px; margin: 16px auto 0; color: var(--brand-2); font-size: .9rem; font-weight: 700; text-underline-offset: 4px; }
     .combo-difference { color: var(--ink-2); font-size: .9rem; line-height: 1.45; margin-bottom: 14px; }
-    .resource-label { color: var(--muted); font-size: .85rem; margin-bottom: 8px; }
+    .resource-label { color: var(--muted); font-size: .85rem; font-weight: 400; margin-bottom: 8px; }
     .resource-list { list-style: none; padding: 0; margin: 0 0 18px; color: var(--ink-2); font-size: .9rem; line-height: 1.45; }
-    .resource-list li { display: flex; gap: 8px; align-items: baseline; padding-block: 4px; }
-    .resource-check { color: var(--brand-2); font-weight: 800; }
+    .resource-list li { display: flex; gap: 10px; align-items: flex-start; padding-block: 6px; }
+
+    .resource-check { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 22px; width: 22px; height: 22px; margin-top: 0; border: 1px solid #337F58; border-radius: 50%; background: linear-gradient(145deg, #54A977, #2D7250); color: #FFFFFF; font-size: .82rem; font-weight: 700; line-height: 1; box-shadow: 0 2px 5px rgba(24, 60, 45, .12), inset 0 1px 0 rgba(255, 255, 255, .22); }
     .access-note, .price span { font-size: .82rem; }
     .testimonial-controls { display: none; }
     .testimonial-controls button { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 10px; border: 1px solid #C7D5BE; border-radius: 50%; background: var(--surface); color: var(--brand-2); cursor: pointer; }
@@ -1020,8 +1021,8 @@
             <figure class="combo-image"><img src="img/combo_esencial.webp" width="1280" height="1280" alt="Portada del Combo Esencial Nutrifit" loading="lazy" decoding="async"></figure>
             <h3 id="combo-esencial">Combo Esencial</h3>
             <div class="combo-benefit"><p class="combo-difference">Transforma tu semana con un combo de 21 días y menús listos.</p></div>
-            <p class="resource-label">Incluye 2 recursos digitales:</p>
-            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span>Reto Keto · 21 días</li><li><span class="resource-check" aria-hidden="true">✓</span>Menús · 7 días</li></ul>
+            <p class="resource-label"><strong>Tu combo incluye</strong></p>
+            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span><span>Reto Keto · 21 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Menús · 7 días</span></li></ul>
             <div class="price-block">
               <p class="price"><strong>$11.99</strong><span>USD · pago único</span></p>
               <a class="cta" href="https://pay.hotmart.com/Q107916266U?off=tsvp2cz6" data-track="combo-esencial" data-price="11.99" data-product="Combo Esencial Nutrifit">COMPRAR COMBO ESENCIAL <span aria-hidden="true">→</span></a>
@@ -1034,8 +1035,8 @@
             <figure class="combo-image"><img src="img/combo_plus.webp" width="1280" height="1280" alt="Portada del Combo Plus Nutrifit" loading="lazy" decoding="async"></figure>
             <h3 id="combo-plus">Combo Plus</h3>
             <div class="combo-benefit"><p class="combo-difference">Dale variedad a tu plan con ayuno y 30 opciones de batidos.</p></div>
-            <p class="resource-label">Incluye 3 recursos digitales:</p>
-            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span>Reto Keto · 21 días</li><li><span class="resource-check" aria-hidden="true">✓</span>Ayuno intermitente</li><li><span class="resource-check" aria-hidden="true">✓</span>30 batidos saludables</li></ul>
+            <p class="resource-label"><strong>Tu combo incluye</strong></p>
+            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span><span>Reto Keto · 21 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Ayuno intermitente</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>30 batidos saludables</span></li></ul>
             <div class="price-block">
               <p class="price"><strong>$14.99</strong><span>USD · pago único</span></p>
               <a class="cta" href="https://pay.hotmart.com/K107916070D?off=1h3wx2jz" data-track="combo-plus" data-price="14.99" data-product="Combo Plus Nutrifit">COMPRAR COMBO PLUS <span aria-hidden="true">→</span></a>
@@ -1047,8 +1048,8 @@
             <figure class="combo-image"><img src="img/combo_completo.webp" width="1280" height="1280" alt="Portada del Combo Completo Nutrifit" loading="lazy" decoding="async"></figure>
             <h3 id="combo-completo">Combo Completo</h3>
             <div class="combo-benefit"><p class="combo-difference">Transforma tus comidas con todos los recursos y un planificador de menús.</p></div>
-            <p class="resource-label">Incluye 5 recursos digitales:</p>
-            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span>Reto Keto · 21 días</li><li><span class="resource-check" aria-hidden="true">✓</span>Menús · 7 días</li><li><span class="resource-check" aria-hidden="true">✓</span>30 batidos saludables</li><li><span class="resource-check" aria-hidden="true">✓</span>Ayuno intermitente</li><li><span class="resource-check" aria-hidden="true">✓</span>Planificador de menús</li></ul>
+            <p class="resource-label"><strong>Tu combo incluye</strong></p>
+            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span><span>Reto Keto · 21 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Menús · 7 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>30 batidos saludables</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Ayuno intermitente</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Planificador de menús</span></li></ul>
             <div class="price-block">
               <p class="price"><strong>$19.99</strong><span>USD · pago único</span></p>
               <a class="cta" href="https://pay.hotmart.com/V98479276N?off=bl4klt4o" data-track="combo-completo" data-price="19.99" data-product="Combo Completo Nutrifit">COMPRAR COMBO COMPLETO <span aria-hidden="true">→</span></a>
