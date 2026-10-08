@@ -108,7 +108,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .combo-image--studio img { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); object-fit: contain; }
 .combo-image--essential img { transform: scale(1.15); }
 .combo-image--plus img { transform: scale(1.24); }
-.combo-image--complete img { inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); object-fit: cover; object-position: center 85%; }
+.combo-image--complete img { inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); object-fit: cover; object-position: center 65%; }
 .combo-card h3, .combo-benefit, .resource-label, .resource-list, .price-block { margin-inline: 12px; }
 .combo-card h3 { font-size: 1.55rem; margin-bottom: 12px; }
 .combo-benefit { min-height: 76px; margin-bottom: 18px; }
@@ -129,7 +129,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .price span { font-size: .72rem; }
 .combo-card .cta { width: 100%; padding-inline: 10px; font-size: .75rem; min-height: 52px; }
 .access-note { margin-top: 12px; text-align: center; font-size: .72rem; }
-.social { background: var(--bg); padding-block: 76px; }
+.social.section { background: var(--bg); padding-block: 24px 48px; }
 .testimonial-track { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-block: 2px 12px; }
 .testimonial-track::-webkit-scrollbar { display: none; }
 .testimonial-card { flex: 0 0 calc((100% - 44px) / 3); min-width: 0; padding: 28px; background: #FFFFFF; border-radius: 20px; scroll-snap-align: start; }
@@ -147,7 +147,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .carousel-dots span { width: 7px; height: 7px; border-radius: 50%; background: rgb(0 132 70 / .25); }
 .carousel-dots .is-active { background: var(--brand); }
 .carousel-position { font-size: .75rem; }
-.support-layout { display: grid; grid-template-columns: 1.15fr 1fr; align-items: start; gap: 60px; padding-block: 88px; }
+.support-layout { display: grid; grid-template-columns: 1.15fr 1fr; align-items: start; gap: 60px; padding-block: 48px 72px; }
 .support-layout > .section { padding: 0; }
 .support-layout > .section > .container { width: 100%; }
 .faq .section-heading { margin: 0 0 28px; text-align: left; }
@@ -208,8 +208,8 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .hero-inner > .hero-cta { grid-area: cta; justify-self: start; align-self: start; width: min(100%, 480px); max-width: 100%; min-width: 0; margin-top: 30px; }
   .hero-inner > .trust-line { grid-area: trust; justify-content: flex-start; align-self: start; width: 100%; margin: 18px 0 0; gap: 12px 16px; }
 }
-@media (max-width: 799px) {
-  .hero-inner > .hero-cta { margin-top: 24px; }
+@media (max-width: 999px) {
+  .hero-inner > .hero-cta { margin-top: 24px; margin-inline: auto; align-self: center; width: min(100%, 530px); }
   .header-inner { min-height: 72px; }
   .hero { padding-top: 0; }
   .hero h1 { font-size: clamp(2rem, 5.8vw, 2.65rem); }
@@ -229,6 +229,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .combo-grid { grid-template-columns: 1fr; gap: 36px; max-width: 520px; margin-inline: auto; }
   .combo-card h3 { font-size: 1.65rem; }
   .combo-benefit { min-height: 0; }
+  .combo-image--complete { aspect-ratio: 1.5; }
   .combo-card .cta { font-size: .85rem; min-height: 56px; }
   .access-note { font-size: .78rem; }
   .testimonial-card { flex-basis: calc((100% - 22px) / 2); padding: 24px; }
@@ -260,6 +261,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .section-heading p, .problem .section-heading p { font-size: .9rem; }
   .problem-item { grid-template-columns: 88px 1fr; gap: 16px; padding-block: 18px; }
   .problem-photo { width: 88px; height: 100px; border-radius: 14px; }
+  .problem-symbol { height: 88px; }
   .problem-item h3 { font-size: .98rem; margin-bottom: 6px; }
   .problem-item p { font-size: .85rem; }
   .solution { padding-block: 44px 50px; }
@@ -285,8 +287,10 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .testimonial-card { flex-basis: 94%; padding: 24px; }
   .testimonial-controls { gap: 9px; }
   .testimonial-controls button { width: 38px; height: 38px; }
+  .social.section { padding-block: 12px 28px; }
+  .hero .trust-line { margin-top: 14px; }
   .carousel-dots { gap: 5px; }
-  .support-layout { padding-block: 48px; gap: 32px; }
+  .support-layout { padding-block: 28px 44px; gap: 28px; }
   .faq h2 { font-size: 1.85rem; }
   .faq-item summary { font-size: .85rem; padding-left: 14px; }
   .guarantee-card { padding: 28px 20px; }
@@ -299,9 +303,9 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .site-footer { font-size: .73rem; }
 }
 @media (max-width: 359px) {
-  .hero .trust-line { flex-wrap: wrap; }
+  .trust-line { flex-wrap: wrap; }
 }
-@media (max-width: 799px) {
+@media (max-width: 999px) {
   .hero .hero-product { aspect-ratio: 1.6; margin-top: 4px; margin-bottom: 0; }
   .hero .hero-product img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
 }
@@ -328,12 +332,13 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .problem-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .problem-item, .problem-item:first-child, .problem-item:last-child { grid-template-columns: 88px minmax(0, 1fr); gap: 20px; padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: rgb(255 255 255 / .45); }
   .problem-photo { width: 88px; height: 104px; border-radius: 12px; }
+  .problem-symbol { height: 88px; }
   .problem-item h3 { font-size: 1.1rem; }
   .problem-item p { font-size: .9rem; }
 
   .solution { padding-block: 88px 96px; }
   .steps { gap: 28px; }
-  .step { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 24px; padding: 24px; }
+  .step { grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 20px; padding: 24px; }
   .step h3 { font-size: 1.2rem; }
   .step p { font-size: .92rem; }
 
