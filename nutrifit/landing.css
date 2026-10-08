@@ -81,27 +81,8 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .popular-label { position: absolute; z-index: 2; left: 50%; top: -17px; transform: translateX(-50%); white-space: nowrap; padding: 6px 20px; border-radius: 99px; color: #FFFFFF; background: var(--brand); font-size: .8rem; font-weight: 700; }
 .combo-image { width: 100%; aspect-ratio: 1; border: 1px solid #E5EBDD; border-radius: 20px; overflow: hidden; margin: 0 0 22px; }
 .combo-card--popular .combo-image { width: 100%; margin-left: 0; border-radius: 19px; }
-.combo-image img { width: 100%; height: 100%; object-fit: cover; }
-.mockup-bundle { position: relative; width: 100%; height: 100%; }
-.mockup-bundle .mockup-product { position: absolute; width: 58%; height: 58%; object-fit: contain; }
-.mockup-bundle--two .mockup-product { width: 72%; height: 92%; top: 4%; }
-.mockup-bundle--two .mockup-product--1 { left: -7%; z-index: 1; }
-.mockup-bundle--two .mockup-product--2 { right: -4%; z-index: 2; }
-.mockup-bundle--three .mockup-product--1 { left: -4%; top: 4%; }
-.mockup-bundle--three .mockup-product--2 { right: -4%; top: 4%; }
-.mockup-bundle--three .mockup-product--3 { left: 21%; bottom: 1%; z-index: 2; }
-.mockup-bundle--four .mockup-product { width: 56%; height: 56%; }
-.mockup-bundle--four .mockup-product--1 { left: -2%; top: 0; }
-.mockup-bundle--four .mockup-product--2 { right: -2%; top: 0; }
-.mockup-bundle--four .mockup-product--3 { left: -2%; bottom: 0; }
-.mockup-bundle--four .mockup-product--4 { right: -2%; bottom: 0; }
-.mockup-bundle--five .mockup-product { width: 41%; height: 51%; top: 0; }
-.mockup-bundle--five .mockup-product--1 { left: -6%; }
-.mockup-bundle--five .mockup-product--2 { left: 29.5%; }
-.mockup-bundle--five .mockup-product--3 { right: -6%; }
-.mockup-bundle--five .mockup-product--4 { width: 56%; height: 56%; top: auto; bottom: 0; left: -4%; }
-.mockup-bundle--five .mockup-product--5 { width: 56%; height: 56%; top: auto; bottom: 0; right: -4%; }
-.combo-image--studio { position: relative; isolation: isolate; background: #F3F3E9; padding: 0; }
+.combo-image img { width: 100%; height: 100%; object-fit: contain; }
+.combo-image--studio { position: relative; isolation: isolate; background: var(--bg); padding: 8px; }
 .combo-card h3, .combo-benefit, .resource-label, .resource-list, .price-block { margin-inline: 12px; }
 .combo-card h3 { font-size: 1.55rem; margin-bottom: 12px; }
 .combo-benefit { min-height: 76px; margin-bottom: 18px; }
@@ -234,8 +215,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .trust-line { flex-wrap: nowrap; gap: 6px; font-size: .7rem; margin-top: 5px; }
   .trust-line span { gap: 4px; }
   .trust-line svg { width: 20px; height: 20px; padding: 3px; flex-basis: 20px; }
-  .hero-product { width: min(100%, 390px); aspect-ratio: 1.2; margin-top: 4px; margin-bottom: 4px; }
-  .hero-product .mockup-bundle--four .mockup-product { height: 62%; }
+  .hero-product { width: min(100%, 390px); aspect-ratio: 1.08; margin-top: 4px; margin-bottom: 4px; }
   .hero-product::before { border-width: 12px; }
   .orbit-dot { width: 9px; height: 9px; }
   .orbit-dot--two { width: 12px; height: 12px; }
