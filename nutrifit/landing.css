@@ -202,7 +202,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
   .hero-inner > .trust-line { grid-area: trust; justify-content: flex-start; align-self: start; width: 100%; margin: 18px 0 0; gap: 12px 16px; }
 }
 @media (max-width: 799px) {
-  .hero-inner > .hero-cta { margin-top: 12px; }
+  .hero-inner > .hero-cta { margin-top: 24px; }
   .header-inner { min-height: 72px; }
   .hero { padding-top: 0; }
   .hero h1 { font-size: clamp(2rem, 5.8vw, 2.65rem); }
