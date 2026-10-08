@@ -39,6 +39,25 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .cta:active { transform: none; }
 .cta svg { width: 20px; height: 20px; flex: 0 0 20px; }
 .hero-cta { min-width: 330px; min-height: 58px; font-size: 1rem; }
+.hero .hero-cta { position: relative; overflow: hidden; isolation: isolate; }
+.hero .hero-cta::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: -60%;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / .28), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: hero-cta-sweep 7s ease-in-out 2s infinite;
+}
+.hero .hero-cta:hover::after,
+.hero .hero-cta:focus-visible::after { animation: none; }
+@keyframes hero-cta-sweep {
+  0%, 3% { left: -60%; }
+  22%, 100% { left: 120%; }
+}
 .hero-inner > .hero-cta { align-self: stretch; width: auto; max-width: 530px; }
 .trust-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 26px; margin-top: 20px; font-size: .85rem; }
 .trust-line span { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
