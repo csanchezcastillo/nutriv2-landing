@@ -32,7 +32,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .hero-copy { display: flex; flex-direction: column; align-items: center; width: 100%; position: relative; z-index: 2; }
 .hero h1 { max-width: 1120px; font-size: clamp(2.2rem, 4.4vw, 4rem); line-height: 1.18; }
-.hero h1 .title-highlight { background: var(--mint); border-radius: 18px; padding: 0 .17em .05em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.hero h1 .title-highlight { color: #000000; background: #F5D76E; border-radius: 18px; padding: 0 .17em .05em; white-space: nowrap; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .hero-subtitle { max-width: 960px; margin: 24px 0 22px; font-size: 1.12rem; line-height: 1.6; }
 .cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 54px; padding: 15px 28px; border: 0; border-radius: 99px; background: var(--cta); color: #FFFFFF; font-size: .88rem; font-weight: 800; text-align: center; line-height: 1.4; text-decoration: none; transition: background .18s ease, transform .18s ease; }
 .cta:hover { background: #008E35; transform: translateY(-2px); }
@@ -81,6 +81,8 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .problem-item:first-child { padding-top: 0; }
 .problem-item:last-child { border-bottom: 0; padding-bottom: 0; }
 .problem-photo { width: 112px; height: 112px; border-radius: 18px; object-fit: cover; }
+.problem-symbol { display: grid; place-items: center; background: var(--mint); color: #075D3B; }
+.problem-symbol svg { width: 48px; height: 48px; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .problem-item h3 { margin-bottom: 8px; font-size: 1.2rem; }
 .problem-item p { font-size: .95rem; line-height: 1.5; }
 .solution { background: #075D3B; padding-block: 72px 84px; }
