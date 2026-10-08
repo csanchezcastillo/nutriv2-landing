@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
-  --bg: #F7F7E2;
+  --bg: #FAF7F0;
   --surface: #FFFFFF;
-  --accent: #F5D76E;
+  --accent: #EFC5B5;
   --accent-soft: color-mix(in srgb, var(--accent) 24%, var(--bg));
   --ink: #292D2A;
   --muted: var(--ink);
