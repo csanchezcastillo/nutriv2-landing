@@ -199,7 +199,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
     text-align: left;
   }
   .hero-copy { grid-area: copy; align-items: flex-start; align-self: end; container-type: inline-size; }
-  .hero h1 { max-width: 100%; font-size: 7.4cqw; white-space: nowrap; line-height: 1.12; letter-spacing: -.055em; }
+  .hero h1 { max-width: 100%; font-size: 7.4cqw; white-space: normal; line-height: 1.12; letter-spacing: -.055em; }
   .hero-subtitle { max-width: 550px; margin: 22px 0 0; font-size: 1.1rem; }
   .hero-product { grid-area: product; align-self: center; justify-self: center; width: min(88%, 520px); aspect-ratio: 1; margin: 0; }
   .hero-inner > .hero-cta { grid-area: cta; justify-self: start; align-self: start; width: min(100%, 480px); max-width: 100%; min-width: 0; margin-top: 30px; }
