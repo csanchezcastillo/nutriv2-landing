@@ -92,10 +92,10 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 .resource-list li { display: flex; align-items: flex-start; gap: 10px; padding-block: 5px; }
 .resource-check { display: flex; align-items: center; justify-content: center; flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%; background: var(--cta); color: #FFFFFF; font-size: .85rem; font-weight: 700; line-height: 1; }
 .resource-list li.resource-bonus { align-items: center; gap: 12px; margin-top: 12px; padding: 12px 14px; border: 2px solid #E3C875; border-radius: 14px; background: #FFF7DC; }
-.bonus-icon { display: grid; place-items: center; flex: 0 0 56px; width: 56px; height: 56px; overflow: hidden; border: 1px solid #E3C875; border-radius: 12px; background: #FFFFFF; }
-.bonus-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .bonus-copy { display: grid; gap: 3px; line-height: 1.3; }
-.bonus-label { color: #725711; font-size: .7rem; font-weight: 800; letter-spacing: .035em; text-transform: uppercase; }
+.bonus-label { display: inline-flex; align-items: center; gap: 5px; color: #725711; font-size: .78rem; font-weight: 800; }
+.bonus-gift-icon { font-size: 1rem; line-height: 1; }
+.bonus-product-icon { flex: 0 0 46px; width: 46px; height: 46px; border: 1px solid #E8D99E; border-radius: 8px; background: #FFFFFF; object-fit: contain; }
 .resource-bonus strong { color: var(--ink); font-weight: 800; }
 .price-block { margin-top: auto; border-top: 1px solid #E7EFEB; padding-top: 22px; }
 .price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
