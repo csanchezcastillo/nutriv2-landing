@@ -313,6 +313,7 @@ h3 { font-size: 1.3rem; letter-spacing: -.025em; }
 }
 @media (max-width: 359px) {
   .trust-line { flex-wrap: wrap; }
+  .currency-note { white-space: normal; }
 }
 @media (max-width: 999px) {
   .hero .hero-product { aspect-ratio: 1.6; margin-top: 4px; margin-bottom: 0; }
