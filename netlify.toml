@@ -1,0 +1,4 @@
+# Netlify: publica la carpeta "nutrifit" tal cual (sitio estático, sin compilación).
+# El sitio queda en la raíz de Netlify: https://combo-nutrifit.netlify.app/
+[build]
+  publish = "nutrifit"
