@@ -55,7 +55,7 @@
     gtag('config','G-QYP9W4CZC5');
   </script>
 
-  <link rel="stylesheet" href="landing.css?v=nutrifit-v4m">
+  <link rel="stylesheet" href="landing.css?v=nutrifit-v4p">
 
   <script type="application/ld+json">
   {
@@ -252,8 +252,8 @@
         <div class="picker" id="picker">
           <div class="seg" role="tablist" aria-label="Elige tu combo">
             <button class="seg-btn" role="tab" id="t-basico" aria-controls="p-basico" aria-selected="false" data-panel="p-basico"><span>Básico</span><small>$12.99</small></button>
-            <button class="seg-btn is-active" role="tab" id="t-plus" aria-controls="p-plus" aria-selected="true" data-panel="p-plus"><span>Plus</span><small>$14.99</small><em>Más popular</em></button>
-            <button class="seg-btn" role="tab" id="t-completo" aria-controls="p-completo" aria-selected="false" data-panel="p-completo"><span>Completo</span><small>$19.99</small><em class="gold">Mejor valor</em></button>
+            <button class="seg-btn" role="tab" id="t-plus" aria-controls="p-plus" aria-selected="false" data-panel="p-plus"><span>Plus</span><small>$14.99</small></button>
+            <button class="seg-btn is-active" role="tab" id="t-completo" aria-controls="p-completo" aria-selected="true" data-panel="p-completo"><span>Completo</span><small>$19.99</small><em class="gold">Mejor valor</em></button>
           </div>
 
           <div class="stage">
@@ -315,6 +315,31 @@
           </article>
           </div>
         </div>
+
+        <section class="compare" id="comparar" data-active="completo" aria-labelledby="cmp-title">
+          <h3 id="cmp-title">Compara qué incluye cada combo</h3>
+          <div class="cmp-wrap">
+            <table class="cmp-table">
+              <caption class="sr-only">Comparación de los combos Básico, Plus y Completo: qué incluye cada uno y su precio</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="cmp-corner"><span class="sr-only">Contenido</span></th>
+                  <th scope="col" data-c="basico"><button type="button" class="cmp-pick" data-panel="p-basico" aria-label="Ver el combo Básico, $12.99"><span class="cmp-name">Básico</span><span class="cmp-price">$12.99</span></button></th>
+                  <th scope="col" data-c="plus"><button type="button" class="cmp-pick" data-panel="p-plus" aria-label="Ver el combo Plus, $14.99"><span class="cmp-name">Plus</span><span class="cmp-price">$14.99</span></button></th>
+                  <th scope="col" data-c="completo"><em class="cmp-badge">Mejor valor</em><button type="button" class="cmp-pick" data-panel="p-completo" aria-label="Ver el combo Completo, $19.99"><span class="cmp-name">Completo</span><span class="cmp-price">$19.99</span></button></th>
+                </tr>
+              </thead>
+              <tbody>
+          <tr><th scope="row">Reto Keto · 21 días</th><td data-c="basico"><span class="yes"><span class="sr-only">Incluido</span></span></td><td data-c="plus"><span class="yes"><span class="sr-only">Incluido</span></span></td><td data-c="completo"><span class="yes"><span class="sr-only">Incluido</span></span></td></tr>
+          <tr><th scope="row">Menús · 7 días</th><td data-c="basico"><span class="yes"><span class="sr-only">Incluido</span></span></td><td data-c="plus"><span class="no"><span class="sr-only">No incluido</span></span></td><td data-c="completo"><span class="yes"><span class="sr-only">Incluido</span></span></td></tr>
+          <tr><th scope="row">30 batidos saludables</th><td data-c="basico"><span class="no"><span class="sr-only">No incluido</span></span></td><td data-c="plus"><span class="yes"><span class="sr-only">Incluido</span></span></td><td data-c="completo"><span class="yes"><span class="sr-only">Incluido</span></span></td></tr>
+          <tr><th scope="row">Ayuno intermitente</th><td data-c="basico"><span class="no"><span class="sr-only">No incluido</span></span></td><td data-c="plus"><span class="yes"><span class="sr-only">Incluido</span></span></td><td data-c="completo"><span class="yes"><span class="sr-only">Incluido</span></span></td></tr>
+          <tr><th scope="row">Planificador de menús</th><td data-c="basico"><span class="no"><span class="sr-only">No incluido</span></span></td><td data-c="plus"><span class="no"><span class="sr-only">No incluido</span></span></td><td data-c="completo"><span class="yes"><span class="sr-only">Incluido</span></span></td></tr>
+          <tr><th scope="row">🎁 Bono: 20 postres keto</th><td data-c="basico"><span class="no"><span class="sr-only">No incluido</span></span></td><td data-c="plus"><span class="no"><span class="sr-only">No incluido</span></span></td><td data-c="completo"><span class="yes"><span class="sr-only">Incluido</span></span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
         <p class="secure"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Pago seguro procesado por Hotmart · Tarjeta, débito, PayPal o métodos locales según tu país</p>
       </div>
@@ -460,6 +485,8 @@
         var btns = picker.querySelectorAll('.seg-btn');
         var panels = picker.querySelectorAll('.panel');
         function showPanel(id) {
+          var cmp = document.getElementById('comparar');
+          if (cmp) cmp.setAttribute('data-active', id.replace('p-', ''));
           btns.forEach(function (b) {
             var on = b.dataset.panel === id;
             b.classList.toggle('is-active', on);
@@ -482,7 +509,13 @@
             n.focus(); showPanel(n.dataset.panel);
           });
         });
-        showPanel('p-plus');
+        document.querySelectorAll('.cmp-pick').forEach(function (b) {
+          b.addEventListener('click', function () {
+            showPanel(b.dataset.panel);
+            picker.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+          });
+        });
+        showPanel('p-completo');
       }
 
       /* Visor "mira por dentro": pestañas + presentación automática */
