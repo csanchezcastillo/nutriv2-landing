@@ -25,8 +25,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://d1yei2z3i6k35z.cloudfront.net" crossorigin>
   <link rel="preconnect" href="https://connect.facebook.net">
-  <link rel="preload" as="image" href="img/mockups/hero-nutrifit-realista-v6.webp" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/mockups/hero-nutrifit-realista-v6-w1000.webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script>document.documentElement.classList.add('js');</script>
   <script>
@@ -55,7 +55,7 @@
     gtag('config','G-QYP9W4CZC5');
   </script>
 
-  <link rel="stylesheet" href="landing.css?v=nutrifit-combo-basico-v1">
+  <link rel="stylesheet" href="landing.css?v=nutrifit-v4h">
 
   <script type="application/ld+json">
   {
@@ -122,180 +122,280 @@
     <img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1186949119684750&amp;ev=PageView&amp;noscript=1">
   </noscript>
 
-<header class="site-header"><div class="container header-inner"><a class="brand-signature" href="#inicio" aria-label="Nutrifit, inicio"><img src="icon-v2.svg" width="34" height="34" alt="" aria-hidden="true"><strong>Nutrifit</strong></a></div></header>
+  <a class="skip" href="#oferta">Ir a los combos</a>
+
+  <header class="nav-wrap">
+    <div class="nav" id="top">
+      <a class="brand" href="#inicio" aria-label="Nutrifit, inicio"><img src="icon-v2.svg" width="30" height="30" alt="" aria-hidden="true"><strong>Nutrifit</strong></a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#dentro">Por dentro</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <a class="btn btn--cta btn--sm" href="#oferta" data-track="header">Ver combos</a>
+    </div>
+  </header>
+
   <main id="inicio">
+    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
+      <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1 id="hero-title">Deja de improvisar para perder peso: sigue un plan <span class="title-highlight">paso a paso</span></h1>
-          <p class="hero-subtitle">Tu plan completo de Keto, menús y batidos listos para empezar hoy</p>
+          <h1 id="hero-title">Deja de improvisar para perder peso: sigue un plan <em>paso a paso</em></h1>
+          <p class="lead">Tu plan completo de Keto, menús y batidos listos para empezar hoy. Sin suscripciones, sin complicaciones.</p>
+          <div class="hero-cta">
+            <a class="btn btn--cta btn--xl" href="#oferta" data-track="hero" aria-label="Elige tu combo y empieza hoy">Elige tu combo y empieza hoy <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <p class="from">Desde <strong>$12.99</strong> USD<br><span>una sola vez</span></p>
+          </div>
         </div>
-        <figure class="hero-product"><img src="img/mockups/hero-nutrifit-realista-v6.webp" width="1254" height="1254" alt="Cuatro libros de Nutrifit con textura de papel y encuadernación realista, Reto Keto al frente y un teléfono que muestra un menú diario" fetchpriority="high" decoding="async"></figure>
-        <a class="cta hero-cta" href="#oferta" aria-label="Elige tu combo y empieza hoy">Elige tu combo y empieza hoy <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="trust-line" aria-label="Acceso inmediato, producto 100% digital y garantía de 7 días"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m13 3-8 11h6l-1 7 9-12h-6l1-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Acceso inmediato</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4m-3 14h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>100% digital</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantía de 7 días</span></div>
+
+        <figure class="hero-art">
+          <div class="blob" aria-hidden="true"></div>
+          <img src="img/mockups/hero-nutrifit-realista-v6-w1000.webp" width="1254" height="1254" alt="Cuatro libros de Nutrifit con textura de papel y encuadernación realista, Reto Keto al frente y un teléfono que muestra un menú diario" fetchpriority="high" decoding="async">
+          <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+            <circle cx="60" cy="60" r="58" class="seal-bg"/>
+            <text class="seal-ring"><textPath href="#circ" startOffset="0">GARANTÍA DE 7 DÍAS · GARANTÍA DE 7 DÍAS · </textPath></text>
+            <text x="60" y="68" text-anchor="middle" class="seal-num">100%</text>
+          </svg>
+        </figure>
       </div>
+
+      <div class="wrap stats" role="group" aria-label="Qué incluye el plan">
+        <div><strong>21</strong><span>días de Reto Keto</span></div>
+        <div><strong>7</strong><span>días de menús listos</span></div>
+        <div><strong>30</strong><span>recetas de batidos</span></div>
+        <div><strong>20</strong><span>postres keto de bono</span></div>
+      </div>
+      <p class="wrap stats-note">Todo esto está en el Combo Completo. Los combos Básico y Plus incluyen una parte.</p>
     </section>
 
-    <section class="section problem" aria-labelledby="problem-title">
-      <div class="container">
-        <header class="section-heading reveal">
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Reto Keto</span><i>✦</i><span>Menús saludables</span><i>✦</i><span>30 batidos</span><i>✦</i><span>Ayuno intermitente</span><i>✦</i><span>Planificador</span><i>✦</i><span>Postres keto</span><i>✦</i>
+        <span>Reto Keto</span><i>✦</i><span>Menús saludables</span><i>✦</i><span>30 batidos</span><i>✦</i><span>Ayuno intermitente</span><i>✦</i><span>Planificador</span><i>✦</i><span>Postres keto</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- PROBLEMA -->
+    <section class="sec problem" aria-labelledby="problem-title">
+      <div class="wrap split">
+        <header class="sec-head sec-head--left reveal">
           <h2 id="problem-title">Improvisar tus comidas cada día cansa</h2>
-          <p>Sin un plan, cada comida es una decisión.</p>
+          <p>Sin un plan, cada comida es una decisión. La solución no es más fuerza de voluntad: <strong>es tener el plan ya hecho.</strong></p>
         </header>
-        <div class="problem-grid visual-problems">
-          <article class="problem-item reveal reveal-delay-1">
-            <div class="problem-photo problem-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" focusable="false"><circle cx="24" cy="24" r="18"/><path d="m31 17-4 10-10 4 4-10 10-4Z"/><path d="m21 21 6 6"/></svg></div>
-            <div><h3>Sin una dirección clara</h3><p>Cambiar de método cada semana hace difícil avanzar.</p></div>
-          </article>
-          <article class="problem-item reveal reveal-delay-2">
-            <div class="problem-photo problem-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" focusable="false"><rect x="8" y="11" width="32" height="29" rx="5"/><path d="M16 7v8m16-8v8M8 21h32m-24 8h4m8 0h4m-16 6h4"/></svg></div>
-            <div><h3>Planes difíciles de sostener</h3><p>Los planes complicados se abandonan con facilidad.</p></div>
-          </article>
-          <article class="problem-item reveal reveal-delay-3">
-            <div class="problem-photo problem-symbol" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" focusable="false"><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="9"/><path d="M4 10v9m5-9v9m-5-4h5m-2.5 4v19M44 10v28m0-28c-5 3-5 13 0 13"/></svg></div>
-            <div><h3>Decidir cada día cansa</h3><p>Pensar qué comer a diario quita tiempo y energía.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="como-funciona" class="section solution" aria-labelledby="solution-title">
-      <div class="container">
-        <header class="section-heading reveal">
-          <h2 id="solution-title">Tu plan, en 3 pasos</h2>
-        </header>
-        <ol class="steps visual-steps">
-          <li class="step reveal reveal-delay-1"><div class="step-art"><span class="step-number" aria-hidden="true">1</span><img class="photo-icon " src="img/people/choose.webp" width="384" height="384" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div><h3>Elige tu combo</h3><p>Básico, Plus o Completo. Pago único, sin suscripción.</p></div></li>
-          <li class="step reveal reveal-delay-2"><div class="step-art"><span class="step-number" aria-hidden="true">2</span><img class="photo-icon " src="img/people/receive.webp" width="384" height="384" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div><h3>Recibe tu material</h3><p>Llega a tu correo, listo para usar desde tu celular, tablet o computador.</p></div></li>
-          <li class="step reveal reveal-delay-3"><div class="step-art"><span class="step-number" aria-hidden="true">3</span><img class="photo-icon " src="img/people/start.webp" width="384" height="384" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><div><h3>Sigue tu plan y avanza</h3><p>Empieza tu Día 1 y avanza hacia tu objetivo a tu ritmo.</p></div></li>
+        <ol class="big-list">
+          <li class="reveal"><span class="num" aria-hidden="true">1</span><div><h3>Sin una dirección clara</h3><p>Cambiar de método cada semana hace difícil avanzar.</p></div></li>
+          <li class="reveal reveal-d1"><span class="num" aria-hidden="true">2</span><div><h3>Planes difíciles de sostener</h3><p>Los planes complicados se abandonan con facilidad.</p></div></li>
+          <li class="reveal reveal-d2"><span class="num" aria-hidden="true">3</span><div><h3>Decidir cada día cansa</h3><p>Pensar qué comer a diario quita tiempo y energía.</p></div></li>
         </ol>
       </div>
     </section>
 
-    <section class="section offer" id="oferta" aria-labelledby="offer-title">
-      <div class="container">
-        <header class="section-heading reveal">
+    <!-- MIRA POR DENTRO -->
+    <section id="dentro" class="sec inside" aria-labelledby="inside-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <h2 id="inside-title">Todo listo para usar</h2>
+          <p>Contenido práctico que abres desde tu celular el día que compras.</p>
+        </header>
+
+        <div class="viewer" id="viewer">
+          <div class="viewer-tabs" role="tablist" aria-label="Libros del plan">
+            <button class="vtab is-active" role="tab" id="vt-0" aria-controls="viewer-panel" aria-selected="true" data-i="0" style="--c1:#2FB36B;--c2:#0B7A44" data-label="Reto Keto" data-title="Reto Keto · 21 días" data-text="Un plan guiado día a día: sabes exactamente qué hacer y qué comer, sin improvisar." data-in="Básico · Plus · Completo" data-points="Un mini objetivo para cada día|Qué comer en desayuno, almuerzo y cena|Tips de mentalidad para no rendirte"><span class="vtab-cover"><img src="img/phone/portada-keto.webp" width="220" height="311" alt="" loading="lazy" decoding="async"></span><span class="vtab-text"><strong>Reto Keto</strong><small>21 días</small></span><span class="vtab-check" aria-hidden="true">✓</span></button>
+            <button class="vtab" role="tab" id="vt-1" aria-controls="viewer-panel" aria-selected="false" data-i="1" style="--c1:#FF8A5B;--c2:#E5483A" data-label="Menús 7 días" data-title="Menús saludables · 7 días" data-text="Tu semana resuelta: abre el menú del día y cocina, sin pensar qué toca." data-in="Básico · Completo" data-points="Desayuno, almuerzo y cena de cada día|7 días resueltos, sin improvisar|Platos sencillos con ingredientes comunes"><span class="vtab-cover"><img src="img/phone/portada-menus.webp" width="220" height="311" alt="" loading="lazy" decoding="async"></span><span class="vtab-text"><strong>Menús</strong><small>7 días</small></span><span class="vtab-check" aria-hidden="true">✓</span></button>
+            <button class="vtab" role="tab" id="vt-2" aria-controls="viewer-panel" aria-selected="false" data-i="2" style="--c1:#F5679A;--c2:#D4206A" data-label="30 batidos" data-title="30 batidos saludables" data-text="Treinta recetas de batidos para variar tus desayunos y snacks sin aburrirte." data-in="Plus · Completo" data-points="Ingredientes claros y fáciles de conseguir|Preparación paso a paso|30 recetas para cambiar cada día"><span class="vtab-cover"><img src="img/phone/portada-batidos.webp" width="220" height="311" alt="" loading="lazy" decoding="async"></span><span class="vtab-text"><strong>Batidos</strong><small>30 recetas</small></span><span class="vtab-check" aria-hidden="true">✓</span></button>
+            <button class="vtab" role="tab" id="vt-3" aria-controls="viewer-panel" aria-selected="false" data-i="3" style="--c1:#2BB5A4;--c2:#0A7C70" data-label="Ayuno intermitente" data-title="Guía de ayuno intermitente" data-text="Una guía práctica para organizar tus horarios de comida con calma y sin extremos." data-in="Plus · Completo" data-points="Define tu horario de comida y hazlo visible|Qué puedes beber durante el ayuno|La regla del 80 %: sin culpa ni castigo"><span class="vtab-cover"><img src="img/phone/portada-ayuno.webp" width="220" height="311" alt="" loading="lazy" decoding="async"></span><span class="vtab-text"><strong>Ayuno</strong><small>Intermitente</small></span><span class="vtab-check" aria-hidden="true">✓</span></button>
+          </div>
+
+          <div class="viewer-stage" role="tabpanel" id="viewer-panel" aria-labelledby="vt-0">
+            <div class="visual">
+              <div class="scene is-active" data-i="0" style="--glow:#3DBE6B"><div class="glow" aria-hidden="true"></div><img src="reto-keto-21-dias.webp" alt="Portadas del Reto Keto de 21 días en libro, tableta y teléfono" loading="lazy" decoding="async"></div>
+              <div class="scene" data-i="1" style="--glow:#F0583F"><div class="glow" aria-hidden="true"></div><img src="menus-saludables-7-dias.webp" alt="Portadas de Menús Saludables para 7 días en libro, tableta y teléfono" loading="lazy" decoding="async"></div>
+              <div class="scene" data-i="2" style="--glow:#E5487F"><div class="glow" aria-hidden="true"></div><img src="30-batidos-saludables.webp" alt="Portadas de 30 Batidos Saludables en libro, tableta y teléfono" loading="lazy" decoding="async"></div>
+              <div class="scene" data-i="3" style="--glow:#4FB89A"><div class="glow" aria-hidden="true"></div><img src="guia-ayuno-intermitente.webp" alt="Portadas de la guía de Ayuno Intermitente en libro, tableta y teléfono" loading="lazy" decoding="async"></div>
+              <div class="phone">
+                <div class="phone-bar"><span class="notch" aria-hidden="true"></span><b id="phone-title">Reto Keto</b><span class="live-dot" aria-hidden="true"></span></div>
+                <div class="phone-screen">
+                  <div class="screen is-active" data-i="0" style="--c1:#2FB36B;--c2:#0B7A44" role="img" aria-label="Vista previa del contenido de Reto Keto"><div class="ph ph-keto"><div class="ph-head"><em>DÍA 1 DE 21</em><strong>Qué comer hoy</strong></div><div class="ph-grid"><figure><img src="img/phone/keto-desayuno.webp" width="300" height="300" alt="" loading="lazy" decoding="async"><figcaption>Desayuno</figcaption></figure><figure><img src="img/phone/keto-almuerzo.webp" width="300" height="300" alt="" loading="lazy" decoding="async"><figcaption>Almuerzo</figcaption></figure><figure><img src="img/phone/keto-cena.webp" width="300" height="300" alt="" loading="lazy" decoding="async"><figcaption>Cena</figcaption></figure><figure><img src="img/phone/keto-snack.webp" width="300" height="300" alt="" loading="lazy" decoding="async"><figcaption>Snack</figcaption></figure></div><div class="ph-bar" aria-hidden="true"><span style="width:8%"></span></div></div></div>
+                  <div class="screen" data-i="1" style="--c1:#FF8A5B;--c2:#E5483A" role="img" aria-label="Vista previa del contenido de Menús 7 días"><div class="ph ph-menus"><div class="ph-head"><em>DÍA 1</em><strong>Tu menú de hoy</strong></div><div class="ph-cards"><figure class="ph-card"><img src="img/phone/menus-desayuno.webp" width="380" height="199" alt="" loading="lazy" decoding="async"><figcaption><small>Desayuno</small><b>Omelette de espinaca y queso</b></figcaption></figure><figure class="ph-card"><img src="img/phone/menus-almuerzo.webp" width="380" height="199" alt="" loading="lazy" decoding="async"><figcaption><small>Almuerzo</small><b>Pollo con ensalada de aguacate</b></figcaption></figure><figure class="ph-card"><img src="img/phone/menus-cena.webp" width="380" height="199" alt="" loading="lazy" decoding="async"><figcaption><small>Cena</small><b>Rollitos de calabacín</b></figcaption></figure></div><div class="ph-dots" aria-hidden="true"><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></div></div></div>
+                  <div class="screen" data-i="2" style="--c1:#F5679A;--c2:#D4206A" role="img" aria-label="Vista previa del contenido de 30 batidos"><div class="ph ph-batidos"><div class="ph-head"><em>DÍA 2</em><strong>Batido energizante tropical</strong></div><div class="ph-stage"><img class="glasses" src="img/phone/batidos-copas.webp" width="380" height="451" alt="" loading="lazy" decoding="async"><img class="f f1" src="img/phone/fruta-pina.webp" width="170" height="116" alt="" loading="lazy" decoding="async"><img class="f f2" src="img/phone/fruta-naranja.webp" width="170" height="128" alt="" loading="lazy" decoding="async"><img class="f f3" src="img/phone/fruta-fresa.webp" width="170" height="159" alt="" loading="lazy" decoding="async"><img class="f f4" src="img/phone/fruta-kiwi.webp" width="170" height="118" alt="" loading="lazy" decoding="async"></div><ul class="ph-ingr"><li><img src="img/phone/fruta-pina.webp" width="170" height="120" alt="" loading="lazy" decoding="async"><span>Piña</span></li><li><img src="img/phone/fruta-naranja.webp" width="170" height="120" alt="" loading="lazy" decoding="async"><span>Naranja</span></li><li><img src="img/phone/fruta-platano.webp" width="170" height="120" alt="" loading="lazy" decoding="async"><span>Plátano</span></li><li><img src="img/phone/fruta-chia.webp" width="170" height="120" alt="" loading="lazy" decoding="async"><span>Chía</span></li></ul></div></div>
+                  <div class="screen" data-i="3" style="--c1:#2BB5A4;--c2:#0A7C70" role="img" aria-label="Vista previa del contenido de Ayuno intermitente"><div class="ph ph-ayuno"><figure class="ph-hero"><img src="img/phone/ayuno-agua.webp" width="380" height="281" alt="" loading="lazy" decoding="async"><figcaption><em>TU HORARIO</em><strong>Ejemplo 16:8</strong></figcaption></figure><div class="ph-time" aria-hidden="true"><div><span class="fast"></span><span class="eat"></span></div><p><small>18:00</small><small>10:00</small><small>18:00</small></p></div><div class="ph-mini"><figure><img src="img/phone/ayuno-te.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><figcaption>Bebe agua o té sin azúcar</figcaption></figure><figure><img src="img/phone/ayuno-tostada.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><figcaption>Rompe el ayuno con calma</figcaption></figure></div></div></div>
+                </div>
+                <span class="home" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="viewer-info" aria-live="polite">
+              <span class="tag" id="viewer-in">Básico · Plus · Completo</span>
+              <h3 id="viewer-title">Reto Keto · 21 días</h3>
+              <p id="viewer-text">Un plan guiado día a día: sabes exactamente qué hacer y qué comer, sin improvisar.</p>
+              <ul class="points" id="viewer-points"><li>Un mini objetivo para cada día</li><li>Qué comer en desayuno, almuerzo y cena</li><li>Tips de mentalidad para no rendirte</li></ul>
+              <a class="btn btn--cta" href="#oferta" data-track="viewer">Quiero este plan <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASOS -->
+    <section id="como-funciona" class="sec steps-sec" aria-labelledby="solution-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <h2 id="solution-title">Tu plan, en 3 pasos</h2>
+        </header>
+        <ol class="steps">
+          <li class="step reveal"><div class="step-img"><img src="img/people/choose.webp" width="384" height="384" alt="" aria-hidden="true" loading="lazy" decoding="async"><b aria-hidden="true">1</b></div><h3>Elige tu combo</h3><p>Básico, Plus o Completo. Pago único, sin suscripción.</p></li>
+          <li class="step reveal reveal-d1"><div class="step-img"><img src="img/people/receive.webp" width="384" height="384" alt="" aria-hidden="true" loading="lazy" decoding="async"><b aria-hidden="true">2</b></div><h3>Recibe tu material</h3><p>Llega a tu correo, listo para usar desde tu celular, tablet o computador.</p></li>
+          <li class="step reveal reveal-d2"><div class="step-img"><img src="img/people/start.webp" width="384" height="384" alt="" aria-hidden="true" loading="lazy" decoding="async"><b aria-hidden="true">3</b></div><h3>Sigue tu plan y avanza</h3><p>Empieza tu Día 1 y avanza hacia tu objetivo a tu ritmo.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- OFERTA / SELECTOR -->
+    <section class="sec offer" id="oferta" aria-labelledby="offer-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
           <h2 id="offer-title">Elige tu combo</h2>
           <p>Básico, Plus o Completo: elige los recursos que quieras incluir.</p>
         </header>
-        <div class="combo-grid">
-          <article class="combo-card reveal">
-            <figure class="combo-image combo-image--studio combo-image--essential"><img src="img/mockups/combo-esencial-organizado-v4.webp" width="1254" height="1254" alt="Libros Reto Keto de 21 días y Menús Saludables para 7 días con un teléfono que muestra un menú diario" loading="lazy" decoding="async"></figure>
-            <h3 id="combo-basico">Combo Básico</h3>
-            <div class="combo-benefit"><p class="combo-difference">Un plan de 21 días y menús para organizar tu semana.</p></div>
-            <p class="resource-label"><strong>Tu combo incluye</strong></p>
-            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span><span>Reto Keto · 21 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Menús · 7 días</span></li></ul>
-            <div class="price-block">
+
+        <div class="picker" id="picker">
+          <div class="seg" role="tablist" aria-label="Elige tu combo">
+            <button class="seg-btn" role="tab" id="t-basico" aria-controls="p-basico" aria-selected="false" data-panel="p-basico"><span>Básico</span><small>$12.99</small></button>
+            <button class="seg-btn is-active" role="tab" id="t-plus" aria-controls="p-plus" aria-selected="true" data-panel="p-plus"><span>Plus</span><small>$14.99</small><em>Más popular</em></button>
+            <button class="seg-btn" role="tab" id="t-completo" aria-controls="p-completo" aria-selected="false" data-panel="p-completo"><span>Completo</span><small>$19.99</small><em class="gold">Mejor valor</em></button>
+          </div>
+
+          <div class="stage">
+          <article class="panel" id="p-basico" role="tabpanel" aria-labelledby="t-basico">
+            <figure class="panel-art"><img src="img/mockups/combo-esencial-organizado-v4-w960.webp" width="1254" height="1254" alt="Libros Reto Keto de 21 días y Menús Saludables para 7 días con un teléfono que muestra un menú diario" loading="lazy" decoding="async"></figure>
+            <div class="panel-body">
+              <h3 id="combo-basico">Combo Básico</h3>
+              <p class="panel-desc">Un plan de 21 días y menús para organizar tu semana.</p>
+              <ul class="inc">
+                <li class="on"><i aria-hidden="true">✓</i>Reto Keto · 21 días</li>
+                <li class="on"><i aria-hidden="true">✓</i>Menús · 7 días</li>
+                <li class="off"><i aria-hidden="true">–</i>30 batidos saludables</li>
+                <li class="off"><i aria-hidden="true">–</i>Ayuno intermitente</li>
+                <li class="off"><i aria-hidden="true">–</i>Planificador de menús</li>
+                <li class="off"><i aria-hidden="true">–</i>Bono: postres keto</li>
+              </ul>
               <p class="price"><strong>$12.99</strong><span>USD · pago único</span></p>
-              <a class="cta" href="https://pay.hotmart.com/Q107916266U?checkoutMode=10" data-track="combo-basico" data-price="12.99" data-product="Combo Básico Nutrifit" aria-label="Comprar Combo Básico">COMPRAR COMBO BÁSICO <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <p class="access-note">Acceso inmediato · Garantía 7 días</p>
+              <a class="btn btn--cta btn--block btn--xl" href="https://pay.hotmart.com/Q107916266U?checkoutMode=10" data-track="combo-basico" data-price="12.99" data-product="Combo Básico Nutrifit" aria-label="Comprar Combo Básico">Comprar Combo Básico <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <p class="note">Acceso inmediato · Garantía 7 días</p>
             </div>
           </article>
 
-          <article class="combo-card combo-card--popular reveal reveal-delay-1">
-            <figure class="combo-image combo-image--studio combo-image--plus"><img src="img/mockups/combo-plus-organizado-v5.webp" width="1254" height="1254" alt="Libro de 30 Batidos Saludables al frente, acompañado de Reto Keto y Ayuno Intermitente, con un teléfono que muestra una receta de batido verde" loading="lazy" decoding="async"></figure>
-            <span class="popular-label"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Más popular</span>
-            <h3 id="combo-plus">Combo Plus</h3>
-            <div class="combo-benefit"><p class="combo-difference">Suma ayuno intermitente y 30 batidos para tener más variedad.</p></div>
-            <p class="resource-label"><strong>Tu combo incluye</strong></p>
-            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span><span>Reto Keto · 21 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Ayuno intermitente</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>30 batidos saludables</span></li></ul>
-            <div class="price-block">
+          <article class="panel" id="p-plus" role="tabpanel" aria-labelledby="t-plus">
+            <figure class="panel-art"><img src="img/mockups/combo-plus-organizado-v5-w960.webp" width="1254" height="1254" alt="Libro de 30 Batidos Saludables al frente, acompañado de Reto Keto y Ayuno Intermitente, con un teléfono que muestra una receta de batido verde" loading="lazy" decoding="async"></figure>
+            <div class="panel-body">
+              <h3 id="combo-plus">Combo Plus</h3>
+              <p class="panel-desc">Suma ayuno intermitente y 30 batidos para tener más variedad.</p>
+              <ul class="inc">
+                <li class="on"><i aria-hidden="true">✓</i>Reto Keto · 21 días</li>
+                <li class="on"><i aria-hidden="true">✓</i>Ayuno intermitente</li>
+                <li class="on"><i aria-hidden="true">✓</i>30 batidos saludables</li>
+                <li class="off"><i aria-hidden="true">–</i>Menús · 7 días</li>
+                <li class="off"><i aria-hidden="true">–</i>Planificador de menús</li>
+                <li class="off"><i aria-hidden="true">–</i>Bono: postres keto</li>
+              </ul>
               <p class="price"><strong>$14.99</strong><span>USD · pago único</span></p>
-              <a class="cta" href="https://pay.hotmart.com/K107916070D?checkoutMode=10" data-track="combo-plus" data-price="14.99" data-product="Combo Plus Nutrifit" aria-label="Comprar Combo Plus">COMPRAR COMBO PLUS <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <p class="access-note">Acceso inmediato · Garantía 7 días</p>
+              <a class="btn btn--cta btn--block btn--xl" href="https://pay.hotmart.com/K107916070D?checkoutMode=10" data-track="combo-plus" data-price="14.99" data-product="Combo Plus Nutrifit" aria-label="Comprar Combo Plus">Comprar Combo Plus <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <p class="note">Acceso inmediato · Garantía 7 días</p>
             </div>
           </article>
 
-          <article class="combo-card combo-card--complete reveal reveal-delay-2">
-            <figure class="combo-image combo-image--studio combo-image--complete"><img src="img/mockups/combo-completo-organizado-v6.webp" width="1254" height="1254" alt="Cinco libros del Combo Completo organizados en abanico con Reto Keto al centro y un teléfono con el planificador semanal" loading="lazy" decoding="async"></figure>
-            <span class="popular-label">Todo incluido</span>
-            <h3 id="combo-completo">Combo Completo</h3>
-            <div class="combo-benefit"><p class="combo-difference">Todo en un solo plan, con planificador de menús y un regalo incluido.</p></div>
-            <p class="resource-label"><strong>Tu combo incluye</strong></p>
-            <ul class="resource-list"><li><span class="resource-check" aria-hidden="true">✓</span><span>Reto Keto · 21 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Menús · 7 días</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>30 batidos saludables</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Ayuno intermitente</span></li><li><span class="resource-check" aria-hidden="true">✓</span><span>Planificador de menús</span></li><li class="resource-bonus"><img class="bonus-product-icon" src="img/bonuses/postres-keto-mockup-icon.webp" width="192" height="192" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="bonus-copy"><span class="bonus-label"><span class="bonus-gift-icon" aria-hidden="true">🎁</span><span>Bono de regalo</span></span><strong>Postres keto</strong><span class="bonus-description">20 recetas de postres keto</span></span></li></ul>
-            <div class="price-block">
+          <article class="panel" id="p-completo" role="tabpanel" aria-labelledby="t-completo">
+            <figure class="panel-art"><img src="img/mockups/combo-completo-organizado-v6-w960.webp" width="1254" height="1254" alt="Cinco libros del Combo Completo organizados en abanico con Reto Keto al centro y un teléfono con el planificador semanal" loading="lazy" decoding="async"></figure>
+            <div class="panel-body">
+              <h3 id="combo-completo">Combo Completo</h3>
+              <p class="panel-desc">Todo en un solo plan, con planificador de menús y un regalo incluido.</p>
+              <ul class="inc">
+                <li class="on"><i aria-hidden="true">✓</i>Reto Keto · 21 días</li>
+                <li class="on"><i aria-hidden="true">✓</i>Menús · 7 días</li>
+                <li class="on"><i aria-hidden="true">✓</i>30 batidos saludables</li>
+                <li class="on"><i aria-hidden="true">✓</i>Ayuno intermitente</li>
+                <li class="on"><i aria-hidden="true">✓</i>Planificador de menús</li>
+                <li class="on gift"><img src="img/bonuses/postres-keto-mockup-icon.webp" width="192" height="192" alt="" aria-hidden="true" loading="lazy" decoding="async"><span><b>🎁 Bono de regalo: Postres keto</b><small>20 recetas de postres keto</small></span></li>
+              </ul>
               <p class="price"><strong>$19.99</strong><span>USD · pago único</span></p>
-              <a class="cta" href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="combo-completo" data-price="19.99" data-product="Combo Completo Nutrifit" aria-label="Comprar Combo Completo">COMPRAR COMBO COMPLETO <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              <p class="access-note">Acceso inmediato · Garantía 7 días</p>
+              <a class="btn btn--cta btn--block btn--xl" href="https://pay.hotmart.com/V98479276N?checkoutMode=10" data-track="combo-completo" data-price="19.99" data-product="Combo Completo Nutrifit" aria-label="Comprar Combo Completo">Comprar Combo Completo <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <p class="note">Acceso inmediato · Garantía 7 días</p>
             </div>
           </article>
+          </div>
+        </div>
+
+        <p class="secure reveal"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Pago seguro procesado por Hotmart · Tarjeta, débito, PayPal o métodos locales según tu país</p>
+      </div>
+    </section>
+
+    <!-- GARANTÍA -->
+    <section class="sec guarantee" aria-labelledby="guarantee-title">
+      <div class="wrap">
+        <div class="g-card reveal">
+          <img src="garantia-7-dias.webp" width="224" height="224" alt="Garantía de 7 días" loading="lazy" decoding="async">
+          <div><h2 id="guarantee-title">7 días de garantía total</h2><p>Pruébalo sin riesgo. Si no quedas conforme, recibe el 100% de tu dinero.</p><small>Solicita tu reembolso directamente mediante Hotmart.</small></div>
         </div>
       </div>
     </section>
 
-    <section id="opiniones" class="section social" aria-labelledby="social-title">
-      <div class="container">
-        <header class="section-heading reveal">
+    <!-- OPINIONES -->
+    <section id="opiniones" class="sec social" aria-labelledby="social-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
           <h2 id="social-title">Qué dicen de nosotros</h2>
           <p>Opiniones de quienes ya probaron nuestros contenidos.</p>
         </header>
-        <div class="testimonial-carousel" role="region" aria-roledescription="carrusel" aria-label="Opiniones de clientes">
-          <div class="testimonial-track" id="testimonial-track" aria-live="off" tabindex="0" aria-label="Opiniones. Usa las flechas del teclado para navegar.">
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689428d47e232_p1.jpg" width="82" height="82" alt="Retrato de Carolina Méndez" loading="lazy" decoding="async"></div>
-                <div><p class="testimonial-name">Carolina Méndez</p><div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div></div>
-              </div>
-              <h3>Muy fácil de seguir y delicioso.</h3>
-              <blockquote>Este combo me ayudó a mejorar mi alimentación sin complicaciones. Las recetas son fáciles y deliciosas.</blockquote>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a857c07cd74_68942aaf0e73b_p4.jpg" width="82" height="82" alt="Retrato de Alejandra Gómez" loading="lazy" decoding="async"></div>
-                <div><p class="testimonial-name">Alejandra Gómez</p><div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div></div>
-              </div>
-              <h3>Súper económico y efectivo.</h3>
-              <blockquote>He comprado varios ebooks antes, pero este es el más completo y fácil de seguir. Vale cada centavo.</blockquote>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68942931989d5_p2.jpg" width="82" height="82" alt="Retrato de Sofía Ríos" loading="lazy" decoding="async"></div>
-                <div><p class="testimonial-name">Sofía Ríos</p><div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div></div>
-              </div>
-              <h3>Feliz con los resultados.</h3>
-              <blockquote>Me siento más saludable y con más energía desde que sigo las recetas de este combo.</blockquote>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/6894294249f43_p3.jpg" width="82" height="82" alt="Retrato de Isabel Ortiz" loading="lazy" decoding="async"></div>
-                <div><p class="testimonial-name">Isabel Ortiz</p><div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div></div>
-              </div>
-              <h3>Sano y sin complicaciones.</h3>
-              <blockquote>Este combo me ha demostrado que no hay que complicarse para comer sano. Todo es súper práctico y accesible.</blockquote>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a8586eecd27_68942abc67db4_p5.jpg" width="82" height="82" alt="Retrato de María Fernanda López" loading="lazy" decoding="async"></div>
-                <div><p class="testimonial-name">María Fernanda López</p><div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div></div>
-              </div>
-              <h3>Me ayudó a mejorar mi relación con la comida.</h3>
-              <blockquote>Este pack me enseñó que comer sano no significa pasar hambre. Aprendí a nutrirme mejor sin restricciones extremas.</blockquote>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-top">
-                <div class="avatar"><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a858bc0956c_68942ac9ae706_p6.jpg" width="82" height="82" alt="Retrato de Gabriela Méndez" loading="lazy" decoding="async"></div>
-                <div><p class="testimonial-name">Gabriela Méndez</p><div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div></div>
-              </div>
-              <h3>Las recetas son increíbles.</h3>
-              <blockquote>No solo son saludables, ¡sino que saben increíble! Nunca pensé que comer bien fuera tan rico y variado.</blockquote>
-            </article>
-          </div>
-          <div class="testimonial-controls" aria-label="Controles de opiniones">
-            <button class="carousel-prev" type="button" aria-label="Opinión anterior"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            <div class="carousel-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span></div>
-            <span class="carousel-position" aria-live="off" aria-label="Opinión 1 de 6">1 / 6</span>
-            <button class="carousel-pause" type="button" aria-label="Pausar avance automático" aria-pressed="false"><svg data-pause-icon viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><svg data-play-icon viewBox="0 0 24 24" fill="none" aria-hidden="true" hidden><path d="m8 5 11 7-11 7V5Z" fill="currentColor"/></svg></button>
-            <button class="carousel-next" type="button" aria-label="Opinión siguiente"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m10 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          </div>
+        <div class="quotes" tabindex="0" role="region" aria-label="Opiniones de clientes. Desliza para ver más.">
+          <article class="quote reveal">
+            <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+            <h3>Muy fácil de seguir y delicioso.</h3>
+            <blockquote>Este combo me ayudó a mejorar mi alimentación sin complicaciones. Las recetas son fáciles y deliciosas.</blockquote>
+            <footer><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/689428d47e232_p1.jpg" width="82" height="82" alt="Retrato de Carolina Méndez" loading="lazy" decoding="async"><p>Carolina Méndez<small>Cliente verificada</small></p></footer>
+          </article>
+          <article class="quote reveal reveal-d1">
+            <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+            <h3>Súper económico y efectivo.</h3>
+            <blockquote>He comprado varios ebooks antes, pero este es el más completo y fácil de seguir. Vale cada centavo.</blockquote>
+            <footer><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a857c07cd74_68942aaf0e73b_p4.jpg" width="82" height="82" alt="Retrato de Alejandra Gómez" loading="lazy" decoding="async"><p>Alejandra Gómez<small>Cliente verificada</small></p></footer>
+          </article>
+          <article class="quote reveal reveal-d2">
+            <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+            <h3>Feliz con los resultados.</h3>
+            <blockquote>Me siento más saludable y con más energía desde que sigo las recetas de este combo.</blockquote>
+            <footer><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68942931989d5_p2.jpg" width="82" height="82" alt="Retrato de Sofía Ríos" loading="lazy" decoding="async"><p>Sofía Ríos<small>Cliente verificada</small></p></footer>
+          </article>
+          <article class="quote reveal">
+            <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+            <h3>Sano y sin complicaciones.</h3>
+            <blockquote>Este combo me ha demostrado que no hay que complicarse para comer sano. Todo es súper práctico y accesible.</blockquote>
+            <footer><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/6894294249f43_p3.jpg" width="82" height="82" alt="Retrato de Isabel Ortiz" loading="lazy" decoding="async"><p>Isabel Ortiz<small>Cliente verificada</small></p></footer>
+          </article>
+          <article class="quote reveal reveal-d1">
+            <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+            <h3>Me ayudó a mejorar mi relación con la comida.</h3>
+            <blockquote>Este pack me enseñó que comer sano no significa pasar hambre. Aprendí a nutrirme mejor sin restricciones extremas.</blockquote>
+            <footer><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a8586eecd27_68942abc67db4_p5.jpg" width="82" height="82" alt="Retrato de María Fernanda López" loading="lazy" decoding="async"><p>María Fernanda López<small>Cliente verificada</small></p></footer>
+          </article>
+          <article class="quote reveal reveal-d2">
+            <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+            <h3>Las recetas son increíbles.</h3>
+            <blockquote>No solo son saludables, ¡sino que saben increíble! Nunca pensé que comer bien fuera tan rico y variado.</blockquote>
+            <footer><img src="https://d1yei2z3i6k35z.cloudfront.net/11268026/68a858bc0956c_68942ac9ae706_p6.jpg" width="82" height="82" alt="Retrato de Gabriela Méndez" loading="lazy" decoding="async"><p>Gabriela Méndez<small>Cliente verificada</small></p></footer>
+          </article>
         </div>
       </div>
     </section>
 
-    <div class="support-layout container">
-    <section class="section faq" aria-labelledby="faq-title">
-      <div class="container">
-        <header class="section-heading reveal">
+    <!-- FAQ -->
+    <section id="faq" class="sec faq" aria-labelledby="faq-title">
+      <div class="wrap split split--faq">
+        <header class="sec-head sec-head--left reveal">
           <h2 id="faq-title">Preguntas frecuentes</h2>
+          <p>¿Algo más? Escríbenos a <a href="mailto:soporte@nutritif.com">soporte@nutritif.com</a>.</p>
         </header>
         <div class="faq-list reveal">
           <details class="faq-item">
@@ -318,153 +418,268 @@
       </div>
     </section>
 
-    <section class="section guarantee" aria-labelledby="guarantee-title">
-      <div class="container">
-        <div class="guarantee-card reveal">
-          <img class="guarantee-seal" src="garantia-7-dias.webp" width="224" height="224" alt="Garantía de 7 días" loading="lazy" decoding="async">
-          <div class="guarantee-copy"><h2 id="guarantee-title">7 días de garantía total</h2><p>Si no quedas conforme, recibe el 100% de tu dinero.</p><p class="guarantee-detail">Solicita tu reembolso mediante Hotmart.</p></div>
-        </div>
-      </div>
-    </section>
-
-    </div>
-    <section class="final-cta" aria-labelledby="final-title">
-      <div class="container">
-        <h2 id="final-title">Elige tu combo</h2>
-        <p>Desde <strong>$12.99 USD</strong> · pago único<br>Combos digitales con 7 días de garantía.</p>
-        <a class="cta" href="#oferta">Ver los tres combos <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="trust-line" aria-label="Acceso inmediato, producto 100% digital y garantía de 7 días"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m13 3-8 11h6l-1 7 9-12h-6l1-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Acceso inmediato</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M10 5h4m-3 14h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>100% digital</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantía de 7 días</span></div>
+    <!-- CTA FINAL -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="wrap">
+        <h2 id="final-title">Tu Día 1 puede empezar hoy.</h2>
+        <p>Desde <strong>$12.99 USD</strong> · pago único · acceso inmediato · 7 días de garantía</p>
+        <a class="btn btn--dark btn--xl" href="#oferta" data-track="final">Ver los tres combos <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-main">
+  <footer class="foot">
+    <div class="wrap foot-in">
       <p>© 2026 Nutrifit · Digibooks · Procesado por Hotmart</p>
-      <nav class="footer-links" aria-label="Enlaces del pie de página">
+      <nav class="foot-links" aria-label="Enlaces del pie de página">
         <a href="#oferta">Ver combos</a>
         <a href="privacidad.html">Privacidad</a>
         <a href="terminos.html">Términos</a>
       </nav>
-      <p class="footer-contact">Contacto y soporte: <a href="mailto:soporte@digibooks.online">soporte@digibooks.online</a></p>
+      <p class="foot-contact">Contacto: <a href="mailto:soporte@nutritif.com">soporte@nutritif.com</a></p>
     </div>
   </footer>
 
+  <div class="sticky" id="sticky" aria-hidden="true">
+    <p><strong>Desde $12.99 USD</strong><span>Pago único · Garantía 7 días</span></p>
+    <a class="btn btn--cta btn--sm" href="#oferta" data-track="sticky" tabindex="-1">Ver combos</a>
+  </div>
+
   <script>
     (function () {
-      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Scroll suave a #oferta + seguimiento de clics */
       document.addEventListener('click', function (event) {
         var anchor = event.target.closest('a[href="#oferta"]');
         if (anchor) {
           event.preventDefault();
-          var offer = document.getElementById('oferta');
-          offer.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-          var heading = document.getElementById('offer-title');
-          if (heading) {
-            heading.setAttribute('tabindex', '-1');
-            heading.focus({ preventScroll: true });
-          }
+          document.getElementById('oferta').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+          var h = document.getElementById('offer-title');
+          if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
         }
-
         var tracked = event.target.closest('[data-track][data-price]');
         if (!tracked) return;
-        var payload = {
-          location: tracked.dataset.track,
-          content_name: tracked.dataset.product,
-          value: Number(tracked.dataset.price),
-          currency: 'USD'
-        };
+        var payload = { location: tracked.dataset.track, content_name: tracked.dataset.product, value: Number(tracked.dataset.price), currency: 'USD' };
         if (typeof window.fbq === 'function') window.fbq('trackCustom', 'CTA_Click', payload);
         if (typeof window.gtag === 'function') {
-          window.gtag('event', 'cta_click', {
-            event_category: 'CTA',
-            event_label: payload.location,
-            location: payload.location,
-            content_name: payload.content_name,
-            value: payload.value,
-            currency: payload.currency
+          window.gtag('event', 'cta_click', { event_category: 'CTA', event_label: payload.location, location: payload.location, content_name: payload.content_name, value: payload.value, currency: payload.currency });
+        }
+      });
+
+      /* Selector de combos */
+      var picker = document.getElementById('picker');
+      if (picker) {
+        var btns = picker.querySelectorAll('.seg-btn');
+        var panels = picker.querySelectorAll('.panel');
+        function showPanel(id) {
+          btns.forEach(function (b) {
+            var on = b.dataset.panel === id;
+            b.classList.toggle('is-active', on);
+            b.setAttribute('aria-selected', String(on));
+            b.tabIndex = on ? 0 : -1;
+          });
+          panels.forEach(function (p) {
+            var on = p.id === id;
+            p.classList.toggle('is-active', on);
+            p.setAttribute('aria-hidden', String(!on));
+            if ('inert' in p) p.inert = !on;
           });
         }
-      });
+        btns.forEach(function (b, i) {
+          b.addEventListener('click', function () { showPanel(b.dataset.panel); });
+          b.addEventListener('keydown', function (e) {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            e.preventDefault();
+            var n = btns[(i + (e.key === 'ArrowRight' ? 1 : -1) + btns.length) % btns.length];
+            n.focus(); showPanel(n.dataset.panel);
+          });
+        });
+        showPanel('p-plus');
+      }
 
-      var track = document.getElementById('testimonial-track');
-      if (!track) return;
-      var carousel = track.closest('.testimonial-carousel');
-      var mobileQuery = window.matchMedia('(max-width: 699px)');
-      var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      var pauseButton = carousel.querySelector('.carousel-pause');
-      var position = carousel.querySelector('.carousel-position');
-      var dots = carousel.querySelectorAll('.carousel-dots span');
-      var cards = track.querySelectorAll('.testimonial-card');
-      var carouselTimer = null;
-      var carouselInteracting = false;
-      var carouselVisible = !('IntersectionObserver' in window);
-      var userPaused = false;
+      /* Visor "mira por dentro": pestañas + presentación automática */
+      var viewer = document.getElementById('viewer');
+      if (viewer) {
+        var tabs = Array.prototype.slice.call(viewer.querySelectorAll('.vtab'));
+        var scenes = viewer.querySelectorAll('.scene');
+        var screens = viewer.querySelectorAll('.screen');
+        var panel = document.getElementById('viewer-panel');
+        var AUTO_MS = 5200, AFTER_CLICK_MS = 9000;
+        var autoTimer = null, userPaused = false, holds = {};
+        var motionOk = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
-      function stepSize() {
-        return cards[0].getBoundingClientRect().width + (parseFloat(window.getComputedStyle(track).columnGap) || 0);
-      }
-      function activeIndex() {
-        if (track.scrollWidth <= track.clientWidth) return 0;
-        if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) return cards.length - 1;
-        return Math.max(0, Math.min(cards.length - 1, Math.round(track.scrollLeft / stepSize())));
-      }
-      function updatePosition() {
-        var index = activeIndex();
-        position.textContent = (index + 1) + ' / ' + cards.length;
-        position.setAttribute('aria-label', 'Opinión ' + (index + 1) + ' de ' + cards.length);
-        dots.forEach(function (dot, i) { dot.classList.toggle('is-active', i === index); });
-      }
-      function goTo(index) {
-        index = (index + cards.length) % cards.length;
-        track.scrollTo({ left: index * stepSize(), behavior: motionQuery.matches ? 'auto' : 'smooth' });
-      }
-      function stopCarousel() {
-        window.clearInterval(carouselTimer);
-        carouselTimer = null;
-      }
-      function startCarousel() {
-        stopCarousel();
-        if (!mobileQuery.matches || motionQuery.matches || document.hidden || carouselInteracting || !carouselVisible || userPaused) return;
-        carouselTimer = window.setInterval(function () { goTo(activeIndex() + 1); }, 5000);
-      }
-      carousel.querySelector('.carousel-prev').addEventListener('click', function () { goTo(activeIndex() - 1); });
-      carousel.querySelector('.carousel-next').addEventListener('click', function () { goTo(activeIndex() + 1); });
-      pauseButton.addEventListener('click', function () {
-        userPaused = !userPaused;
-        pauseButton.setAttribute('aria-pressed', String(userPaused));
-        pauseButton.setAttribute('aria-label', userPaused ? 'Reanudar avance automático' : 'Pausar avance automático');
-        pauseButton.querySelector('[data-pause-icon]').hidden = userPaused;
-        pauseButton.querySelector('[data-play-icon]').hidden = !userPaused;
-        startCarousel();
-      });
-      track.addEventListener('scroll', updatePosition, { passive: true });
-      track.addEventListener('keydown', function (event) {
-        if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-          event.preventDefault();
-          goTo(activeIndex() + (event.key === 'ArrowRight' ? 1 : -1));
+        tabs.forEach(function (t) {
+          var bar = document.createElement('span');
+          bar.className = 'vtab-progress'; bar.setAttribute('aria-hidden', 'true');
+          t.appendChild(bar);
+        });
+
+        function current() { for (var k = 0; k < tabs.length; k++) if (tabs[k].classList.contains('is-active')) return k; return 0; }
+
+        function selectTab(t) {
+          var i = t.dataset.i;
+          panel.setAttribute('aria-labelledby', t.id);
+          tabs.forEach(function (x) { var on = x === t; x.classList.toggle('is-active', on); x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; });
+          scenes.forEach(function (s) { s.classList.toggle('is-active', s.dataset.i === i); });
+          screens.forEach(function (s) { s.classList.toggle('is-active', s.dataset.i === i); });
+          document.getElementById('phone-title').textContent = t.dataset.label;
+          document.getElementById('viewer-title').textContent = t.dataset.title;
+          document.getElementById('viewer-text').textContent = t.dataset.text;
+          document.getElementById('viewer-in').textContent = t.dataset.in;
+          var ul = document.getElementById('viewer-points');
+          ul.textContent = '';
+          t.dataset.points.split('|').forEach(function (txt) { var li = document.createElement('li'); li.textContent = txt; ul.appendChild(li); });
         }
-      });
-      track.addEventListener('pointerdown', function () { carouselInteracting = true; stopCarousel(); }, { passive: true });
-      function resumeCarousel() { carouselInteracting = carousel.contains(document.activeElement); startCarousel(); }
-      window.addEventListener('pointerup', resumeCarousel, { passive: true });
-      window.addEventListener('pointercancel', resumeCarousel, { passive: true });
-      carousel.addEventListener('focusin', function () { carouselInteracting = true; stopCarousel(); });
-      carousel.addEventListener('focusout', function (event) { carouselInteracting = carousel.contains(event.relatedTarget); startCarousel(); });
-      if ('IntersectionObserver' in window) {
-        var carouselObserver = new IntersectionObserver(function (entries) {
-          carouselVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= .25;
-          startCarousel();
-        }, { threshold: [0, .25] });
-        carouselObserver.observe(track);
+
+        function restartBar(ms) {
+          viewer.style.setProperty('--dwell', ms + 'ms');
+          tabs.forEach(function (x) { x.querySelector('.vtab-progress').classList.remove('run'); });
+          var bar = tabs[current()].querySelector('.vtab-progress');
+          void bar.offsetWidth;            // reinicia la animación
+          bar.classList.add('run');
+        }
+
+        function shouldPlay() {
+          if (!motionOk || userPaused) return false;
+          for (var k in holds) if (holds[k]) return false;
+          return true;
+        }
+        function stopAuto() { window.clearTimeout(autoTimer); autoTimer = null; viewer.classList.remove('is-playing'); }
+        function schedule(ms) {
+          window.clearTimeout(autoTimer);
+          if (!shouldPlay()) { stopAuto(); return; }
+          viewer.classList.add('is-playing');
+          restartBar(ms);
+          autoTimer = window.setTimeout(function () {
+            selectTab(tabs[(current() + 1) % tabs.length]);
+            schedule(AUTO_MS);
+          }, ms);
+        }
+        function sync() { if (shouldPlay()) { if (!autoTimer) schedule(AUTO_MS); } else stopAuto(); }
+
+        tabs.forEach(function (t, idx) {
+          t.tabIndex = t.classList.contains('is-active') ? 0 : -1;
+          t.addEventListener('click', function () { selectTab(t); schedule(AFTER_CLICK_MS); });
+          t.addEventListener('keydown', function (e) {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            e.preventDefault();
+            var n = tabs[(idx + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+            n.focus(); selectTab(n); schedule(AFTER_CLICK_MS);
+          });
+        });
+
+        /* Pausas: sección fuera de pantalla, pestaña oculta, mouse encima, foco de teclado */
+        holds.offscreen = true;
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (e) { holds.offscreen = !(e[0].isIntersecting && e[0].intersectionRatio >= .3); sync(); }, { threshold: [0, .3, .6] }).observe(viewer);
+        } else { holds.offscreen = false; }
+        document.addEventListener('visibilitychange', function () { holds.hidden = document.hidden; sync(); });
+        if (window.matchMedia && window.matchMedia('(hover: hover)').matches) {
+          viewer.addEventListener('mouseenter', function () { holds.hover = true; sync(); });
+          viewer.addEventListener('mouseleave', function () { holds.hover = false; sync(); });
+        }
+        viewer.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) { holds.focus = true; sync(); } });
+        viewer.addEventListener('focusout', function () { holds.focus = false; sync(); });
+
       }
-      document.addEventListener('visibilitychange', startCarousel);
-      mobileQuery.addEventListener('change', function () { updatePosition(); startCarousel(); });
-      motionQuery.addEventListener('change', startCarousel);
-      updatePosition();
-      startCarousel();
+
+      /* Opiniones en móvil: carrusel horizontal automático */
+      (function () {
+        var qs = document.querySelector('.quotes');
+        if (!qs) return;
+        var cards = Array.prototype.slice.call(qs.children);
+        var mq = window.matchMedia('(max-width: 559px)');
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+        var DWELL = 4800, IDLE_RESUME = 8000;
+        var timer = null, idleTimer = null, userPaused = false, holds = { offscreen: true };
+
+        /* controles: puntos + pausa (solo visibles en móvil por CSS) */
+        var ui = document.createElement('div');
+        ui.className = 'quotes-ui';
+        var dots = document.createElement('div');
+        dots.className = 'quotes-dots';
+        cards.forEach(function (c, i) {
+          var b = document.createElement('button');
+          b.type = 'button'; b.setAttribute('aria-label', 'Ver opinión ' + (i + 1) + ' de ' + cards.length);
+          b.addEventListener('click', function () { go(i); interact(); });
+          dots.appendChild(b);
+        });
+        ui.appendChild(dots);
+        qs.parentNode.insertBefore(ui, qs.nextSibling);
+
+        function idx() {
+          var best = 0, bd = 1e9, mid = qs.scrollLeft + qs.clientWidth / 2;
+          cards.forEach(function (c, i) { var d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+          return best;
+        }
+        function paint() {
+          var a = idx();
+          Array.prototype.forEach.call(dots.children, function (d, i) { d.classList.toggle('is-on', i === a); if (i === a) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+        }
+        function go(i) {
+          var c = cards[i];
+          qs.scrollTo({ left: c.offsetLeft - (qs.clientWidth - c.offsetWidth) / 2, behavior: reduce.matches ? 'auto' : 'smooth' });
+        }
+        function canPlay() {
+          if (!mq.matches || reduce.matches || userPaused) return false;
+          for (var k in holds) if (holds[k]) return false;
+          return true;
+        }
+        function stop() { window.clearInterval(timer); timer = null; }
+        function sync() {
+          if (canPlay()) { if (!timer) timer = window.setInterval(function () { go((idx() + 1) % cards.length); }, DWELL); }
+          else stop();
+        }
+        /* el usuario toca, arrastra o usa el teclado: pausa y reanuda tras unos segundos */
+        function interact() {
+          holds.touch = true; sync();
+          window.clearTimeout(idleTimer);
+          idleTimer = window.setTimeout(function () { holds.touch = false; sync(); }, IDLE_RESUME);
+        }
+        ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (ev) { qs.addEventListener(ev, interact, { passive: true }); });
+
+        var ticking = false;
+        qs.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(function () { paint(); ticking = false; }); } }, { passive: true });
+
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (e) { holds.offscreen = !e[0].isIntersecting; sync(); }, { threshold: 0.4 }).observe(qs);
+        } else { holds.offscreen = false; }
+        document.addEventListener('visibilitychange', function () { holds.hidden = document.hidden; sync(); });
+        qs.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) { holds.focus = true; sync(); } });
+        qs.addEventListener('focusout', function () { holds.focus = false; sync(); });
+        mq.addEventListener('change', function () { if (!mq.matches) qs.scrollLeft = 0; sync(); });
+        reduce.addEventListener('change', sync);
+
+        paint();
+      })();
+
+      /* Reveal al hacer scroll */
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); }
+      else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (e) { io.observe(e); });
+      }
+
+      /* Barra fija móvil */
+      var sticky = document.getElementById('sticky');
+      if (sticky && 'IntersectionObserver' in window) {
+        var state = { hero: true, offer: false, final: false };
+        var link = sticky.querySelector('a');
+        function update() {
+          var show = !state.hero && !state.offer && !state.final;
+          sticky.classList.toggle('is-on', show);
+          sticky.setAttribute('aria-hidden', String(!show));
+          link.tabIndex = show ? 0 : -1;
+        }
+        [['.hero', 'hero'], ['#oferta', 'offer'], ['.final', 'final']].forEach(function (p) {
+          new IntersectionObserver(function (e) { state[p[1]] = e[0].isIntersecting; update(); }, { threshold: 0.05 }).observe(document.querySelector(p[0]));
+        });
+      }
     })();
   </script>
 </body>
 </html>
-
