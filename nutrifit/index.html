@@ -493,8 +493,8 @@
         var scenes = viewer.querySelectorAll('.scene');
         var screens = viewer.querySelectorAll('.screen');
         var panel = document.getElementById('viewer-panel');
-        var AUTO_MS = 3000, AFTER_CLICK_MS = 6000;
-        var autoTimer = null, userPaused = false, holds = {};
+        var AUTO_MS = 2000, HOLD_AFTER_CLICK = 4000;
+        var tickTimer = null, holdUntil = 0, focusHold = false, wasOn = false;
         var motionOk = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
         tabs.forEach(function (t) {
@@ -528,47 +528,46 @@
           bar.classList.add('run');
         }
 
-        function shouldPlay() {
-          if (!motionOk || userPaused) return false;
-          for (var k in holds) if (holds[k]) return false;
-          return true;
+        /* Ritmo fijo: un solo temporizador que nunca se reinicia por pausas; cada paso comprueba si procede avanzar */
+        function onScreen() {
+          var r = viewer.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight;
+          var visible = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+          return r.height > 0 && visible >= Math.min(r.height, vh) * 0.3;
         }
-        function stopAuto() { window.clearTimeout(autoTimer); autoTimer = null; viewer.classList.remove('is-playing'); }
-        function schedule(ms) {
-          window.clearTimeout(autoTimer);
-          if (!shouldPlay()) { stopAuto(); return; }
+        function tick() {
+          if (!motionOk || document.hidden || focusHold || Date.now() < holdUntil || !onScreen()) return;
+          selectTab(tabs[(current() + 1) % tabs.length]);
+          restartBar(AUTO_MS);
+        }
+        function startAuto() {
+          window.clearInterval(tickTimer);
+          if (!motionOk) return;
           viewer.classList.add('is-playing');
-          restartBar(ms);
-          autoTimer = window.setTimeout(function () {
-            selectTab(tabs[(current() + 1) % tabs.length]);
-            schedule(AUTO_MS);
-          }, ms);
+          restartBar(AUTO_MS);
+          tickTimer = window.setInterval(tick, AUTO_MS);
         }
-        function sync() { if (shouldPlay()) { if (!autoTimer) schedule(AUTO_MS); } else stopAuto(); }
 
         tabs.forEach(function (t, idx) {
           t.tabIndex = t.classList.contains('is-active') ? 0 : -1;
-          t.addEventListener('click', function () { selectTab(t); schedule(AFTER_CLICK_MS); });
+          t.addEventListener('click', function () { selectTab(t); holdUntil = Date.now() + HOLD_AFTER_CLICK; startAuto(); });
           t.addEventListener('keydown', function (e) {
             if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
             e.preventDefault();
             var n = tabs[(idx + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
-            n.focus(); selectTab(n); schedule(AFTER_CLICK_MS);
+            n.focus(); selectTab(n); holdUntil = Date.now() + HOLD_AFTER_CLICK; startAuto();
           });
         });
 
-        /* Pausas: sección fuera de pantalla, pestaña oculta, mouse encima, foco de teclado */
-        holds.offscreen = true;
-        if ('IntersectionObserver' in window) {
-          new IntersectionObserver(function (e) { holds.offscreen = !(e[0].isIntersecting && e[0].intersectionRatio >= .3); sync(); }, { threshold: [0, .3, .6] }).observe(viewer);
-        } else { holds.offscreen = false; }
-        document.addEventListener('visibilitychange', function () { holds.hidden = document.hidden; sync(); });
-        if (window.matchMedia && window.matchMedia('(hover: hover)').matches) {
-          viewer.addEventListener('mouseenter', function () { holds.hover = true; sync(); });
-          viewer.addEventListener('mouseleave', function () { holds.hover = false; sync(); });
-        }
-        viewer.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) { holds.focus = true; sync(); } });
-        viewer.addEventListener('focusout', function () { holds.focus = false; sync(); });
+        /* Pausas: solo con el teclado enfocado en el visor. Al volver a verse la sección, la cuenta arranca de cero. */
+        viewer.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) focusHold = true; });
+        viewer.addEventListener('focusout', function () { focusHold = false; });
+        var scrolling = false;
+        window.addEventListener('scroll', function () {
+          if (scrolling) return; scrolling = true;
+          window.requestAnimationFrame(function () { scrolling = false; var on = onScreen(); if (on && !wasOn) startAuto(); wasOn = on; });
+        }, { passive: true });
+        wasOn = onScreen();
+        startAuto();
 
       }
 
@@ -579,8 +578,8 @@
         var cards = Array.prototype.slice.call(qs.children);
         var mq = window.matchMedia('(max-width: 559px)');
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-        var DWELL = 4800, IDLE_RESUME = 8000;
-        var timer = null, idleTimer = null, userPaused = false, holds = { offscreen: true };
+        var DWELL = 2000, IDLE_RESUME = 3000;
+        var timer = null, idleTimer = null, userPaused = false, holds = { hidden: document.hidden };
 
         /* controles: puntos + pausa (solo visibles en móvil por CSS) */
         var ui = document.createElement('div');
@@ -614,10 +613,17 @@
           for (var k in holds) if (holds[k]) return false;
           return true;
         }
+        /* ¿Las reseñas están a la vista? (se comprueba en cada paso, sin depender de observadores) */
+        function onScreen() {
+          var r = qs.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight;
+          var visible = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+          return r.height > 0 && visible >= Math.min(r.height, vh) * 0.3;
+        }
         function stop() { window.clearInterval(timer); timer = null; }
         function sync() {
-          if (canPlay()) { if (!timer) timer = window.setInterval(function () { go((idx() + 1) % cards.length); }, DWELL); }
-          else stop();
+          if (canPlay()) {
+            if (!timer) timer = window.setInterval(function () { if (onScreen()) go((idx() + 1) % cards.length); }, DWELL);
+          } else stop();
         }
         /* el usuario toca, arrastra o usa el teclado: pausa y reanuda tras unos segundos */
         function interact() {
@@ -625,14 +631,11 @@
           window.clearTimeout(idleTimer);
           idleTimer = window.setTimeout(function () { holds.touch = false; sync(); }, IDLE_RESUME);
         }
-        ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (ev) { qs.addEventListener(ev, interact, { passive: true }); });
+        ['pointerdown', 'touchstart', 'keydown'].forEach(function (ev) { qs.addEventListener(ev, interact, { passive: true }); });
 
         var ticking = false;
         qs.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(function () { paint(); ticking = false; }); } }, { passive: true });
 
-        if ('IntersectionObserver' in window) {
-          new IntersectionObserver(function (e) { holds.offscreen = !e[0].isIntersecting; sync(); }, { threshold: 0.4 }).observe(qs);
-        } else { holds.offscreen = false; }
         document.addEventListener('visibilitychange', function () { holds.hidden = document.hidden; sync(); });
         qs.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) { holds.focus = true; sync(); } });
         qs.addEventListener('focusout', function () { holds.focus = false; sync(); });
@@ -640,6 +643,7 @@
         reduce.addEventListener('change', sync);
 
         paint();
+        sync();
       })();
 
       /* Oculta el cartel "Powered by Netlify" que Netlify inyecta (iframe#nl-badge-frame) */
