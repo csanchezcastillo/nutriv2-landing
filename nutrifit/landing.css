@@ -100,10 +100,6 @@ em { font-style: italic; }
 .sec-head > p:not(.eyebrow) { margin-top: 16px; font-size: 1.08rem; color: var(--muted); }
 .sec-head--left { margin: 0; text-align: left; }
 .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: start; }
-.reveal-d1 { transition-delay: .1s !important; }
-.reveal-d2 { transition-delay: .2s !important; }
-.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-.js .reveal.is-in { opacity: 1; transform: none; }
 
 /* Problema */
 .big-list { list-style: none; margin: 0; padding: 0; counter-reset: n; }
@@ -303,7 +299,6 @@ em { font-style: italic; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .js .reveal { opacity: 1; transform: none; }
 }
 
 /* Acentos por contexto */
@@ -680,3 +675,4 @@ p, li, blockquote { text-wrap: pretty; }
 html { scroll-padding-top: 16px; }
 .hero { padding-top: 64px; }
 @media (max-width: 860px) { .hero { padding-top: 44px; } }
+
