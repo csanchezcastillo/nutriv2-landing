@@ -55,7 +55,7 @@
     gtag('config','G-QYP9W4CZC5');
   </script>
 
-  <link rel="stylesheet" href="landing.css?v=nutrifit-v4h">
+  <link rel="stylesheet" href="landing.css?v=nutrifit-v4l">
 
   <script type="application/ld+json">
   {
@@ -124,18 +124,6 @@
 
   <a class="skip" href="#oferta">Ir a los combos</a>
 
-  <header class="nav-wrap">
-    <div class="nav" id="top">
-      <a class="brand" href="#inicio" aria-label="Nutrifit, inicio"><img src="icon-v2.svg" width="30" height="30" alt="" aria-hidden="true"><strong>Nutrifit</strong></a>
-      <nav class="nav-links" aria-label="Principal">
-        <a href="#dentro">Por dentro</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#faq">Preguntas</a>
-      </nav>
-      <a class="btn btn--cta btn--sm" href="#oferta" data-track="header">Ver combos</a>
-    </div>
-  </header>
-
   <main id="inicio">
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
@@ -182,7 +170,7 @@
     <section class="sec problem" aria-labelledby="problem-title">
       <div class="wrap split">
         <header class="sec-head sec-head--left reveal">
-          <h2 id="problem-title">Improvisar tus comidas cada día cansa</h2>
+          <h2 id="problem-title">Improvisar tus comidas<br class="br-sm"> cada día cansa</h2>
           <p>Sin un plan, cada comida es una decisión. La solución no es más fuerza de voluntad: <strong>es tener el plan ya hecho.</strong></p>
         </header>
         <ol class="big-list">
@@ -505,7 +493,7 @@
         var scenes = viewer.querySelectorAll('.scene');
         var screens = viewer.querySelectorAll('.screen');
         var panel = document.getElementById('viewer-panel');
-        var AUTO_MS = 5200, AFTER_CLICK_MS = 9000;
+        var AUTO_MS = 3000, AFTER_CLICK_MS = 6000;
         var autoTimer = null, userPaused = false, holds = {};
         var motionOk = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
@@ -652,6 +640,13 @@
         reduce.addEventListener('change', sync);
 
         paint();
+      })();
+
+      /* Oculta el cartel "Powered by Netlify" que Netlify inyecta (iframe#nl-badge-frame) */
+      (function () {
+        function rm() { var f = document.getElementById('nl-badge-frame'); if (f && f.parentNode) f.parentNode.removeChild(f); }
+        rm();
+        if ('MutationObserver' in window) new MutationObserver(rm).observe(document.body, { childList: true });
       })();
 
       /* Reveal al hacer scroll */
