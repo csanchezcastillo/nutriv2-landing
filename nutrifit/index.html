@@ -55,7 +55,7 @@
     gtag('config','G-QYP9W4CZC5');
   </script>
 
-  <link rel="stylesheet" href="landing.css?v=nutrifit-v4q">
+  <link rel="stylesheet" href="landing.css?v=nutrifit-v4r">
 
   <script type="application/ld+json">
   {
@@ -252,8 +252,8 @@
         <div class="picker" id="picker">
           <div class="seg" role="tablist" aria-label="Elige tu combo">
             <button class="seg-btn" role="tab" id="t-basico" aria-controls="p-basico" aria-selected="false" data-panel="p-basico"><span>Básico</span><small>$12.99</small></button>
-            <button class="seg-btn" role="tab" id="t-plus" aria-controls="p-plus" aria-selected="false" data-panel="p-plus"><span>Plus</span><small>$14.99</small></button>
-            <button class="seg-btn is-active" role="tab" id="t-completo" aria-controls="p-completo" aria-selected="true" data-panel="p-completo"><span>Completo</span><small>$19.99</small><em class="gold">Mejor valor</em></button>
+            <button class="seg-btn is-active" role="tab" id="t-plus" aria-controls="p-plus" aria-selected="true" data-panel="p-plus"><span>Plus</span><small>$14.99</small></button>
+            <button class="seg-btn" role="tab" id="t-completo" aria-controls="p-completo" aria-selected="false" data-panel="p-completo"><span>Completo</span><small>$19.99</small><em class="gold">Mejor valor</em></button>
           </div>
 
           <div class="stage">
@@ -316,7 +316,7 @@
           </div>
         </div>
 
-        <section class="compare" id="comparar" data-active="completo" aria-labelledby="cmp-title">
+        <section class="compare" id="comparar" data-active="plus" aria-labelledby="cmp-title">
           <h3 id="cmp-title">Compara qué incluye cada combo</h3>
           <div class="cmp-wrap">
             <table class="cmp-table">
@@ -515,7 +515,7 @@
             picker.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
           });
         });
-        showPanel('p-completo');
+        showPanel('p-plus');
       }
 
       /* Visor "mira por dentro": pestañas + presentación automática */
