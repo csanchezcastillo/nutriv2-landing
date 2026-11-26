@@ -720,3 +720,14 @@ html { scroll-padding-top: 16px; }
 
 /* Separación del inicio sin cinta: línea fina */
 .sec.problem { border-top: 1px solid var(--line); }
+
+/* Sello giratorio "100%" arriba a la derecha del mockup */
+.seal { position: absolute; z-index: 3; top: 7%; right: 0; width: 108px; height: 108px; filter: drop-shadow(0 10px 14px rgb(0 105 58 / .35)); }
+.seal-bg { fill: var(--forest-2); }
+.seal-ring { font-family: "Inter", sans-serif; font-size: 10.5px; font-weight: 800; letter-spacing: .08em; fill: #fff; transform-origin: 60px 60px; animation: spin 18s linear infinite; }
+.seal-num { font-family: var(--serif); font-size: 24px; font-weight: 700; fill: #fff; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 860px) {
+  .hero-art { margin-top: 48px; }
+  .seal { top: -50px; right: -2px; width: 70px; height: 70px; }
+}
