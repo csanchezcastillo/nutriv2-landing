@@ -727,3 +727,9 @@ html { scroll-padding-top: 16px; }
 
 /* Título del inicio algo más pequeño en móvil */
 @media (max-width: 560px) { .hero h1 { font-size: clamp(1.7rem, 8.2vw, 2.1rem); } .lead { margin-top: 14px; } }
+
+/* Hero móvil/tableta: mockup completo (sin recorte abajo) y más aire sobre el botón */
+@media (max-width: 860px) {
+  .hero-art > img { object-position: 50% 60.8%; }
+  .hero-cta { margin-top: 34px; }
+}
