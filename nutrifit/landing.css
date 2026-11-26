@@ -68,9 +68,6 @@ em { font-style: italic; }
 .hero h1 em { color: var(--mango); font-weight: 600; white-space: nowrap; }
 .lead { max-width: 540px; margin: 24px 0 30px; font-size: 1.15rem; color: rgb(251 246 236 / .82); }
 .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
-.from { font-size: .88rem; line-height: 1.35; color: rgb(251 246 236 / .75); }
-.from strong { color: #fff; font-family: var(--serif); font-size: 1.7rem; }
-.from span { font-size: .78rem; }
 .stars { color: var(--leaf); letter-spacing: .06em; font-size: 1.05rem; line-height: 1.2; }
 .hero-art { position: relative; aspect-ratio: 1; width: 100%; top: -36px; }
 .blob { position: absolute; inset: 8% 6%; border-radius: 50%; background: radial-gradient(closest-side, rgb(239 197 181 / .5), rgb(239 197 181 / 0) 72%); filter: blur(8px); }
@@ -326,8 +323,6 @@ em { font-style: italic; }
 .hero h1 { color: var(--ink); }
 .hero h1 em { font-style: normal; font-weight: 700; color: var(--ink); background: var(--mango); padding: 0 .16em .04em; border-radius: 18px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .lead { color: var(--muted); }
-.from { color: var(--muted); }
-.from strong { color: var(--ink); }
 .hero-art::after { background: radial-gradient(closest-side, rgb(0 60 30 / .3), transparent); }
 .seal { filter: drop-shadow(0 10px 14px rgb(0 105 58 / .35)); }
 .seal-bg { fill: var(--forest-2); }
@@ -733,3 +728,18 @@ html { scroll-padding-top: 16px; }
   .cmp-table tbody th[scope="row"] { font-size: .76rem; padding-left: 8px; }
 }
 
+
+/* Hero en móvil/tableta: el botón va debajo del mockup; el sello pasa arriba para no chocar con él */
+@media (max-width: 860px) {
+  .hero-grid { gap: 0; }
+  .hero-copy { display: contents; }
+  .hero h1, .lead { justify-self: center; }
+  .lead { margin-bottom: 0; }
+  .hero-art { order: 1; margin-top: 64px; }
+  .hero-cta { order: 2; justify-self: center; justify-content: center; width: 100%; margin-top: 18px; position: relative; z-index: 3; }
+  .seal { top: -64px; bottom: auto; right: -2px; width: 68px; height: 68px; }
+  .stats { margin-top: 34px; }
+}
+
+/* Título del inicio algo más pequeño en móvil */
+@media (max-width: 560px) { .hero h1 { font-size: clamp(1.7rem, 8.2vw, 2.1rem); } .lead { margin-top: 14px; } }
