@@ -73,12 +73,6 @@ em { font-style: italic; }
 .blob { position: absolute; inset: 8% 6%; border-radius: 50%; background: radial-gradient(closest-side, rgb(239 197 181 / .5), rgb(239 197 181 / 0) 72%); filter: blur(8px); }
 .hero-art::after { content: ""; position: absolute; left: 14%; right: 14%; bottom: 12%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgb(0 0 0 / .55), transparent); filter: blur(10px); }
 .hero-art > img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; }
-.seal { z-index: 2; }
-.seal { position: absolute; right: 0; bottom: 6%; width: 112px; height: 112px; filter: drop-shadow(0 12px 18px rgb(0 0 0 / .4)); }
-.seal-bg { fill: var(--mango); }
-.seal-ring { font-family: "Inter", sans-serif; font-size: 10.5px; font-weight: 800; letter-spacing: .08em; fill: var(--forest-ink); transform-origin: 60px 60px; animation: spin 18s linear infinite; }
-.seal-num { font-family: var(--serif); font-size: 24px; font-weight: 700; fill: var(--forest-ink); }
-@keyframes spin { to { transform: rotate(360deg); } }
 .stats { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 56px; border-top: 1px solid var(--line-dk); }
 .stats > div { padding: 26px 8px 30px; border-left: 1px solid var(--line-dk); text-align: center; }
 .stats > div:first-child { border-left: 0; }
@@ -258,10 +252,8 @@ em { font-style: italic; }
   .hero-art > img { object-fit: cover; object-position: 50% 54.3%; }
   .hero-art::after { bottom: 3%; }
   .blob { inset: -6% 4% -4%; }
-  .seal { bottom: -26%; right: 2%; width: 84px; height: 84px; }
   .stats { margin-top: 36px; }
   .hero-art { max-width: 460px; margin-inline: auto; }
-  .seal { width: 92px; height: 92px; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stats > div:nth-child(3) { border-left: 0; }
   .stats > div:nth-child(n+3) { border-top: 1px solid var(--line-dk); }
@@ -324,9 +316,6 @@ em { font-style: italic; }
 .hero h1 em { font-style: normal; font-weight: 700; color: var(--ink); background: var(--mango); padding: 0 .16em .04em; border-radius: 18px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .lead { color: var(--muted); }
 .hero-art::after { background: radial-gradient(closest-side, rgb(0 60 30 / .3), transparent); }
-.seal { filter: drop-shadow(0 10px 14px rgb(0 105 58 / .35)); }
-.seal-bg { fill: var(--forest-2); }
-.seal-ring, .seal-num { fill: #fff; }
 .stats { border-top-color: var(--line); }
 .stats > div { border-left-color: var(--line); }
 .stats > div:nth-child(n+3) { border-top-color: var(--line); }
@@ -477,11 +466,9 @@ p, li, blockquote { text-wrap: pretty; }
 .hero h1 { line-height: 1.12; letter-spacing: -.02em; }
 .hero h1 em { padding: .02em .16em .1em; }
 .final h2 { letter-spacing: -.02em; line-height: 1.04; }
-.seal { top: 3%; bottom: auto; right: 1%; }
 .foot-contact a { display: inline-block; padding-block: 10px; }
 @media (max-width: 860px) {
   .sec-head--left { text-align: center; margin-inline: auto; }
-  .seal { top: auto; bottom: -34%; right: 0; width: 80px; height: 80px; }
   .stats { margin-top: 72px; }
 }
 @media (max-width: 560px) {
@@ -523,7 +510,6 @@ p, li, blockquote { text-wrap: pretty; }
   .final { padding-block: 60px; }
   .lead { margin: 16px auto 22px; }
   .stats { margin-top: 60px; }
-  .seal { width: 72px; height: 72px; bottom: -28%; }
   .viewer { gap: 20px; }
   .viewer-stage { gap: 18px; }
   .seg { margin-bottom: 22px; }
@@ -648,7 +634,6 @@ p, li, blockquote { text-wrap: pretty; }
   .quotes-dots button.is-on::before { width: 20px; background: var(--forest-2); }
 }
 
-/* Cifras: que el sello de garantía no roce la cuadrícula */
 @media (max-width: 860px) { .stats { margin-top: 80px; } }
 
 /* Nota bajo las cifras: aclara qué combo incluye cada cosa */
@@ -729,15 +714,14 @@ html { scroll-padding-top: 16px; }
 }
 
 
-/* Hero en móvil/tableta: el botón va debajo del mockup; el sello pasa arriba para no chocar con él */
+/* Hero en móvil/tableta: el botón va debajo del mockup */
 @media (max-width: 860px) {
   .hero-grid { gap: 0; }
   .hero-copy { display: contents; }
   .hero h1, .lead { justify-self: center; }
   .lead { margin-bottom: 0; }
-  .hero-art { order: 1; margin-top: 64px; }
+  .hero-art { order: 1; margin-top: 22px; }
   .hero-cta { order: 2; justify-self: center; justify-content: center; width: 100%; margin-top: 18px; position: relative; z-index: 3; }
-  .seal { top: -64px; bottom: auto; right: -2px; width: 68px; height: 68px; }
   .stats { margin-top: 34px; }
 }
 
