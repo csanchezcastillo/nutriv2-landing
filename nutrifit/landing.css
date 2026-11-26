@@ -74,11 +74,6 @@ em { font-style: italic; }
 .hero-art::after { content: ""; position: absolute; left: 14%; right: 14%; bottom: 12%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgb(0 0 0 / .55), transparent); filter: blur(10px); }
 .hero-art > img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; }
 
-/* ---------- Marquee ---------- */
-.marquee { overflow: hidden; background: var(--mango); color: var(--forest-ink); border-block: 2px solid var(--forest-ink); }
-.marquee-track { display: flex; width: max-content; gap: 28px; padding: 14px 0; font-family: var(--serif); font-size: 1.35rem; font-weight: 700; white-space: nowrap; animation: marq 32s linear infinite; }
-.marquee i { font-style: normal; opacity: .55; }
-@keyframes marq { to { transform: translateX(-50%); } }
 
 /* ---------- Secciones ---------- */
 .sec { padding-block: 104px; }
@@ -308,8 +303,6 @@ em { font-style: italic; }
 .lead { color: var(--muted); }
 .hero-art::after { background: radial-gradient(closest-side, rgb(0 60 30 / .3), transparent); }
 
-/* Cinta en verde marca */
-.marquee { background: var(--forest-2); color: #fff; border-block: 0; }
 
 /* Precios sobre crema */
 .offer { background: var(--paper-2); color: var(--ink); }
@@ -724,6 +717,6 @@ html { scroll-padding-top: 16px; }
 @media (max-width: 560px) { .hero-trust { flex-wrap: nowrap; gap: 0 10px; font-size: .72rem; margin-top: -2px; } .hero-trust span { gap: 4px; } }
 @media (max-width: 340px) { .hero-trust { font-size: .66rem; gap: 0 7px; } }
 
-/* Cinta en durazno para que el botón verde sea el protagonista */
-.marquee { background: var(--mango); color: var(--ink); }
-.marquee i { color: var(--forest-2); opacity: .8; }
+
+/* Separación del inicio sin cinta: línea fina */
+.sec.problem { border-top: 1px solid var(--line); }
